@@ -1,0 +1,5 @@
+# Ley 21.719 - Guía de Implementación
+# Python dependencies
+
+flask>=2.3.0
+gunicorn>=21.0.0

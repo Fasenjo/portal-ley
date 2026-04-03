@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guía interactiva para implementación técnica de la Ley N° 21.719 de Protección de Datos Personales de Chile">
+    <title>{% block title %}Ley 21.719{% endblock %} | Guía de Implementación</title>
+    
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages.css') }}">
+    
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header__container">
+            <a href="{{ url_for('index') }}" class="header__brand" aria-label="Inicio">
+                <span class="header__logo" aria-hidden="true">§</span>
+                <span class="header__title">Ley 21.719</span>
+            </a>
+            
+            <nav class="nav" role="navigation" aria-label="Navegación principal">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="{{ url_for('index') }}" class="nav__link {% if active_page == 'inicio' %}nav__link--active{% endif %}">
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{ url_for('articulos') }}" class="nav__link {% if active_page == 'articulos' %}nav__link--active{% endif %}">
+                            Artículos
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{ url_for('capacidades') }}" class="nav__link {% if active_page == 'capacidades' %}nav__link--active{% endif %}">
+                            Capacidades
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{ url_for('matriz') }}" class="nav__link {% if active_page == 'matriz' %}nav__link--active{% endif %}">
+                            Matriz
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{ url_for('recursos') }}" class="nav__link {% if active_page == 'recursos' %}nav__link--active{% endif %}">
+                            Recursos
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <button class="header__menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
+                <span class="header__menu-icon"></span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Navegación móvil -->
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil" hidden>
+        <ul class="mobile-nav__list">
+            <li><a href="{{ url_for('index') }}" class="mobile-nav__link">Inicio</a></li>
+            <li><a href="{{ url_for('articulos') }}" class="mobile-nav__link">Artículos</a></li>
+            <li><a href="{{ url_for('capacidades') }}" class="mobile-nav__link">Capacidades</a></li>
+            <li><a href="{{ url_for('matriz') }}" class="mobile-nav__link">Matriz</a></li>
+            <li><a href="{{ url_for('recursos') }}" class="mobile-nav__link">Recursos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main id="main-content" role="main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+            <div class="footer__disclaimer">
+                <p>
+                    <strong>Aviso legal:</strong> Este sitio web ofrece una interpretación y visualización de la Ley N° 21.719 sobre Protección de Datos Personales de Chile, con el objetivo de proporcionar una guía referencial sobre posibles implementaciones tecnológicas. La información presentada tiene carácter meramente informativo y no constituye asesoría legal. No garantiza el cumplimiento de obligaciones legales o normativas. Para implementaciones específicas, consulte con profesionales especializados en protección de datos y ciberseguridad.
+                </p>
+            </div>
+            
+            <div class="footer__links">
+                <a href="https://www.bcn.cl/leychile/navegar?idNorma=1209272" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="footer__link">
+                    Texto oficial de la Ley (BCN)
+                </a>
+                <a href="{{ url_for('recursos') }}#iso-nist" class="footer__link">
+                    Referencias ISO/NIST
+                </a>
+                <a href="{{ url_for('recursos') }}#glosario" class="footer__link">
+                    Glosario
+                </a>
+            </div>
+            
+            <div class="footer__meta">
+                <p>Vigencia de la Ley: <strong>1 de diciembre de 2026</strong></p>
+                <p class="footer__copyright">© 2026 Guía de Implementación Ley 21.719</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

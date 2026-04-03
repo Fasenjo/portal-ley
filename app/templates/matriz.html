@@ -1,0 +1,387 @@
+{% extends "base.html" %}
+
+{% block title %}Matriz de Cumplimiento{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="page-header__container">
+        <h1 class="page-header__title">Matriz de Cumplimiento</h1>
+        <p class="page-header__subtitle">Vista cruzada de Artículos × Capacidades Tecnológicas</p>
+    </div>
+</section>
+
+<!-- Filtros de criticidad -->
+<div class="matrix-filters">
+    <div class="matrix-filters__container">
+        <span class="matrix-filters__label">Filtrar por criticidad:</span>
+        <div class="matrix-filters__options" role="group" aria-label="Filtros de criticidad">
+            <button class="matrix-filter matrix-filter--active" data-filter="todos">
+                Todos
+            </button>
+            <button class="matrix-filter" data-filter="core">
+                <span class="matrix-filter__dot matrix-filter__dot--core"></span>
+                Solo Core
+            </button>
+            <button class="matrix-filter" data-filter="core-essential">
+                <span class="matrix-filter__dot matrix-filter__dot--core"></span>
+                <span class="matrix-filter__dot matrix-filter__dot--essential"></span>
+                Core + Esencial
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Matriz -->
+<section class="matrix-section" aria-labelledby="matrix-title">
+    <h2 id="matrix-title" class="visually-hidden">Matriz de cumplimiento artículo por capacidad</h2>
+    
+    <div class="matrix-wrapper">
+        <div class="matrix-scroll">
+            <table class="matrix" role="grid" aria-describedby="matrix-legend">
+                <thead>
+                    <tr>
+                        <th class="matrix__header matrix__header--sticky" scope="col">Artículo</th>
+                        <th class="matrix__header" scope="col" title="Data Discovery & Classification">DDC</th>
+                        <th class="matrix__header" scope="col" title="Identity & Access Management">IAM</th>
+                        <th class="matrix__header" scope="col" title="Data Access Monitoring">DAM</th>
+                        <th class="matrix__header" scope="col" title="Data Protection & Encryption">DPE</th>
+                        <th class="matrix__header" scope="col" title="Workflow Automation">WFA</th>
+                        <th class="matrix__header" scope="col" title="Governance, Risk & Compliance">GRC</th>
+                        <th class="matrix__header" scope="col" title="Data Retention & Deletion">DRD</th>
+                        <th class="matrix__header" scope="col" title="Content & Document Management">CDM</th>
+                        <th class="matrix__header" scope="col" title="Data Governance & Catalog">DGC</th>
+                        <th class="matrix__header" scope="col" title="Integration & Data Transfer">IDT</th>
+                        <th class="matrix__header" scope="col" title="Security Monitoring">SIEM</th>
+                    </tr>
+                </thead>
+                <tbody id="matrix-body">
+                    <!-- Principios -->
+                    <tr class="matrix__row" data-article="art3">
+                        <th class="matrix__label" scope="row">
+                            <span class="matrix__label-category">Principios</span>
+                            <span class="matrix__label-title">Art. 3 — Principios</span>
+                        </th>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DDC" data-level="core" title="Core: DDC para Art. 3">●●</td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="IAM" data-level="core" title="Core: IAM para Art. 3">●●</td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="DAM" data-level="esencial" title="Esencial: DAM para Art. 3">●</td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DPE" data-level="core" title="Core: DPE para Art. 3">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="CDM" data-level="complementaria" title="Complementaria: CDM para Art. 3">○</td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="DGC" data-level="esencial" title="Esencial: DGC para Art. 3">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                    </tr>
+                    
+                    <!-- Derechos ARCOP -->
+                    <tr class="matrix__row" data-article="art5">
+                        <th class="matrix__label" scope="row">
+                            <span class="matrix__label-category">Derechos</span>
+                            <span class="matrix__label-title">Art. 5 — Acceso</span>
+                        </th>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DDC" data-level="core">●●</td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="IAM" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="WFA" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="CDM" data-level="complementaria">○</td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DGC" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                    </tr>
+                    
+                    <tr class="matrix__row" data-article="art6">
+                        <th class="matrix__label" scope="row">
+                            <span class="matrix__label-category">Derechos</span>
+                            <span class="matrix__label-title">Art. 6 — Rectificación</span>
+                        </th>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DDC" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="WFA" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="CDM" data-level="complementaria">○</td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DGC" data-level="core">●●</td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="IDT" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                    </tr>
+                    
+                    <tr class="matrix__row" data-article="art7">
+                        <th class="matrix__label" scope="row">
+                            <span class="matrix__label-category">Derechos</span>
+                            <span class="matrix__label-title">Art. 7 — Supresión</span>
+                        </th>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DDC" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="DAM" data-level="complementaria">○</td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="DPE" data-level="esencial">●</td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="WFA" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DRD" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                    </tr>
+                    
+                    <tr class="matrix__row" data-article="art8">
+                        <th class="matrix__label" scope="row">
+                            <span class="matrix__label-category">Derechos</span>
+                            <span class="matrix__label-title">Art. 8 — Oposición</span>
+                        </th>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DDC" data-level="core">●●</td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="IAM" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="WFA" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="CDM" data-level="complementaria">○</td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="DGC" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                    </tr>
+                    
+                    <tr class="matrix__row" data-article="art8bis">
+                        <th class="matrix__label" scope="row">
+                            <span class="matrix__label-category">Derechos</span>
+                            <span class="matrix__label-title">Art. 8 bis — Dec. Auto.</span>
+                        </th>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="IAM" data-level="esencial">●</td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DAM" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="WFA" data-level="core">●●</td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="GRC" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="CDM" data-level="complementaria">○</td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DGC" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                    </tr>
+                    
+                    <tr class="matrix__row" data-article="art9">
+                        <th class="matrix__label" scope="row">
+                            <span class="matrix__label-category">Derechos</span>
+                            <span class="matrix__label-title">Art. 9 — Portabilidad</span>
+                        </th>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DDC" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="DPE" data-level="complementaria">○</td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="WFA" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="IDT" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                    </tr>
+                    
+                    <!-- Procedimientos -->
+                    <tr class="matrix__row" data-article="art10">
+                        <th class="matrix__label" scope="row">
+                            <span class="matrix__label-category">Procedimientos</span>
+                            <span class="matrix__label-title">Art. 10 — Forma y Medios</span>
+                        </th>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="IAM" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="WFA" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="CDM" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                    </tr>
+                    
+                    <tr class="matrix__row" data-article="art11">
+                        <th class="matrix__label" scope="row">
+                            <span class="matrix__label-category">Procedimientos</span>
+                            <span class="matrix__label-title">Art. 11 — Procedimiento</span>
+                        </th>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="IAM" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="WFA" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="DRD" data-level="esencial">●</td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="CDM" data-level="esencial">●</td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="DGC" data-level="complementaria">○</td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="IDT" data-level="complementaria">○</td>
+                        <td class="matrix__cell"></td>
+                    </tr>
+                    
+                    <tr class="matrix__row" data-article="art12">
+                        <th class="matrix__label" scope="row">
+                            <span class="matrix__label-category">Procedimientos</span>
+                            <span class="matrix__label-title">Art. 12 — Consentimiento</span>
+                        </th>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="IAM" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="WFA" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="CDM" data-level="esencial">●</td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="DGC" data-level="complementaria">○</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                    </tr>
+                    
+                    <!-- Obligaciones -->
+                    <tr class="matrix__row" data-article="art14">
+                        <th class="matrix__label" scope="row">
+                            <span class="matrix__label-category">Obligaciones</span>
+                            <span class="matrix__label-title">Art. 14 — Oblig. y Seg.</span>
+                        </th>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="DDC" data-level="esencial">●</td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="IAM" data-level="esencial">●</td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DAM" data-level="core">●●</td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DPE" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="DRD" data-level="esencial">●</td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="CDM" data-level="complementaria">○</td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="DGC" data-level="complementaria">○</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="SIEM" data-level="core">●●</td>
+                    </tr>
+                    
+                    <tr class="matrix__row" data-article="art15ter">
+                        <th class="matrix__label" scope="row">
+                            <span class="matrix__label-category">Obligaciones</span>
+                            <span class="matrix__label-title">Art. 15 ter — EIPDP</span>
+                        </th>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="DDC" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="GRC" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="CDM" data-level="complementaria">○</td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="DGC" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                    </tr>
+                    
+                    <tr class="matrix__row" data-article="art16">
+                        <th class="matrix__label" scope="row">
+                            <span class="matrix__label-category">Obligaciones</span>
+                            <span class="matrix__label-title">Art. 16 — Datos Sensibles</span>
+                        </th>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DDC" data-level="core">●●</td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="IAM" data-level="core">●●</td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="DAM" data-level="esencial">●</td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DPE" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="GRC" data-level="complementaria">○</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="DGC" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                    </tr>
+                    
+                    <!-- Transferencias -->
+                    <tr class="matrix__row" data-article="art27">
+                        <th class="matrix__label" scope="row">
+                            <span class="matrix__label-category">Transferencias</span>
+                            <span class="matrix__label-title">Art. 27/28 — Transfer. Int.</span>
+                        </th>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="DDC" data-level="complementaria">○</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="DAM" data-level="esencial">●</td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="DPE" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="GRC" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="IDT" data-level="core">●●</td>
+                        <td class="matrix__cell"></td>
+                    </tr>
+                    
+                    <tr class="matrix__row" data-article="art49">
+                        <th class="matrix__label" scope="row">
+                            <span class="matrix__label-category">Compliance</span>
+                            <span class="matrix__label-title">Art. 49 — Modelo Prev.</span>
+                        </th>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="DDC" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="DAM" data-level="esencial">●</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="WFA" data-level="complementaria">○</td>
+                        <td class="matrix__cell matrix__cell--core" data-capacity="GRC" data-level="core">●●</td>
+                        <td class="matrix__cell matrix__cell--essential" data-capacity="DRD" data-level="esencial">●</td>
+                        <td class="matrix__cell matrix__cell--complementary" data-capacity="CDM" data-level="complementaria">○</td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                        <td class="matrix__cell"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Leyenda -->
+<div class="matrix-legend" id="matrix-legend">
+    <div class="matrix-legend__container">
+        <h3 class="matrix-legend__title">Leyenda</h3>
+        <div class="matrix-legend__items">
+            <span class="matrix-legend__item">
+                <span class="matrix-legend__symbol matrix-legend__symbol--core">●●</span>
+                <span class="matrix-legend__label">Core — Imprescindible para cumplimiento</span>
+            </span>
+            <span class="matrix-legend__item">
+                <span class="matrix-legend__symbol matrix-legend__symbol--essential">●</span>
+                <span class="matrix-legend__label">Esencial — Altamente recomendado</span>
+            </span>
+            <span class="matrix-legend__item">
+                <span class="matrix-legend__symbol matrix-legend__symbol--complementary">○</span>
+                <span class="matrix-legend__label">Complementaria — Valor agregado</span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para detalle de conexión -->
+<div class="modal" id="connection-modal" hidden aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__content">
+        <header class="modal__header">
+            <h2 class="modal__title" id="modal-title">
+                <span id="modal-article">Art. X</span> × <span id="modal-capacity">CAP</span>
+            </h2>
+            <button class="modal__close" aria-label="Cerrar modal" data-close>×</button>
+        </header>
+        <div class="modal__body">
+            <div class="modal__level" id="modal-level">
+                <!-- Se carga dinámicamente -->
+            </div>
+            <p class="modal__justification" id="modal-justification">
+                <!-- Se carga dinámicamente -->
+            </p>
+        </div>
+        <footer class="modal__footer">
+            <a href="#" class="btn btn--secondary" id="modal-link-article">Ver artículo</a>
+            <a href="#" class="btn btn--ghost" id="modal-link-capacity">Ver capacidad</a>
+        </footer>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/matriz.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+
+{% block title %}Artículos{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="page-header__container">
+        <h1 class="page-header__title">Artículos de la Ley N° 21.719</h1>
+        <p class="page-header__subtitle">15 artículos organizados por categoría funcional</p>
+    </div>
+</section>
+
+<!-- Filtros -->
+<div class="filter-bar" role="tablist" aria-label="Filtrar artículos por categoría">
+    <div class="filter-bar__container">
+        <button class="filter-tab filter-tab--active" 
+                role="tab" 
+                aria-selected="true" 
+                data-filter="todos">
+            Todos
+        </button>
+        <button class="filter-tab" 
+                role="tab" 
+                aria-selected="false" 
+                data-filter="principios">
+            Principios
+        </button>
+        <button class="filter-tab" 
+                role="tab" 
+                aria-selected="false" 
+                data-filter="derechos">
+            Derechos ARCOP
+        </button>
+        <button class="filter-tab" 
+                role="tab" 
+                aria-selected="false" 
+                data-filter="procedimientos">
+            Procedimientos
+        </button>
+        <button class="filter-tab" 
+                role="tab" 
+                aria-selected="false" 
+                data-filter="obligaciones">
+            Obligaciones
+        </button>
+        <button class="filter-tab" 
+                role="tab" 
+                aria-selected="false" 
+                data-filter="transferencias">
+            Transferencias
+        </button>
+    </div>
+</div>
+
+<!-- Split View: Lista + Detalle -->
+<div class="split-view">
+    <div class="split-view__container">
+        <!-- Sidebar con lista de artículos -->
+        <aside class="article-sidebar" aria-label="Lista de artículos">
+            <div class="article-groups" id="article-list">
+                <!-- Principios -->
+                <div class="article-group" data-category="principios">
+                    <h2 class="article-group__title">Principios</h2>
+                    <div class="article-group__items">
+                        <button class="article-item article-item--active" 
+                                data-article="art3"
+                                aria-pressed="true">
+                            <span class="article-item__number">Art. 3</span>
+                            <span class="article-item__title">Principios Generales</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Derechos ARCOP -->
+                <div class="article-group" data-category="derechos">
+                    <h2 class="article-group__title">Derechos ARCOP</h2>
+                    <div class="article-group__items">
+                        <button class="article-item" data-article="art5">
+                            <span class="article-item__number">Art. 5</span>
+                            <span class="article-item__title">Derecho de Acceso</span>
+                        </button>
+                        <button class="article-item" data-article="art6">
+                            <span class="article-item__number">Art. 6</span>
+                            <span class="article-item__title">Derecho de Rectificación</span>
+                        </button>
+                        <button class="article-item" data-article="art7">
+                            <span class="article-item__number">Art. 7</span>
+                            <span class="article-item__title">Derecho de Supresión</span>
+                        </button>
+                        <button class="article-item" data-article="art8">
+                            <span class="article-item__number">Art. 8</span>
+                            <span class="article-item__title">Derecho de Oposición</span>
+                            <span class="article-item__badge">Nuevo</span>
+                        </button>
+                        <button class="article-item" data-article="art8bis">
+                            <span class="article-item__number">Art. 8 bis</span>
+                            <span class="article-item__title">Decisiones Automatizadas</span>
+                            <span class="article-item__badge">Nuevo</span>
+                        </button>
+                        <button class="article-item" data-article="art9">
+                            <span class="article-item__number">Art. 9</span>
+                            <span class="article-item__title">Derecho de Portabilidad</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Procedimientos -->
+                <div class="article-group" data-category="procedimientos">
+                    <h2 class="article-group__title">Procedimientos</h2>
+                    <div class="article-group__items">
+                        <button class="article-item" data-article="art10">
+                            <span class="article-item__number">Art. 10</span>
+                            <span class="article-item__title">Forma y Medios de Ejercicio</span>
+                        </button>
+                        <button class="article-item" data-article="art11">
+                            <span class="article-item__number">Art. 11</span>
+                            <span class="article-item__title">Procedimiento ante Responsable</span>
+                        </button>
+                        <button class="article-item" data-article="art12">
+                            <span class="article-item__number">Art. 12</span>
+                            <span class="article-item__title">Consentimiento</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Obligaciones -->
+                <div class="article-group" data-category="obligaciones">
+                    <h2 class="article-group__title">Obligaciones</h2>
+                    <div class="article-group__items">
+                        <button class="article-item" data-article="art14">
+                            <span class="article-item__number">Art. 14-14 sept</span>
+                            <span class="article-item__title">Obligaciones y Seguridad</span>
+                        </button>
+                        <button class="article-item" data-article="art15ter">
+                            <span class="article-item__number">Art. 15 ter</span>
+                            <span class="article-item__title">Evaluación de Impacto</span>
+                        </button>
+                        <button class="article-item" data-article="art16">
+                            <span class="article-item__number">Art. 16</span>
+                            <span class="article-item__title">Tratamiento de Datos Sensibles</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Transferencias -->
+                <div class="article-group" data-category="transferencias">
+                    <h2 class="article-group__title">Transferencias y Compliance</h2>
+                    <div class="article-group__items">
+                        <button class="article-item" data-article="art27">
+                            <span class="article-item__number">Art. 27/28</span>
+                            <span class="article-item__title">Transferencia Internacional</span>
+                        </button>
+                        <button class="article-item" data-article="art49">
+                            <span class="article-item__number">Art. 49</span>
+                            <span class="article-item__title">Modelo de Prevención</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Panel de detalle -->
+        <article class="article-detail" id="article-detail" aria-live="polite">
+            <header class="article-detail__header">
+                <span class="article-detail__category" id="detail-category">Principios</span>
+                <h2 class="article-detail__title">
+                    <span class="article-detail__number" id="detail-number">Art. 3</span>
+                    <span id="detail-title">Principios Generales</span>
+                </h2>
+            </header>
+            
+            <!-- Tabs de contenido -->
+            <div class="detail-tabs" role="tablist">
+                <button class="detail-tab detail-tab--active" 
+                        role="tab" 
+                        aria-selected="true" 
+                        data-tab="resumen">
+                    Resumen
+                </button>
+                <button class="detail-tab" 
+                        role="tab" 
+                        aria-selected="false" 
+                        data-tab="texto">
+                    Texto Completo
+                </button>
+                <button class="detail-tab" 
+                        role="tab" 
+                        aria-selected="false" 
+                        data-tab="tecnico">
+                    Requisitos Técnicos
+                </button>
+            </div>
+            
+            <!-- Contenido del tab -->
+            <div class="detail-content">
+                <div class="content-panel content-panel--active" id="panel-resumen" role="tabpanel">
+                    <div class="article-summary" id="detail-summary">
+                        <p>Cargando resumen...</p>
+                    </div>
+                </div>
+                
+                <div class="content-panel" id="panel-texto" role="tabpanel">
+                    <div class="legal-text" id="detail-texto">
+                        <p>Cargando texto completo...</p>
+                    </div>
+                </div>
+                
+                <div class="content-panel" id="panel-tecnico" role="tabpanel">
+                    <div class="technical-requirements" id="detail-tecnico">
+                        <p>Cargando requisitos técnicos...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capacidades requeridas -->
+            <section class="required-capacities" aria-labelledby="capacities-title">
+                <h3 id="capacities-title" class="required-capacities__title">Capacidades Requeridas</h3>
+                <div class="required-capacities__grid" id="detail-capacidades">
+                    <!-- Se carga dinámicamente -->
+                </div>
+            </section>
+            
+            <!-- Controles de referencia -->
+            <section class="reference-controls" aria-labelledby="controls-title">
+                <h3 id="controls-title" class="reference-controls__title">Controles de Referencia</h3>
+                <div class="controls-grid" id="detail-controles">
+                    <!-- Se carga dinámicamente -->
+                </div>
+            </section>
+        </article>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/articulos.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Test de Artículos</title>
+    <style>
+        body { font-family: system-ui; background: #1a1a2e; color: #eee; padding: 20px; }
+        .tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+        .tab { padding: 10px 20px; background: #333; border: none; color: #fff; cursor: pointer; border-radius: 5px; }
+        .tab.active { background: #6366f1; }
+        .panel { display: none; padding: 20px; background: #252547; border-radius: 8px; }
+        .panel.active { display: block; }
+        #debug { margin-top: 30px; padding: 15px; background: #000; font-family: monospace; font-size: 12px; white-space: pre-wrap; max-height: 300px; overflow: auto; }
+    </style>
+</head>
+<body>
+    <h1>Test de Paneles de Artículos</h1>
+    
+    <div class="tabs">
+        <button class="tab active" data-panel="resumen">Resumen</button>
+        <button class="tab" data-panel="texto">Texto Completo</button>
+        <button class="tab" data-panel="tecnico">Requisitos Técnicos</button>
+    </div>
+    
+    <div class="panel active" id="panel-resumen">
+        <h3>RESUMEN</h3>
+        <div id="content-resumen">Cargando...</div>
+    </div>
+    
+    <div class="panel" id="panel-texto">
+        <h3>TEXTO COMPLETO</h3>
+        <div id="content-texto">Cargando...</div>
+    </div>
+    
+    <div class="panel" id="panel-tecnico">
+        <h3>REQUISITOS TÉCNICOS</h3>
+        <div id="content-tecnico">Cargando...</div>
+    </div>
+    
+    <div id="debug">DEBUG LOG:</div>
+
+    <script>
+        const log = (msg) => {
+            console.log(msg);
+            document.getElementById('debug').textContent += '\n' + msg;
+        };
+
+        // Cargar datos
+        fetch('/data/articulos.json')
+            .then(r => r.json())
+            .then(data => {
+                log('✓ JSON cargado: ' + data.articulos.length + ' artículos');
+                
+                const art = data.articulos[0]; // Art. 3
+                log('✓ Artículo: ' + art.titulo);
+                log('✓ Resumen (primeros 100 chars): ' + art.resumen.substring(0, 100));
+                log('✓ Texto (primeros 100 chars): ' + art.textoCompleto.substring(0, 100));
+                
+                // Insertar contenido
+                document.getElementById('content-resumen').innerHTML = '<p>' + art.resumen + '</p>';
+                document.getElementById('content-texto').innerHTML = art.textoCompleto;
+                document.getElementById('content-tecnico').innerHTML = art.capacidades.map(c => 
+                    '<div><strong>' + c.sigla + '</strong> (' + c.criticidad + '): ' + c.justificacion + '</div>'
+                ).join('');
+                
+                log('✓ Contenido insertado en DOM');
+            })
+            .catch(err => log('✗ Error: ' + err));
+
+        // Tabs
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const panelId = tab.dataset.panel;
+                log('Click en tab: ' + panelId);
+                
+                // Desactivar todos
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+                
+                // Activar seleccionado
+                tab.classList.add('active');
+                document.getElementById('panel-' + panelId).classList.add('active');
+                
+                log('Panel activado: panel-' + panelId);
+            });
+        });
+    </script>
+</body>
+</html>

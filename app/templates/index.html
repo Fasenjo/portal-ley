@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<section class="hero" aria-labelledby="hero-title">
+    <div class="hero__container">
+        <div class="hero__content">
+            <p class="hero__label">Ley N° 21.719</p>
+            <h1 id="hero-title" class="hero__title">
+                Protección de Datos Personales
+            </h1>
+            <p class="hero__subtitle">
+                Guía interactiva para implementación técnica del cumplimiento normativo en Chile
+            </p>
+            <p class="hero__date">
+                <span class="hero__date-label">Vigencia:</span>
+                <time datetime="2026-12-01">1 de diciembre de 2026</time>
+            </p>
+            <a href="{{ url_for('articulos') }}" class="btn btn--primary hero__cta">
+                Explorar Guía
+                <span aria-hidden="true">→</span>
+            </a>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+            <div class="hero__illustration">
+                <div class="hero__shield">
+                    <div class="hero__shield-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 4L8 16v16c0 14.4 10.24 27.84 24 32 13.76-4.16 24-17.6 24-32V16L32 4z" 
+                                  stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M24 32l6 6 12-12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="hero__data-lines">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Stats -->
+<section class="stats" aria-labelledby="stats-title">
+    <h2 id="stats-title" class="visually-hidden">Estadísticas del contenido</h2>
+    <div class="stats__container">
+        <article class="stat-card">
+            <span class="stat-card__number">15</span>
+            <span class="stat-card__label">Artículos de la Ley</span>
+            <span class="stat-card__desc">Organizados en 5 categorías</span>
+        </article>
+        <article class="stat-card">
+            <span class="stat-card__number">11</span>
+            <span class="stat-card__label">Capacidades Tecnológicas</span>
+            <span class="stat-card__desc">Categorías genéricas de implementación</span>
+        </article>
+        <article class="stat-card">
+            <span class="stat-card__number">60+</span>
+            <span class="stat-card__label">Conexiones Mapeadas</span>
+            <span class="stat-card__desc">Entre artículos y capacidades</span>
+        </article>
+    </div>
+</section>
+
+<!-- Intro -->
+<section class="intro" aria-labelledby="intro-title">
+    <div class="intro__container">
+        <div class="intro__about">
+            <h2 id="intro-title" class="intro__heading">Qué es esta guía</h2>
+            <p class="intro__text">
+                Una herramienta para entender los requisitos de la Ley N° 21.719 de Protección de Datos Personales 
+                y las capacidades tecnológicas necesarias para cumplir con sus obligaciones.
+            </p>
+            <p class="intro__text">
+                Cada artículo de la ley está mapeado a capacidades tecnológicas específicas, con niveles de criticidad 
+                que indican su importancia para el cumplimiento, junto con referencias a controles internacionales 
+                ISO 27001, ISO 27701 y NIST SP 800-53.
+            </p>
+            <div class="intro__actions">
+                <a href="{{ url_for('articulos') }}" class="btn btn--secondary">Ver Artículos</a>
+                <a href="{{ url_for('matriz') }}" class="btn btn--ghost">Ver Matriz</a>
+            </div>
+        </div>
+        
+        <div class="intro__criticality">
+            <h3 class="intro__subheading">Niveles de criticidad</h3>
+            <ul class="criticality-legend">
+                <li class="criticality-legend__item">
+                    <span class="tag tag--core">Core</span>
+                    <p class="criticality-legend__desc">
+                        <strong>Imprescindible para cumplimiento.</strong> 
+                        Sin esta capacidad, el artículo no puede implementarse.
+                    </p>
+                </li>
+                <li class="criticality-legend__item">
+                    <span class="tag tag--essential">Esencial</span>
+                    <p class="criticality-legend__desc">
+                        <strong>Altamente recomendado.</strong> 
+                        Mejora significativamente el cumplimiento y reduce riesgos.
+                    </p>
+                </li>
+                <li class="criticality-legend__item">
+                    <span class="tag tag--complementary">Complementaria</span>
+                    <p class="criticality-legend__desc">
+                        <strong>Valor agregado.</strong> 
+                        Aporta eficiencia, trazabilidad o automatización adicional.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Categorías preview -->
+<section class="categories-preview" aria-labelledby="categories-title">
+    <div class="categories-preview__container">
+        <header class="categories-preview__header">
+            <h2 id="categories-title" class="categories-preview__title">Capacidades Tecnológicas</h2>
+            <p class="categories-preview__subtitle">11 categorías genéricas para implementar cumplimiento</p>
+        </header>
+        
+        <div class="categories-preview__grid">
+            <article class="capacity-mini" data-capacity="ddc">
+                <span class="capacity-mini__sigla">DDC</span>
+                <span class="capacity-mini__name">Data Discovery & Classification</span>
+            </article>
+            <article class="capacity-mini" data-capacity="iam">
+                <span class="capacity-mini__sigla">IAM</span>
+                <span class="capacity-mini__name">Identity & Access Management</span>
+            </article>
+            <article class="capacity-mini" data-capacity="dam">
+                <span class="capacity-mini__sigla">DAM</span>
+                <span class="capacity-mini__name">Data Access Monitoring</span>
+            </article>
+            <article class="capacity-mini" data-capacity="dpe">
+                <span class="capacity-mini__sigla">DPE</span>
+                <span class="capacity-mini__name">Data Protection & Encryption</span>
+            </article>
+            <article class="capacity-mini" data-capacity="wfa">
+                <span class="capacity-mini__sigla">WFA</span>
+                <span class="capacity-mini__name">Workflow Automation</span>
+            </article>
+            <article class="capacity-mini" data-capacity="grc">
+                <span class="capacity-mini__sigla">GRC</span>
+                <span class="capacity-mini__name">Governance, Risk & Compliance</span>
+            </article>
+            <article class="capacity-mini" data-capacity="drd">
+                <span class="capacity-mini__sigla">DRD</span>
+                <span class="capacity-mini__name">Data Retention & Deletion</span>
+            </article>
+            <article class="capacity-mini" data-capacity="cdm">
+                <span class="capacity-mini__sigla">CDM</span>
+                <span class="capacity-mini__name">Content & Document Management</span>
+            </article>
+            <article class="capacity-mini" data-capacity="dgc">
+                <span class="capacity-mini__sigla">DGC</span>
+                <span class="capacity-mini__name">Data Governance & Catalog</span>
+            </article>
+            <article class="capacity-mini" data-capacity="idt">
+                <span class="capacity-mini__sigla">IDT</span>
+                <span class="capacity-mini__name">Integration & Data Transfer</span>
+            </article>
+            <article class="capacity-mini" data-capacity="siem">
+                <span class="capacity-mini__sigla">SIEM</span>
+                <span class="capacity-mini__name">Security Monitoring</span>
+            </article>
+        </div>
+        
+        <div class="categories-preview__cta">
+            <a href="{{ url_for('capacidades') }}" class="btn btn--ghost">
+                Ver todas las capacidades
+                <span aria-hidden="true">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

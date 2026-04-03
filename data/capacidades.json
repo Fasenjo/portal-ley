@@ -1,0 +1,487 @@
+{
+  "capacidades": [
+    {
+      "id": "ddc",
+      "sigla": "DDC",
+      "nombre": "Data Discovery & Classification",
+      "nombreCorto": "Descubrimiento y Clasificación",
+      "descripcion": "Capacidad para descubrir, inventariar y clasificar automáticamente datos personales y sensibles en todos los repositorios de la organización (bases de datos, archivos, aplicaciones, nube). Permite responder a la pregunta fundamental: ¿qué datos personales tenemos, dónde están, y qué tan sensibles son?",
+      "funcionalidades": [
+        "Escaneo automático de repositorios de datos",
+        "Clasificación por tipo de dato (personal, sensible, financiero)",
+        "Inventario centralizado de datos personales",
+        "Detección de datos en reposo y en movimiento",
+        "Etiquetado automático según sensibilidad"
+      ],
+      "ejemplosVendors": [
+        "IBM Guardium Data Discovery",
+        "Microsoft Purview Data Map",
+        "Varonis Data Classification Engine",
+        "BigID",
+        "OneTrust Data Discovery"
+      ],
+      "controles": {
+        "iso27001": [
+          {"codigo": "A.5.9", "descripcion": "Inventario de información y otros activos asociados"},
+          {"codigo": "A.5.12", "descripcion": "Clasificación de la información"},
+          {"codigo": "A.5.13", "descripcion": "Etiquetado de la información"}
+        ],
+        "iso27701": [
+          {"codigo": "7.4.1", "descripcion": "Identificar y documentar el propósito del tratamiento"}
+        ],
+        "nist": [
+          {"codigo": "ID.AM-1", "descripcion": "Inventariar dispositivos físicos y sistemas"},
+          {"codigo": "ID.AM-2", "descripcion": "Inventariar plataformas de software y aplicaciones"},
+          {"codigo": "CM-8", "descripcion": "Inventario de componentes del sistema"}
+        ]
+      },
+      "stats": {
+        "core": 7,
+        "esencial": 3,
+        "complementaria": 1,
+        "total": 11
+      }
+    },
+    {
+      "id": "iam",
+      "sigla": "IAM",
+      "nombre": "Identity & Access Management",
+      "nombreCorto": "Gestión de Identidades",
+      "descripcion": "Sistema integral para gestionar identidades digitales y controlar el acceso a datos personales. Incluye autenticación (verificar quién es el usuario), autorización (qué puede hacer), y gestión del ciclo de vida de identidades.",
+      "funcionalidades": [
+        "Autenticación multifactor (MFA)",
+        "Single Sign-On (SSO)",
+        "Gestión de roles y permisos (RBAC/ABAC)",
+        "Gestión del ciclo de vida de identidades",
+        "Control de acceso basado en contexto",
+        "Verificación de identidad de titulares (para solicitudes ARCOP)"
+      ],
+      "ejemplosVendors": [
+        "Microsoft Entra ID (Azure AD)",
+        "Okta",
+        "Ping Identity",
+        "SailPoint",
+        "CyberArk"
+      ],
+      "controles": {
+        "iso27001": [
+          {"codigo": "A.5.15", "descripcion": "Control de acceso"},
+          {"codigo": "A.5.16", "descripcion": "Gestión de identidades"},
+          {"codigo": "A.5.17", "descripcion": "Información de autenticación"},
+          {"codigo": "A.8.2", "descripcion": "Gestión de acceso privilegiado"},
+          {"codigo": "A.8.5", "descripcion": "Autenticación segura"}
+        ],
+        "iso27701": [
+          {"codigo": "7.2.2", "descripcion": "Identificar la base legal para el tratamiento"}
+        ],
+        "nist": [
+          {"codigo": "PR.AC-1", "descripcion": "Gestionar identidades y credenciales"},
+          {"codigo": "PR.AC-4", "descripcion": "Gestionar permisos de acceso"},
+          {"codigo": "AC-2", "descripcion": "Gestión de cuentas"},
+          {"codigo": "IA-2", "descripcion": "Identificación y autenticación"}
+        ]
+      },
+      "stats": {
+        "core": 5,
+        "esencial": 3,
+        "complementaria": 0,
+        "total": 8
+      }
+    },
+    {
+      "id": "dam",
+      "sigla": "DAM",
+      "nombre": "Data Access Monitoring",
+      "nombreCorto": "Monitoreo de Accesos",
+      "descripcion": "Monitoreo continuo de quién accede a qué datos, cuándo y cómo. Genera registros de auditoría que permiten demostrar cumplimiento y detectar accesos anómalos o no autorizados.",
+      "funcionalidades": [
+        "Registro de todas las operaciones sobre datos personales",
+        "Alertas en tiempo real por accesos anómalos",
+        "Reportes de auditoría por usuario/dato/período",
+        "Detección de exfiltración de datos",
+        "Monitoreo de acceso a bases de datos",
+        "Correlación de eventos de acceso"
+      ],
+      "ejemplosVendors": [
+        "IBM Guardium Data Protection",
+        "Imperva Data Security",
+        "Oracle Audit Vault",
+        "Netwrix Auditor",
+        "Solarwinds Database Performance Analyzer"
+      ],
+      "controles": {
+        "iso27001": [
+          {"codigo": "A.8.15", "descripcion": "Registro de eventos"},
+          {"codigo": "A.8.16", "descripcion": "Actividades de monitoreo"},
+          {"codigo": "A.8.17", "descripcion": "Sincronización de relojes"}
+        ],
+        "iso27701": [
+          {"codigo": "7.4.5", "descripcion": "Registros del tratamiento de datos personales"}
+        ],
+        "nist": [
+          {"codigo": "DE.CM-1", "descripcion": "Monitorear la red"},
+          {"codigo": "DE.CM-3", "descripcion": "Monitorear al personal"},
+          {"codigo": "PR.PT-1", "descripcion": "Registros de auditoría"},
+          {"codigo": "AU-2", "descripcion": "Eventos auditables"},
+          {"codigo": "AU-3", "descripcion": "Contenido de los registros de auditoría"}
+        ]
+      },
+      "stats": {
+        "core": 2,
+        "esencial": 3,
+        "complementaria": 1,
+        "total": 6
+      }
+    },
+    {
+      "id": "dpe",
+      "sigla": "DPE",
+      "nombre": "Data Protection & Encryption",
+      "nombreCorto": "Protección y Cifrado",
+      "descripcion": "Protección técnica de datos personales mediante cifrado, enmascaramiento, tokenización, seudonimización y anonimización. Garantiza que los datos sean ilegibles para usuarios no autorizados.",
+      "funcionalidades": [
+        "Cifrado en reposo (AES-256)",
+        "Cifrado en tránsito (TLS 1.3+)",
+        "Enmascaramiento dinámico y estático",
+        "Tokenización de datos sensibles",
+        "Seudonimización reversible",
+        "Anonimización irreversible",
+        "Gestión de claves criptográficas"
+      ],
+      "ejemplosVendors": [
+        "Thales CipherTrust",
+        "Voltage SecureData (Micro Focus)",
+        "Protegrity",
+        "HashiCorp Vault",
+        "AWS KMS / Azure Key Vault"
+      ],
+      "controles": {
+        "iso27001": [
+          {"codigo": "A.8.24", "descripcion": "Uso de criptografía"},
+          {"codigo": "A.8.11", "descripcion": "Enmascaramiento de datos"},
+          {"codigo": "A.8.12", "descripcion": "Prevención de fuga de datos"}
+        ],
+        "iso27701": [
+          {"codigo": "7.4.8", "descripcion": "Transferencia, portabilidad y eliminación de datos"}
+        ],
+        "nist": [
+          {"codigo": "PR.DS-1", "descripcion": "Proteger datos en reposo"},
+          {"codigo": "PR.DS-2", "descripcion": "Proteger datos en tránsito"},
+          {"codigo": "SC-8", "descripcion": "Confidencialidad e integridad en transmisión"},
+          {"codigo": "SC-28", "descripcion": "Protección de datos en reposo"}
+        ]
+      },
+      "stats": {
+        "core": 4,
+        "esencial": 1,
+        "complementaria": 1,
+        "total": 6
+      }
+    },
+    {
+      "id": "wfa",
+      "sigla": "WFA",
+      "nombre": "Workflow Automation",
+      "nombreCorto": "Automatización de Procesos",
+      "descripcion": "Automatización de procesos relacionados con el manejo de datos personales, especialmente solicitudes de derechos ARCOP. Gestiona flujos de trabajo desde la recepción hasta la resolución y notificación.",
+      "funcionalidades": [
+        "Formularios de captura de solicitudes",
+        "Enrutamiento automático según tipo de solicitud",
+        "Control de plazos legales (30 días)",
+        "Escalamientos y alertas de vencimiento",
+        "Generación automática de respuestas",
+        "Registro de evidencias de cumplimiento",
+        "Notificaciones a titulares"
+      ],
+      "ejemplosVendors": [
+        "OneTrust Privacy Rights Automation",
+        "ServiceNow Privacy Management",
+        "TrustArc",
+        "DataGrail",
+        "Securiti.ai"
+      ],
+      "controles": {
+        "iso27001": [
+          {"codigo": "A.5.1", "descripcion": "Políticas para la seguridad de la información"},
+          {"codigo": "A.5.37", "descripcion": "Procedimientos operacionales documentados"}
+        ],
+        "iso27701": [
+          {"codigo": "7.3.1", "descripcion": "Cumplir obligaciones hacia titulares de datos"},
+          {"codigo": "7.3.2", "descripcion": "Determinar información para titulares"}
+        ],
+        "nist": [
+          {"codigo": "PR.IP-1", "descripcion": "Implementar configuración de línea base"},
+          {"codigo": "SA-3", "descripcion": "Ciclo de vida de desarrollo del sistema"}
+        ]
+      },
+      "stats": {
+        "core": 6,
+        "esencial": 3,
+        "complementaria": 1,
+        "total": 10
+      }
+    },
+    {
+      "id": "grc",
+      "sigla": "GRC",
+      "nombre": "Governance, Risk & Compliance",
+      "nombreCorto": "Gobernanza y Cumplimiento",
+      "descripcion": "Plataforma para gestionar riesgos de protección de datos, realizar evaluaciones de impacto (DPIA/EIPDP), documentar controles y demostrar cumplimiento normativo ante la Agencia.",
+      "funcionalidades": [
+        "Evaluación de impacto en protección de datos (EIPDP)",
+        "Gestión de riesgos de privacidad",
+        "Registro de actividades de tratamiento",
+        "Documentación de controles implementados",
+        "Dashboards de cumplimiento",
+        "Preparación para auditorías",
+        "Seguimiento de medidas de mitigación"
+      ],
+      "ejemplosVendors": [
+        "OneTrust GRC",
+        "ServiceNow GRC",
+        "RSA Archer",
+        "MetricStream",
+        "LogicGate"
+      ],
+      "controles": {
+        "iso27001": [
+          {"codigo": "6.1", "descripcion": "Acciones para abordar riesgos y oportunidades"},
+          {"codigo": "A.5.34", "descripcion": "Privacidad y protección de PII"}
+        ],
+        "iso27701": [
+          {"codigo": "7.2.5", "descripcion": "Evaluación de impacto en privacidad"},
+          {"codigo": "5.4.1.2", "descripcion": "Evaluación de riesgos de privacidad"}
+        ],
+        "nist": [
+          {"codigo": "ID.RA-1", "descripcion": "Identificar y documentar vulnerabilidades"},
+          {"codigo": "ID.RA-5", "descripcion": "Determinar la probabilidad e impacto de riesgos"},
+          {"codigo": "RA-3", "descripcion": "Evaluación de riesgos"},
+          {"codigo": "PM-9", "descripcion": "Estrategia de gestión de riesgos"}
+        ]
+      },
+      "stats": {
+        "core": 2,
+        "esencial": 2,
+        "complementaria": 1,
+        "total": 5
+      }
+    },
+    {
+      "id": "drd",
+      "sigla": "DRD",
+      "nombre": "Data Retention & Deletion",
+      "nombreCorto": "Retención y Eliminación",
+      "descripcion": "Gestión del ciclo de vida de los datos personales: definición de períodos de retención, archivado seguro, y eliminación verificable cuando los datos ya no son necesarios o el titular lo solicita.",
+      "funcionalidades": [
+        "Políticas de retención por tipo de dato",
+        "Archivado automático según períodos definidos",
+        "Eliminación segura y verificable",
+        "Eliminación de copias de respaldo",
+        "Certificados de destrucción",
+        "Capacidad de restauración ante incidentes"
+      ],
+      "ejemplosVendors": [
+        "Veritas Enterprise Vault",
+        "Commvault",
+        "IBM Spectrum Archive",
+        "Mimecast",
+        "Blancco Data Erasure"
+      ],
+      "controles": {
+        "iso27001": [
+          {"codigo": "A.8.10", "descripcion": "Eliminación de información"},
+          {"codigo": "A.8.14", "descripcion": "Redundancia de instalaciones de procesamiento"},
+          {"codigo": "A.7.10", "descripcion": "Medios de almacenamiento"}
+        ],
+        "iso27701": [
+          {"codigo": "7.4.7", "descripcion": "Retención de datos personales"},
+          {"codigo": "7.4.8", "descripcion": "Eliminación de datos personales"}
+        ],
+        "nist": [
+          {"codigo": "PR.IP-6", "descripcion": "Destruir datos según política"},
+          {"codigo": "MP-6", "descripcion": "Sanitización de medios"},
+          {"codigo": "SI-12", "descripcion": "Manejo y retención de información"}
+        ]
+      },
+      "stats": {
+        "core": 1,
+        "esencial": 3,
+        "complementaria": 0,
+        "total": 4
+      }
+    },
+    {
+      "id": "cdm",
+      "sigla": "CDM",
+      "nombre": "Content & Document Management",
+      "nombreCorto": "Gestión Documental",
+      "descripcion": "Gestión empresarial de documentos relacionados con protección de datos: consentimientos, políticas de privacidad, evidencias de cumplimiento, solicitudes de titulares y sus respuestas.",
+      "funcionalidades": [
+        "Almacenamiento seguro de consentimientos",
+        "Control de versiones de políticas de privacidad",
+        "Gestión de evidencias de cumplimiento",
+        "Workflows de aprobación documental",
+        "Retención legal de documentos",
+        "Búsqueda y recuperación rápida"
+      ],
+      "ejemplosVendors": [
+        "Microsoft SharePoint",
+        "OpenText",
+        "Box",
+        "DocuSign CLM",
+        "M-Files"
+      ],
+      "controles": {
+        "iso27001": [
+          {"codigo": "A.5.33", "descripcion": "Protección de registros"},
+          {"codigo": "7.5", "descripcion": "Información documentada"}
+        ],
+        "iso27701": [
+          {"codigo": "7.2.3", "descripcion": "Determinar cuándo se requiere consentimiento"},
+          {"codigo": "7.2.4", "descripcion": "Obtener y registrar el consentimiento"}
+        ],
+        "nist": [
+          {"codigo": "PR.IP-4", "descripcion": "Proteger y mantener respaldos"},
+          {"codigo": "AU-11", "descripcion": "Retención de registros de auditoría"}
+        ]
+      },
+      "stats": {
+        "core": 0,
+        "esencial": 4,
+        "complementaria": 6,
+        "total": 10
+      }
+    },
+    {
+      "id": "dgc",
+      "sigla": "DGC",
+      "nombre": "Data Governance & Catalog",
+      "nombreCorto": "Gobernanza de Datos",
+      "descripcion": "Catálogo centralizado de activos de datos con metadata, linaje, propietarios y políticas de uso. Permite entender el contexto completo de los datos personales en la organización.",
+      "funcionalidades": [
+        "Catálogo de activos de datos",
+        "Linaje de datos (de dónde vienen, a dónde van)",
+        "Gestión de metadatos",
+        "Políticas de uso por tipo de dato",
+        "Propietarios y custodios de datos",
+        "Control de calidad de datos",
+        "Glosario de negocio"
+      ],
+      "ejemplosVendors": [
+        "Collibra",
+        "Alation",
+        "Informatica Enterprise Data Catalog",
+        "Microsoft Purview",
+        "Atlan"
+      ],
+      "controles": {
+        "iso27001": [
+          {"codigo": "A.5.9", "descripcion": "Inventario de información"},
+          {"codigo": "A.5.10", "descripcion": "Uso aceptable de información"}
+        ],
+        "iso27701": [
+          {"codigo": "7.4.1", "descripcion": "Limitar la recolección"},
+          {"codigo": "7.4.4", "descripcion": "Calidad de los datos personales"}
+        ],
+        "nist": [
+          {"codigo": "ID.AM-5", "descripcion": "Priorizar recursos según clasificación"},
+          {"codigo": "CM-8", "descripcion": "Inventario de componentes del sistema"}
+        ]
+      },
+      "stats": {
+        "core": 3,
+        "esencial": 4,
+        "complementaria": 2,
+        "total": 9
+      }
+    },
+    {
+      "id": "idt",
+      "sigla": "IDT",
+      "nombre": "Integration & Data Transfer",
+      "nombreCorto": "Integración y Transferencia",
+      "descripcion": "Capacidad para transferir datos personales de manera segura entre sistemas internos y hacia terceros, incluyendo transferencias internacionales con las garantías adecuadas.",
+      "funcionalidades": [
+        "APIs seguras para intercambio de datos",
+        "Cifrado en tránsito obligatorio",
+        "Validación de destinos autorizados",
+        "Registro detallado de transferencias",
+        "Control de formato y contenido",
+        "Soporte para portabilidad (Art. 9)",
+        "Transferencia directa responsable-a-responsable"
+      ],
+      "ejemplosVendors": [
+        "MuleSoft",
+        "Dell Boomi",
+        "Informatica Cloud",
+        "Talend",
+        "SnapLogic"
+      ],
+      "controles": {
+        "iso27001": [
+          {"codigo": "A.5.14", "descripcion": "Transferencia de información"},
+          {"codigo": "A.8.20", "descripcion": "Seguridad de redes"}
+        ],
+        "iso27701": [
+          {"codigo": "7.5.1", "descripcion": "Identificar base para transferencia"},
+          {"codigo": "7.5.2", "descripcion": "Países y organizaciones internacionales"}
+        ],
+        "nist": [
+          {"codigo": "PR.DS-2", "descripcion": "Proteger datos en tránsito"},
+          {"codigo": "SC-8", "descripcion": "Confidencialidad e integridad en transmisión"}
+        ]
+      },
+      "stats": {
+        "core": 2,
+        "esencial": 1,
+        "complementaria": 1,
+        "total": 4
+      }
+    },
+    {
+      "id": "siem",
+      "sigla": "SIEM",
+      "nombre": "Security Monitoring",
+      "nombreCorto": "Monitoreo de Seguridad",
+      "descripcion": "Monitoreo centralizado de eventos de seguridad para detectar, alertar y responder a incidentes que puedan afectar datos personales. Crítico para cumplir con el deber de reportar vulneraciones (Art. 14 sexies).",
+      "funcionalidades": [
+        "Recolección centralizada de logs",
+        "Correlación de eventos de seguridad",
+        "Detección de anomalías y amenazas",
+        "Alertas en tiempo real",
+        "Investigación de incidentes",
+        "Reportes para la Agencia",
+        "Integración con respuesta a incidentes"
+      ],
+      "ejemplosVendors": [
+        "Splunk Enterprise Security",
+        "IBM QRadar",
+        "Microsoft Sentinel",
+        "Elastic SIEM",
+        "Palo Alto Cortex XSIAM"
+      ],
+      "controles": {
+        "iso27001": [
+          {"codigo": "A.5.24", "descripcion": "Planificación y preparación de gestión de incidentes"},
+          {"codigo": "A.5.25", "descripcion": "Evaluación y decisión sobre eventos de seguridad"},
+          {"codigo": "A.5.26", "descripcion": "Respuesta a incidentes de seguridad"}
+        ],
+        "iso27701": [
+          {"codigo": "7.3.4", "descripcion": "Proporcionar mecanismo para modificar/retirar consentimiento"}
+        ],
+        "nist": [
+          {"codigo": "DE.AE-2", "descripcion": "Analizar eventos para entender objetivos de ataque"},
+          {"codigo": "DE.CM-1", "descripcion": "Monitorear la red"},
+          {"codigo": "IR-4", "descripcion": "Manejo de incidentes"},
+          {"codigo": "SI-4", "descripcion": "Monitoreo del sistema de información"}
+        ]
+      },
+      "stats": {
+        "core": 1,
+        "esencial": 0,
+        "complementaria": 0,
+        "total": 1
+      }
+    }
+  ]
+}

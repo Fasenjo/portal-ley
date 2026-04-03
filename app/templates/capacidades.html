@@ -1,0 +1,257 @@
+{% extends "base.html" %}
+
+{% block title %}Capacidades Tecnológicas{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="page-header__container">
+        <h1 class="page-header__title">Capacidades Tecnológicas</h1>
+        <p class="page-header__subtitle">11 categorías genéricas para implementar cumplimiento normativo</p>
+    </div>
+</section>
+
+<!-- Grid de capacidades -->
+<section class="capacities-section" aria-labelledby="capacities-grid-title">
+    <h2 id="capacities-grid-title" class="visually-hidden">Lista de capacidades</h2>
+    <div class="capacities-grid" id="capacities-grid">
+        <!-- DDC -->
+        <article class="capacity-card" data-capacity="ddc" tabindex="0">
+            <header class="capacity-card__header">
+                <span class="capacity-card__sigla">DDC</span>
+                <span class="capacity-card__stats">
+                    <span class="capacity-card__stat capacity-card__stat--core" title="Core">7</span>
+                    <span class="capacity-card__stat capacity-card__stat--essential" title="Esencial">3</span>
+                    <span class="capacity-card__stat capacity-card__stat--complementary" title="Complementaria">1</span>
+                </span>
+            </header>
+            <h3 class="capacity-card__name">Data Discovery & Classification</h3>
+            <p class="capacity-card__desc">Descubrimiento y clasificación automática de datos personales</p>
+            <span class="capacity-card__expand" aria-hidden="true">Ver detalle →</span>
+        </article>
+        
+        <!-- IAM -->
+        <article class="capacity-card" data-capacity="iam" tabindex="0">
+            <header class="capacity-card__header">
+                <span class="capacity-card__sigla">IAM</span>
+                <span class="capacity-card__stats">
+                    <span class="capacity-card__stat capacity-card__stat--core" title="Core">5</span>
+                    <span class="capacity-card__stat capacity-card__stat--essential" title="Esencial">3</span>
+                    <span class="capacity-card__stat capacity-card__stat--complementary" title="Complementaria">0</span>
+                </span>
+            </header>
+            <h3 class="capacity-card__name">Identity & Access Management</h3>
+            <p class="capacity-card__desc">Gestión de identidades, autenticación, autorización</p>
+            <span class="capacity-card__expand" aria-hidden="true">Ver detalle →</span>
+        </article>
+        
+        <!-- DAM -->
+        <article class="capacity-card" data-capacity="dam" tabindex="0">
+            <header class="capacity-card__header">
+                <span class="capacity-card__sigla">DAM</span>
+                <span class="capacity-card__stats">
+                    <span class="capacity-card__stat capacity-card__stat--core" title="Core">2</span>
+                    <span class="capacity-card__stat capacity-card__stat--essential" title="Esencial">3</span>
+                    <span class="capacity-card__stat capacity-card__stat--complementary" title="Complementaria">1</span>
+                </span>
+            </header>
+            <h3 class="capacity-card__name">Data Access Monitoring</h3>
+            <p class="capacity-card__desc">Monitoreo y auditoría de acceso a datos</p>
+            <span class="capacity-card__expand" aria-hidden="true">Ver detalle →</span>
+        </article>
+        
+        <!-- DPE -->
+        <article class="capacity-card" data-capacity="dpe" tabindex="0">
+            <header class="capacity-card__header">
+                <span class="capacity-card__sigla">DPE</span>
+                <span class="capacity-card__stats">
+                    <span class="capacity-card__stat capacity-card__stat--core" title="Core">4</span>
+                    <span class="capacity-card__stat capacity-card__stat--essential" title="Esencial">1</span>
+                    <span class="capacity-card__stat capacity-card__stat--complementary" title="Complementaria">1</span>
+                </span>
+            </header>
+            <h3 class="capacity-card__name">Data Protection & Encryption</h3>
+            <p class="capacity-card__desc">Cifrado, enmascaramiento, tokenización</p>
+            <span class="capacity-card__expand" aria-hidden="true">Ver detalle →</span>
+        </article>
+        
+        <!-- WFA -->
+        <article class="capacity-card" data-capacity="wfa" tabindex="0">
+            <header class="capacity-card__header">
+                <span class="capacity-card__sigla">WFA</span>
+                <span class="capacity-card__stats">
+                    <span class="capacity-card__stat capacity-card__stat--core" title="Core">6</span>
+                    <span class="capacity-card__stat capacity-card__stat--essential" title="Esencial">3</span>
+                    <span class="capacity-card__stat capacity-card__stat--complementary" title="Complementaria">1</span>
+                </span>
+            </header>
+            <h3 class="capacity-card__name">Workflow Automation</h3>
+            <p class="capacity-card__desc">Automatización de procesos y solicitudes</p>
+            <span class="capacity-card__expand" aria-hidden="true">Ver detalle →</span>
+        </article>
+        
+        <!-- GRC -->
+        <article class="capacity-card" data-capacity="grc" tabindex="0">
+            <header class="capacity-card__header">
+                <span class="capacity-card__sigla">GRC</span>
+                <span class="capacity-card__stats">
+                    <span class="capacity-card__stat capacity-card__stat--core" title="Core">2</span>
+                    <span class="capacity-card__stat capacity-card__stat--essential" title="Esencial">2</span>
+                    <span class="capacity-card__stat capacity-card__stat--complementary" title="Complementaria">1</span>
+                </span>
+            </header>
+            <h3 class="capacity-card__name">Governance, Risk & Compliance</h3>
+            <p class="capacity-card__desc">Gestión de riesgos y cumplimiento normativo</p>
+            <span class="capacity-card__expand" aria-hidden="true">Ver detalle →</span>
+        </article>
+        
+        <!-- DRD -->
+        <article class="capacity-card" data-capacity="drd" tabindex="0">
+            <header class="capacity-card__header">
+                <span class="capacity-card__sigla">DRD</span>
+                <span class="capacity-card__stats">
+                    <span class="capacity-card__stat capacity-card__stat--core" title="Core">1</span>
+                    <span class="capacity-card__stat capacity-card__stat--essential" title="Esencial">3</span>
+                    <span class="capacity-card__stat capacity-card__stat--complementary" title="Complementaria">0</span>
+                </span>
+            </header>
+            <h3 class="capacity-card__name">Data Retention & Deletion</h3>
+            <p class="capacity-card__desc">Retención, archivado y eliminación segura</p>
+            <span class="capacity-card__expand" aria-hidden="true">Ver detalle →</span>
+        </article>
+        
+        <!-- CDM -->
+        <article class="capacity-card" data-capacity="cdm" tabindex="0">
+            <header class="capacity-card__header">
+                <span class="capacity-card__sigla">CDM</span>
+                <span class="capacity-card__stats">
+                    <span class="capacity-card__stat capacity-card__stat--core" title="Core">0</span>
+                    <span class="capacity-card__stat capacity-card__stat--essential" title="Esencial">4</span>
+                    <span class="capacity-card__stat capacity-card__stat--complementary" title="Complementaria">6</span>
+                </span>
+            </header>
+            <h3 class="capacity-card__name">Content & Document Management</h3>
+            <p class="capacity-card__desc">Gestión documental y evidencias</p>
+            <span class="capacity-card__expand" aria-hidden="true">Ver detalle →</span>
+        </article>
+        
+        <!-- DGC -->
+        <article class="capacity-card" data-capacity="dgc" tabindex="0">
+            <header class="capacity-card__header">
+                <span class="capacity-card__sigla">DGC</span>
+                <span class="capacity-card__stats">
+                    <span class="capacity-card__stat capacity-card__stat--core" title="Core">3</span>
+                    <span class="capacity-card__stat capacity-card__stat--essential" title="Esencial">4</span>
+                    <span class="capacity-card__stat capacity-card__stat--complementary" title="Complementaria">2</span>
+                </span>
+            </header>
+            <h3 class="capacity-card__name">Data Governance & Catalog</h3>
+            <p class="capacity-card__desc">Catálogo de datos, linaje, calidad</p>
+            <span class="capacity-card__expand" aria-hidden="true">Ver detalle →</span>
+        </article>
+        
+        <!-- IDT -->
+        <article class="capacity-card" data-capacity="idt" tabindex="0">
+            <header class="capacity-card__header">
+                <span class="capacity-card__sigla">IDT</span>
+                <span class="capacity-card__stats">
+                    <span class="capacity-card__stat capacity-card__stat--core" title="Core">2</span>
+                    <span class="capacity-card__stat capacity-card__stat--essential" title="Esencial">1</span>
+                    <span class="capacity-card__stat capacity-card__stat--complementary" title="Complementaria">1</span>
+                </span>
+            </header>
+            <h3 class="capacity-card__name">Integration & Data Transfer</h3>
+            <p class="capacity-card__desc">APIs, transferencia segura entre sistemas</p>
+            <span class="capacity-card__expand" aria-hidden="true">Ver detalle →</span>
+        </article>
+        
+        <!-- SIEM -->
+        <article class="capacity-card" data-capacity="siem" tabindex="0">
+            <header class="capacity-card__header">
+                <span class="capacity-card__sigla">SIEM</span>
+                <span class="capacity-card__stats">
+                    <span class="capacity-card__stat capacity-card__stat--core" title="Core">1</span>
+                    <span class="capacity-card__stat capacity-card__stat--essential" title="Esencial">0</span>
+                    <span class="capacity-card__stat capacity-card__stat--complementary" title="Complementaria">0</span>
+                </span>
+            </header>
+            <h3 class="capacity-card__name">Security Monitoring</h3>
+            <p class="capacity-card__desc">Monitoreo de seguridad, detección de incidentes</p>
+            <span class="capacity-card__expand" aria-hidden="true">Ver detalle →</span>
+        </article>
+    </div>
+</section>
+
+<!-- Panel de detalle expandible -->
+<aside class="capacity-detail" id="capacity-detail" hidden aria-labelledby="capacity-detail-title">
+    <div class="capacity-detail__container">
+        <header class="capacity-detail__header">
+            <div class="capacity-detail__heading">
+                <span class="capacity-detail__sigla" id="cap-detail-sigla">DDC</span>
+                <h2 class="capacity-detail__title" id="capacity-detail-title">
+                    <span id="cap-detail-name">Data Discovery & Classification</span>
+                </h2>
+            </div>
+            <button class="capacity-detail__close" aria-label="Cerrar panel de detalle">
+                <span aria-hidden="true">×</span>
+            </button>
+        </header>
+        
+        <div class="capacity-detail__body">
+            <section class="capacity-detail__section">
+                <h3 class="capacity-detail__subtitle">Descripción</h3>
+                <p class="capacity-detail__desc" id="cap-detail-desc">
+                    <!-- Se carga dinámicamente -->
+                </p>
+            </section>
+            
+            <section class="capacity-detail__section">
+                <h3 class="capacity-detail__subtitle">Funcionalidades Clave</h3>
+                <ul class="capacity-detail__list" id="cap-detail-funcionalidades">
+                    <!-- Se carga dinámicamente -->
+                </ul>
+            </section>
+            
+            <section class="capacity-detail__section">
+                <h3 class="capacity-detail__subtitle">Ejemplos de Productos</h3>
+                <div class="capacity-detail__vendors" id="cap-detail-vendors">
+                    <!-- Se carga dinámicamente -->
+                </div>
+            </section>
+            
+            <section class="capacity-detail__section">
+                <h3 class="capacity-detail__subtitle">Artículos Relacionados</h3>
+                <div class="capacity-detail__articles" id="cap-detail-articulos">
+                    <!-- Se carga dinámicamente -->
+                </div>
+            </section>
+            
+            <section class="capacity-detail__section">
+                <h3 class="capacity-detail__subtitle">Controles de Referencia</h3>
+                <div class="capacity-detail__controls" id="cap-detail-controles">
+                    <!-- Se carga dinámicamente -->
+                </div>
+            </section>
+        </div>
+    </div>
+</aside>
+
+<!-- Leyenda -->
+<div class="legend-bar">
+    <div class="legend-bar__container">
+        <span class="legend-bar__label">Leyenda de estadísticas:</span>
+        <span class="legend-bar__item">
+            <span class="legend-dot legend-dot--core"></span> Core
+        </span>
+        <span class="legend-bar__item">
+            <span class="legend-dot legend-dot--essential"></span> Esencial
+        </span>
+        <span class="legend-bar__item">
+            <span class="legend-dot legend-dot--complementary"></span> Complementaria
+        </span>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/capacidades.js') }}"></script>
+{% endblock %}
