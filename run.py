@@ -52,12 +52,6 @@ def recursos():
     return render_template('recursos.html', active_page='recursos')
 
 
-@app.route('/test-articulos')
-def test_articulos():
-    """Test page for debugging"""
-    return render_template('test-articulos.html')
-
-
 # =========================================
 # Static data endpoint
 # =========================================

@@ -1,115 +1,118 @@
 {
   "matriz": {
     "articulos": ["art3", "art5", "art6", "art7", "art8", "art8bis", "art9", "art10", "art11", "art12", "art14", "art15ter", "art16", "art27", "art49"],
-    "capacidades": ["DDC", "IAM", "DAM", "DPE", "WFA", "GRC", "DRD", "CDM", "DGC", "IDT", "SIEM"],
+    "capacidades": ["DLP/DCS", "IAM", "DAM", "ENC/TOK", "PRM", "GRC", "RET/DEL", "ECM", "DGV", "ETL/API", "SIEM"],
     "relaciones": {
       "art3": {
-        "DDC": {"nivel": "core", "justificacion": "Principios de finalidad y proporcionalidad requieren conocer qué datos se tienen y su propósito"},
+        "DLP/DCS": {"nivel": "core", "justificacion": "Principios de finalidad y proporcionalidad requieren conocer qué datos se tienen y su propósito"},
         "IAM": {"nivel": "core", "justificacion": "Principio de confidencialidad requiere control estricto de quién accede a los datos"},
         "DAM": {"nivel": "esencial", "justificacion": "Principio de responsabilidad requiere demostrar quién accedió, cuándo y por qué"},
-        "DPE": {"nivel": "core", "justificacion": "Principio de seguridad requiere protección técnica mediante cifrado y enmascaramiento"},
-        "CDM": {"nivel": "complementaria", "justificacion": "Principio de transparencia requiere documentar y publicar políticas de privacidad"},
-        "DGC": {"nivel": "esencial", "justificacion": "Principio de calidad requiere gobierno de datos para mantener exactitud y completitud"}
+        "ENC/TOK": {"nivel": "core", "justificacion": "Principio de seguridad requiere protección técnica mediante cifrado y enmascaramiento"},
+        "ECM": {"nivel": "complementaria", "justificacion": "Principio de transparencia requiere documentar y publicar políticas de privacidad"},
+        "DGV": {"nivel": "esencial", "justificacion": "Principio de calidad requiere gobierno de datos para mantener exactitud y completitud"}
       },
       "art5": {
-        "DDC": {"nivel": "core", "justificacion": "Necesario para localizar todos los datos del titular en todos los sistemas de la organización"},
-        "DGC": {"nivel": "core", "justificacion": "Catálogo centralizado permite respuesta completa con origen, finalidad y destinatarios"},
+        "DLP/DCS": {"nivel": "core", "justificacion": "Necesario para localizar todos los datos del titular en todos los sistemas de la organización"},
+        "DGV": {"nivel": "core", "justificacion": "Catálogo centralizado permite respuesta completa con origen, finalidad y destinatarios"},
         "IAM": {"nivel": "esencial", "justificacion": "Validar identidad del solicitante antes de entregar información personal"},
-        "WFA": {"nivel": "esencial", "justificacion": "Automatizar proceso de solicitud, verificación, recopilación y entrega"},
-        "CDM": {"nivel": "complementaria", "justificacion": "Gestionar evidencia de las solicitudes recibidas y respuestas entregadas"}
+        "PRM": {"nivel": "esencial", "justificacion": "Automatizar proceso de solicitud, verificación, recopilación y entrega"},
+        "ECM": {"nivel": "complementaria", "justificacion": "Gestionar evidencia de las solicitudes recibidas y respuestas entregadas"}
       },
       "art6": {
-        "DDC": {"nivel": "core", "justificacion": "Localizar todos los sistemas donde existe el dato a rectificar"},
-        "DGC": {"nivel": "core", "justificacion": "Identificar dato maestro vs. copias, y linaje para propagación"},
-        "WFA": {"nivel": "esencial", "justificacion": "Gestionar flujo de rectificación con aprobaciones y propagación"},
-        "IDT": {"nivel": "esencial", "justificacion": "Comunicar rectificaciones a terceros que recibieron los datos"},
-        "CDM": {"nivel": "complementaria", "justificacion": "Documentar solicitud, cambios realizados y notificaciones enviadas"}
+        "DLP/DCS": {"nivel": "core", "justificacion": "Localizar todos los sistemas donde existe el dato a rectificar"},
+        "DGV": {"nivel": "core", "justificacion": "Identificar dato maestro vs. copias, y linaje para propagación"},
+        "PRM": {"nivel": "esencial", "justificacion": "Gestionar flujo de rectificación con aprobaciones y propagación"},
+        "ETL/API": {"nivel": "esencial", "justificacion": "Comunicar rectificaciones a terceros que recibieron los datos"},
+        "ECM": {"nivel": "complementaria", "justificacion": "Documentar solicitud, cambios realizados y notificaciones enviadas"}
       },
       "art7": {
-        "DDC": {"nivel": "core", "justificacion": "Localizar todas las instancias de los datos a eliminar en todos los sistemas"},
-        "DRD": {"nivel": "core", "justificacion": "Ejecutar eliminación segura incluyendo copias de respaldo"},
-        "WFA": {"nivel": "esencial", "justificacion": "Gestionar solicitudes de supresión con verificación y certificación"},
-        "DPE": {"nivel": "esencial", "justificacion": "Anonimización como alternativa a la supresión cuando aplique"},
+        "DLP/DCS": {"nivel": "core", "justificacion": "Localizar todas las instancias de los datos a eliminar en todos los sistemas"},
+        "RET/DEL": {"nivel": "core", "justificacion": "Ejecutar eliminación segura incluyendo copias de respaldo"},
+        "PRM": {"nivel": "esencial", "justificacion": "Gestionar solicitudes de supresión con verificación y certificación"},
+        "ENC/TOK": {"nivel": "esencial", "justificacion": "Anonimización como alternativa a la supresión cuando aplique"},
         "DAM": {"nivel": "complementaria", "justificacion": "Evidencia auditable de que los datos fueron efectivamente eliminados"}
       },
       "art8": {
-        "DDC": {"nivel": "core", "justificacion": "Identificar todos los tratamientos aplicados a los datos del titular"},
-        "WFA": {"nivel": "core", "justificacion": "Gestionar solicitudes de oposición con flujos diferenciados según causal"},
+        "DLP/DCS": {"nivel": "core", "justificacion": "Identificar todos los tratamientos aplicados a los datos del titular"},
+        "PRM": {"nivel": "core", "justificacion": "Gestionar solicitudes de oposición con flujos diferenciados según causal"},
         "IAM": {"nivel": "esencial", "justificacion": "Verificar identidad y aplicar restricciones de tratamiento"},
-        "DGC": {"nivel": "esencial", "justificacion": "Registro de finalidades para evaluar procedencia de oposición"},
-        "CDM": {"nivel": "complementaria", "justificacion": "Documentar solicitud, evaluación y resolución"}
+        "DGV": {"nivel": "esencial", "justificacion": "Registro de finalidades para evaluar procedencia de oposición"},
+        "ECM": {"nivel": "complementaria", "justificacion": "Documentar solicitud, evaluación y resolución"}
       },
       "art8bis": {
         "DAM": {"nivel": "core", "justificacion": "Registrar todas las decisiones automatizadas y su lógica aplicada"},
-        "WFA": {"nivel": "core", "justificacion": "Gestionar solicitudes de revisión humana y oposición a perfilado"},
-        "DGC": {"nivel": "core", "justificacion": "Documentar la lógica de algoritmos y criterios de decisión"},
+        "PRM": {"nivel": "core", "justificacion": "Gestionar solicitudes de revisión humana y oposición a perfilado"},
+        "DGV": {"nivel": "core", "justificacion": "Documentar la lógica de algoritmos y criterios de decisión"},
         "IAM": {"nivel": "esencial", "justificacion": "Control de quién puede crear/modificar reglas de decisión automatizada"},
         "GRC": {"nivel": "esencial", "justificacion": "Evaluación de riesgos de sistemas de decisión automatizada"},
-        "CDM": {"nivel": "complementaria", "justificacion": "Documentación de explicaciones entregadas a titulares"}
+        "ECM": {"nivel": "complementaria", "justificacion": "Documentación de explicaciones entregadas a titulares"}
       },
       "art9": {
-        "DDC": {"nivel": "core", "justificacion": "Localizar y extraer todos los datos del titular de todos los sistemas"},
-        "IDT": {"nivel": "core", "justificacion": "Transferir datos en formato estructurado al nuevo responsable"},
-        "WFA": {"nivel": "esencial", "justificacion": "Gestionar solicitudes de portabilidad con validación de destino"},
-        "DPE": {"nivel": "complementaria", "justificacion": "Cifrado en tránsito para transferencia segura"}
+        "DLP/DCS": {"nivel": "core", "justificacion": "Localizar y extraer todos los datos del titular de todos los sistemas"},
+        "ETL/API": {"nivel": "core", "justificacion": "Transferir datos en formato estructurado al nuevo responsable"},
+        "PRM": {"nivel": "esencial", "justificacion": "Gestionar solicitudes de portabilidad con validación de destino"},
+        "ENC/TOK": {"nivel": "complementaria", "justificacion": "Cifrado en tránsito para transferencia segura"}
       },
       "art10": {
         "IAM": {"nivel": "core", "justificacion": "Verificación robusta de identidad del solicitante"},
-        "WFA": {"nivel": "core", "justificacion": "Formularios y canales para recepción de solicitudes ARCOP"},
-        "CDM": {"nivel": "esencial", "justificacion": "Registro de medios utilizados y evidencias de comunicación"}
+        "PRM": {"nivel": "core", "justificacion": "Formularios y canales para recepción de solicitudes ARCOP"},
+        "ECM": {"nivel": "esencial", "justificacion": "Registro de medios utilizados y evidencias de comunicación"}
       },
       "art11": {
         "IAM": {"nivel": "core", "justificacion": "Verificación de identidad antes de procesar solicitud"},
-        "WFA": {"nivel": "core", "justificacion": "Control de plazos (30 días), escalamientos y notificaciones"},
-        "DRD": {"nivel": "esencial", "justificacion": "Bloqueo temporal de datos durante evaluación de solicitud"},
-        "CDM": {"nivel": "esencial", "justificacion": "Documentar todo el procedimiento y respuestas"},
-        "DGC": {"nivel": "complementaria", "justificacion": "Contexto para evaluar procedencia de solicitudes"},
-        "IDT": {"nivel": "complementaria", "justificacion": "Comunicar a terceros cuando corresponda"}
+        "PRM": {"nivel": "core", "justificacion": "Control de plazos (30 días), escalamientos y notificaciones"},
+        "RET/DEL": {"nivel": "esencial", "justificacion": "Bloqueo temporal de datos durante evaluación de solicitud"},
+        "ECM": {"nivel": "esencial", "justificacion": "Documentar todo el procedimiento y respuestas"},
+        "DGV": {"nivel": "complementaria", "justificacion": "Contexto para evaluar procedencia de solicitudes"},
+        "ETL/API": {"nivel": "complementaria", "justificacion": "Comunicar a terceros cuando corresponda"}
       },
       "art12": {
         "IAM": {"nivel": "core", "justificacion": "Verificar identidad del titular que otorga consentimiento"},
-        "WFA": {"nivel": "core", "justificacion": "Captura, registro y gestión de consentimientos"},
-        "CDM": {"nivel": "esencial", "justificacion": "Almacenar evidencia de consentimiento otorgado"},
-        "DGC": {"nivel": "complementaria", "justificacion": "Asociar consentimientos a finalidades específicas de tratamiento"}
+        "PRM": {"nivel": "core", "justificacion": "Captura, registro y gestión de consentimientos"},
+        "ECM": {"nivel": "esencial", "justificacion": "Almacenar evidencia de consentimiento otorgado"},
+        "DGV": {"nivel": "complementaria", "justificacion": "Asociar consentimientos a finalidades específicas de tratamiento"}
       },
       "art14": {
-        "DPE": {"nivel": "core", "justificacion": "Art. 14 quinquies (a): seudonimización y cifrado obligatorios"},
+        "ENC/TOK": {"nivel": "core", "justificacion": "Art. 14 quinquies (a): seudonimización y cifrado obligatorios"},
         "DAM": {"nivel": "core", "justificacion": "Detección de accesos no autorizados para cumplir Art. 14 sexies"},
         "SIEM": {"nivel": "core", "justificacion": "Detección y reporte de vulneraciones según Art. 14 sexies"},
-        "DDC": {"nivel": "esencial", "justificacion": "Conocer qué datos proteger y con qué nivel según sensibilidad"},
+        "DLP/DCS": {"nivel": "esencial", "justificacion": "Conocer qué datos proteger y con qué nivel según sensibilidad"},
         "IAM": {"nivel": "esencial", "justificacion": "Control de acceso según principio de mínimo privilegio"},
-        "DRD": {"nivel": "esencial", "justificacion": "Art. 14 quinquies (c): capacidad de restauración rápida"},
-        "CDM": {"nivel": "complementaria", "justificacion": "Art. 14 ter: políticas de privacidad accesibles"},
-        "DGC": {"nivel": "complementaria", "justificacion": "Gobierno de datos para cumplir obligaciones"}
+        "RET/DEL": {"nivel": "esencial", "justificacion": "Art. 14 quinquies (c): capacidad de restauración rápida"},
+        "ECM": {"nivel": "complementaria", "justificacion": "Art. 14 ter: políticas de privacidad accesibles"},
+        "DGV": {"nivel": "complementaria", "justificacion": "Gobierno de datos para cumplir obligaciones"}
       },
       "art15ter": {
         "GRC": {"nivel": "core", "justificacion": "Plataforma para ejecutar, documentar y dar seguimiento a evaluaciones de impacto"},
-        "DDC": {"nivel": "esencial", "justificacion": "Identificar datos involucrados, su clasificación y flujos"},
-        "DGC": {"nivel": "esencial", "justificacion": "Contexto de uso, propietarios, y análisis de riesgos basado en metadata"},
-        "CDM": {"nivel": "complementaria", "justificacion": "Almacenar evaluaciones, versiones, evidencias y medidas de mitigación"}
+        "DLP/DCS": {"nivel": "esencial", "justificacion": "Identificar datos involucrados, su clasificación y flujos"},
+        "DGV": {"nivel": "esencial", "justificacion": "Contexto de uso, propietarios, y análisis de riesgos basado en metadata"},
+        "ECM": {"nivel": "complementaria", "justificacion": "Almacenar evaluaciones, versiones, evidencias y medidas de mitigación"}
       },
       "art16": {
-        "DDC": {"nivel": "core", "justificacion": "Identificación automática de datos sensibles en todos los repositorios"},
-        "DPE": {"nivel": "core", "justificacion": "Protección reforzada: cifrado específico, enmascaramiento granular"},
+        "DLP/DCS": {"nivel": "core", "justificacion": "Identificación automática de datos sensibles en todos los repositorios"},
+        "ENC/TOK": {"nivel": "core", "justificacion": "Protección reforzada: cifrado específico, enmascaramiento granular"},
         "IAM": {"nivel": "core", "justificacion": "Controles de acceso reforzados, autenticación adicional para datos sensibles"},
         "DAM": {"nivel": "esencial", "justificacion": "Monitoreo especializado de operaciones sobre datos sensibles"},
-        "DGC": {"nivel": "esencial", "justificacion": "Clasificación específica y políticas diferenciadas por tipo de dato sensible"},
+        "DGV": {"nivel": "esencial", "justificacion": "Clasificación específica y políticas diferenciadas por tipo de dato sensible"},
+        "SIEM": {"nivel": "esencial", "justificacion": "Monitoreo de acceso y operaciones sobre datos sensibles para detección de anomalías"},
         "GRC": {"nivel": "complementaria", "justificacion": "Evaluación de riesgos específica para tratamientos de datos sensibles"}
       },
       "art27": {
-        "IDT": {"nivel": "core", "justificacion": "APIs y mecanismos seguros para transferencia cross-border"},
-        "DPE": {"nivel": "core", "justificacion": "Cifrado obligatorio para transferencias internacionales"},
+        "ETL/API": {"nivel": "core", "justificacion": "APIs y mecanismos seguros para transferencia cross-border"},
+        "ENC/TOK": {"nivel": "core", "justificacion": "Cifrado obligatorio para transferencias internacionales"},
         "GRC": {"nivel": "esencial", "justificacion": "Verificar nivel de protección del país destino"},
         "DAM": {"nivel": "esencial", "justificacion": "Registro detallado de cada transferencia internacional"},
-        "DDC": {"nivel": "complementaria", "justificacion": "Identificar qué datos son objeto de transferencia"}
+        "SIEM": {"nivel": "esencial", "justificacion": "Detección de exfiltración de datos en transferencias cross-border"},
+        "DLP/DCS": {"nivel": "complementaria", "justificacion": "Identificar qué datos son objeto de transferencia"}
       },
       "art49": {
         "GRC": {"nivel": "core", "justificacion": "Plataforma para gestionar programa de cumplimiento completo"},
-        "DDC": {"nivel": "esencial", "justificacion": "Inventario y caracterización de datos tratados (letra c)"},
+        "DLP/DCS": {"nivel": "esencial", "justificacion": "Inventario y caracterización de datos tratados (letra c)"},
         "DAM": {"nivel": "esencial", "justificacion": "Identificación de riesgos y monitoreo de actividades (letra d)"},
-        "DRD": {"nivel": "esencial", "justificacion": "Gestión de retención según políticas del programa"},
-        "WFA": {"nivel": "complementaria", "justificacion": "Workflows para reporte interno y sanciones (letras f y g)"},
-        "CDM": {"nivel": "complementaria", "justificacion": "Documentación de políticas, procedimientos y evidencias"}
+        "RET/DEL": {"nivel": "esencial", "justificacion": "Gestión de retención según políticas del programa"},
+        "SIEM": {"nivel": "esencial", "justificacion": "Generación de reportes de cumplimiento y detección de riesgos para la Agencia"},
+        "PRM": {"nivel": "complementaria", "justificacion": "Workflows para reporte interno y sanciones (letras f y g)"},
+        "ECM": {"nivel": "complementaria", "justificacion": "Documentación de políticas, procedimientos y evidencias"}
       }
     }
   },
@@ -132,17 +135,17 @@
   },
   "estadisticas": {
     "porCapacidad": {
-      "DDC": {"core": 7, "esencial": 3, "complementaria": 1, "total": 11},
-      "WFA": {"core": 6, "esencial": 3, "complementaria": 1, "total": 10},
+      "DLP/DCS": {"core": 7, "esencial": 3, "complementaria": 2, "total": 12},
       "IAM": {"core": 5, "esencial": 3, "complementaria": 0, "total": 8},
-      "DPE": {"core": 4, "esencial": 1, "complementaria": 1, "total": 6},
-      "DGC": {"core": 3, "esencial": 4, "complementaria": 2, "total": 9},
       "DAM": {"core": 2, "esencial": 3, "complementaria": 1, "total": 6},
+      "ENC/TOK": {"core": 4, "esencial": 1, "complementaria": 1, "total": 6},
+      "PRM": {"core": 6, "esencial": 3, "complementaria": 1, "total": 10},
       "GRC": {"core": 2, "esencial": 2, "complementaria": 1, "total": 5},
-      "CDM": {"core": 0, "esencial": 4, "complementaria": 6, "total": 10},
-      "DRD": {"core": 1, "esencial": 3, "complementaria": 0, "total": 4},
-      "IDT": {"core": 2, "esencial": 1, "complementaria": 1, "total": 4},
-      "SIEM": {"core": 1, "esencial": 0, "complementaria": 0, "total": 1}
+      "RET/DEL": {"core": 1, "esencial": 3, "complementaria": 0, "total": 4},
+      "ECM": {"core": 0, "esencial": 4, "complementaria": 6, "total": 10},
+      "DGV": {"core": 3, "esencial": 4, "complementaria": 2, "total": 9},
+      "ETL/API": {"core": 2, "esencial": 1, "complementaria": 1, "total": 4},
+      "SIEM": {"core": 1, "esencial": 3, "complementaria": 0, "total": 4}
     }
   }
 }

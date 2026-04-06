@@ -6,20 +6,20 @@
       "titulo": "Principios Generales",
       "categoria": "PRINCIPIOS",
       "categoriaId": "principios",
-      "resumen": "Establece ocho principios fundamentales que rigen el tratamiento de datos personales: licitud y lealtad, finalidad, proporcionalidad, calidad, responsabilidad, seguridad, transparencia y confidencialidad. Estos principios son la base para todas las obligaciones específicas de la ley.",
-      "textoCompleto": "<p>El tratamiento de los datos personales se rige por los siguientes principios:</p><p><strong>a) Principios de licitud y lealtad.</strong> Los datos personales sólo pueden tratarse de manera lícita y leal. El responsable deberá ser capaz de acreditar la licitud del tratamiento de datos personales que realiza.</p><p><strong>b) Principio de finalidad.</strong> Los datos personales deben ser recolectados con fines específicos, explícitos y lícitos. El tratamiento de los datos personales debe limitarse al cumplimiento de estos fines.</p><p><strong>c) Principio de proporcionalidad.</strong> Los datos personales que se traten deben limitarse estrictamente a aquéllos que resulten necesarios, adecuados y pertinentes en relación con los fines del tratamiento.</p><p><strong>d) Principio de calidad.</strong> Los datos personales deben ser exactos, completos, actuales y pertinentes en relación con su proveniencia y los fines del tratamiento.</p><p><strong>e) Principio de responsabilidad.</strong> Quienes realicen tratamiento de los datos personales serán legalmente responsables del cumplimiento de los principios contenidos en este artículo.</p><p><strong>f) Principio de seguridad.</strong> En el tratamiento de los datos personales, el responsable debe garantizar estándares adecuados de seguridad, protegiéndolos contra el tratamiento no autorizado o ilícito.</p><p><strong>g) Principio de transparencia e información.</strong> El responsable debe entregar al titular toda la información que sea necesaria para el ejercicio de los derechos que establece esta ley.</p><p><strong>h) Principio de confidencialidad.</strong> El responsable de datos personales y quienes tengan acceso a ellos deberán guardar secreto o confidencialidad acerca de los mismos.</p>",
+      "resumen": "Establece los 8 principios fundamentales que rigen todo tratamiento de datos personales: licitud, finalidad, proporcionalidad, calidad, responsabilidad, seguridad, transparencia y confidencialidad. Cualquier actividad de tratamiento debe cumplir simultáneamente con estos principios.",
+      "textoCompleto": "<p>El tratamiento de los datos personales se rige por los siguientes principios:</p><p><strong>a) Principio de licitud:</strong> Los datos personales sólo pueden tratarse con sujeción a la ley.</p><p><strong>b) Principio de finalidad:</strong> Los datos personales deben ser recolectados con fines específicos, explícitos y lícitos.</p><p><strong>c) Principio de proporcionalidad:</strong> Los datos personales que se traten deben limitarse a aquellos que resulten necesarios en relación con los fines del tratamiento.</p><p><strong>d) Principio de calidad:</strong> Los datos personales deben ser exactos, completos y actuales.</p><p><strong>e) Principio de responsabilidad:</strong> Quienes realicen tratamiento de datos personales serán legalmente responsables del cumplimiento de estos principios.</p><p><strong>f) Principio de seguridad:</strong> En el tratamiento de datos el responsable debe garantizar estándares adecuados de seguridad.</p><p><strong>g) Principio de transparencia:</strong> Las políticas y prácticas sobre el tratamiento deben estar formuladas en un lenguaje claro y accesible.</p><p><strong>h) Principio de confidencialidad:</strong> El responsable y quienes tengan acceso a datos personales deberán guardar secreto sobre los mismos.</p>",
       "capacidades": [
-        {"sigla": "DDC", "criticidad": "core", "justificacion": "Principios de finalidad y proporcionalidad requieren conocer qué datos se tienen y su propósito"},
+        {"sigla": "DLP/DCS", "criticidad": "core", "justificacion": "Principios de finalidad y proporcionalidad requieren conocer qué datos se tienen y su propósito"},
         {"sigla": "IAM", "criticidad": "core", "justificacion": "Principio de confidencialidad requiere control estricto de quién accede a los datos"},
-        {"sigla": "DPE", "criticidad": "core", "justificacion": "Principio de seguridad requiere protección técnica mediante cifrado y enmascaramiento"},
-        {"sigla": "DAM", "criticidad": "essential", "justificacion": "Principio de responsabilidad requiere demostrar quién accedió, cuándo y por qué"},
-        {"sigla": "DGC", "criticidad": "essential", "justificacion": "Principio de calidad requiere gobierno de datos para mantener exactitud y completitud"},
-        {"sigla": "CDM", "criticidad": "complementary", "justificacion": "Principio de transparencia requiere documentar y publicar políticas de privacidad"}
+        {"sigla": "ENC/TOK", "criticidad": "core", "justificacion": "Principio de seguridad requiere protección técnica mediante cifrado y enmascaramiento"},
+        {"sigla": "DAM", "criticidad": "esencial", "justificacion": "Principio de responsabilidad requiere demostrar quién accedió, cuándo y por qué"},
+        {"sigla": "DGV", "criticidad": "esencial", "justificacion": "Principio de calidad requiere gobierno de datos para mantener exactitud y completitud"},
+        {"sigla": "ECM", "criticidad": "complementaria", "justificacion": "Principio de transparencia requiere documentar y publicar políticas de privacidad"}
       ],
       "controles": {
-        "iso27001": ["A.5.31", "A.5.10", "A.5.9", "A.5.33", "A.5.1", "A.8.24", "A.5.37", "A.5.15", "A.6.6"],
-        "iso27701": ["7.2.2", "7.4.1", "7.4.2", "7.4.4", "5.2.1", "7.4.9", "7.3.2"],
-        "nist": ["AC-1", "SI-12", "PM-5", "SC-8", "SC-28", "TR-1", "AC-3"]
+        "iso27001": ["A.5.9", "A.5.12", "A.5.15", "A.8.24"],
+        "iso27701": ["7.2.1", "7.2.2", "7.4.1"],
+        "nist": ["AC-1", "AC-3", "SC-8", "SC-28", "CM-8"]
       }
     },
     {
@@ -28,19 +28,19 @@
       "titulo": "Derecho de Acceso",
       "categoria": "DERECHOS ARCOP",
       "categoriaId": "derechos",
-      "resumen": "Otorga al titular el derecho de solicitar y obtener confirmación sobre el tratamiento de sus datos personales y acceder a ellos. Incluye conocer: datos tratados y su origen, finalidades, destinatarios, período de conservación, intereses legítimos del responsable y lógica aplicada en tratamientos automatizados.",
-      "textoCompleto": "<p>El titular de datos tiene derecho a solicitar y obtener del responsable, confirmación acerca de si los datos personales que le conciernen están siendo tratados por él, y en tal caso, acceder a dichos datos y a la siguiente información:</p><p>a) Los datos tratados y su origen.</p><p>b) La finalidad o finalidades del tratamiento.</p><p>c) Las categorías, clases o tipos de destinatarios, o bien, la identidad de cada destinatario.</p><p>d) El período de tiempo durante el cual los datos serán tratados.</p><p>e) Los intereses legítimos del responsable, cuando el tratamiento se base en interés legítimo.</p><p>f) La información significativa sobre la lógica aplicada en caso de tratamiento automatizado.</p><p>El responsable siempre estará obligado a entregar información y dar acceso a los datos solicitados excepto cuando una ley disponga expresamente lo contrario.</p><p><strong>Plazo:</strong> 30 días corridos (prorrogables por 30 días más una sola vez).</p><p><strong>Gratuidad:</strong> Obligatoria al menos trimestralmente.</p>",
+      "resumen": "Otorga al titular el derecho a solicitar y obtener confirmación de si sus datos están siendo tratados, acceder a ellos, conocer su origen, finalidad, categorías tratadas, destinatarios, y el período de conservación. El responsable debe proporcionar esta información en forma precisa, clara, inequívoca y gratuita.",
+      "textoCompleto": "<p>El titular de datos tiene derecho a solicitar y obtener del responsable, confirmación acerca de si los datos personales que le conciernen están siendo tratados por él, y en tal caso, acceder a dichos datos y a la siguiente información:</p><p>a) Los datos tratados y su origen.</p><p>b) La finalidad o finalidades del tratamiento.</p><p>c) Las categorías, clases o tipos de destinatarios a los que se han comunicado o cedido los datos.</p><p>d) El período durante el cual los datos serán tratados.</p><p>e) La existencia del derecho a solicitar del responsable la rectificación, supresión u oposición.</p><p>La información deberá ser proporcionada en forma precisa, clara, inequívoca y gratuita.</p>",
       "capacidades": [
-        {"sigla": "DDC", "criticidad": "core", "justificacion": "Necesario para localizar todos los datos del titular en todos los sistemas de la organización"},
-        {"sigla": "DGC", "criticidad": "core", "justificacion": "Catálogo centralizado permite respuesta completa con origen, finalidad y destinatarios"},
-        {"sigla": "IAM", "criticidad": "essential", "justificacion": "Validar identidad del solicitante antes de entregar información personal"},
-        {"sigla": "WFA", "criticidad": "essential", "justificacion": "Automatizar proceso de solicitud, verificación, recopilación y entrega"},
-        {"sigla": "CDM", "criticidad": "complementary", "justificacion": "Gestionar evidencia de las solicitudes recibidas y respuestas entregadas"}
+        {"sigla": "DLP/DCS", "criticidad": "core", "justificacion": "Necesario para localizar todos los datos del titular en todos los sistemas de la organización"},
+        {"sigla": "DGV", "criticidad": "core", "justificacion": "Catálogo centralizado permite respuesta completa con origen, finalidad y destinatarios"},
+        {"sigla": "IAM", "criticidad": "esencial", "justificacion": "Validar identidad del solicitante antes de entregar información personal"},
+        {"sigla": "PRM", "criticidad": "esencial", "justificacion": "Automatizar proceso de solicitud, verificación, recopilación y entrega"},
+        {"sigla": "ECM", "criticidad": "complementaria", "justificacion": "Gestionar evidencia de las solicitudes recibidas y respuestas entregadas"}
       ],
       "controles": {
-        "iso27001": ["A.5.9", "A.5.16", "A.8.5", "A.8.15", "A.5.14"],
-        "iso27701": ["7.4.1", "7.3.6", "7.3.1", "7.3.3"],
-        "nist": ["CM-8", "IA-2", "AU-2", "AC-21"]
+        "iso27001": ["A.5.15", "A.5.33", "A.8.15"],
+        "iso27701": ["7.3.2", "7.3.3", "7.3.6"],
+        "nist": ["IP-1", "IP-2", "AC-3", "AU-2"]
       }
     },
     {
@@ -52,11 +52,11 @@
       "resumen": "Permite al titular solicitar y obtener la rectificación de datos inexactos, desactualizados o incompletos. El responsable debe comunicar las rectificaciones a los destinatarios de los datos originales. Prohíbe volver a tratar los datos sin rectificar.",
       "textoCompleto": "<p>El titular de datos tiene derecho a solicitar y obtener del responsable, la rectificación de los datos personales que le conciernen y que están siendo tratados por él, cuando sean inexactos, desactualizados o incompletos.</p><p>Los datos rectificados deberán ser comunicados a las personas, entidades u organismos a los cuales el responsable haya comunicado o cedido los referidos datos, salvo en los casos en que dicha comunicación sea imposible o exija un esfuerzo desproporcionado.</p><p>Efectuada la rectificación, no se podrán volver a tratar los datos sin rectificar.</p>",
       "capacidades": [
-        {"sigla": "DDC", "criticidad": "core", "justificacion": "Localizar todos los sistemas donde existe el dato a rectificar"},
-        {"sigla": "DGC", "criticidad": "core", "justificacion": "Identificar dato maestro vs. copias, y linaje para propagación"},
-        {"sigla": "WFA", "criticidad": "essential", "justificacion": "Gestionar flujo de rectificación con aprobaciones y propagación"},
-        {"sigla": "IDT", "criticidad": "essential", "justificacion": "Comunicar rectificaciones a terceros que recibieron los datos"},
-        {"sigla": "CDM", "criticidad": "complementary", "justificacion": "Documentar solicitud, cambios realizados y notificaciones enviadas"}
+        {"sigla": "DLP/DCS", "criticidad": "core", "justificacion": "Localizar todos los sistemas donde existe el dato a rectificar"},
+        {"sigla": "DGV", "criticidad": "core", "justificacion": "Identificar dato maestro vs. copias, y linaje para propagación"},
+        {"sigla": "PRM", "criticidad": "esencial", "justificacion": "Gestionar flujo de rectificación con aprobaciones y propagación"},
+        {"sigla": "ETL/API", "criticidad": "esencial", "justificacion": "Comunicar rectificaciones a terceros que recibieron los datos"},
+        {"sigla": "ECM", "criticidad": "complementaria", "justificacion": "Documentar solicitud, cambios realizados y notificaciones enviadas"}
       ],
       "controles": {
         "iso27001": ["A.5.33", "A.5.14", "A.8.15"],
@@ -71,18 +71,18 @@
       "categoria": "DERECHOS ARCOP",
       "categoriaId": "derechos",
       "resumen": "Faculta al titular a solicitar la eliminación de sus datos personales cuando: ya no son necesarios, se revoca el consentimiento, fueron obtenidos ilícitamente, son caducos, o deben eliminarse por obligación legal. Incluye excepciones como libertades de expresión o cumplimiento de obligaciones legales.",
-      "textoCompleto": "<p>El titular de datos tiene derecho a solicitar y obtener del responsable, la eliminación de los datos personales que le conciernen, en los siguientes casos:</p><p>a) Cuando los datos no resulten necesarios en relación con los fines del tratamiento.</p><p>b) Cuando el titular haya revocado su consentimiento y no exista otro fundamento legal.</p><p>c) Cuando los datos hayan sido obtenidos o tratados ilícitamente.</p><p>d) Cuando se trate de datos caducos.</p><p>e) Cuando los datos deban suprimirse para el cumplimiento de una sentencia judicial, resolución de la autoridad o obligación legal.</p><p>f) Cuando el titular haya ejercido su derecho de oposición y no exista otro fundamento legal.</p><p><strong>No procede la supresión cuando el tratamiento sea necesario:</strong> Para ejercer libertades de opinión e información, cumplimiento de obligaciones legales, función pública, interés público en salud, o tratamientos con fines históricos, estadísticos o científicos.</p><p><strong>Plazo:</strong> 30 días corridos.</p>",
+      "textoCompleto": "<p>El titular de datos tiene derecho a solicitar y obtener del responsable la supresión de los datos personales que le conciernan, cuando concurra alguna de las siguientes circunstancias:</p><p>a) Los datos no resulten necesarios en relación con los fines del tratamiento para el cual fueron recogidos.</p><p>b) El titular haya revocado su consentimiento y éste sea el único fundamento del tratamiento.</p><p>c) Los datos hayan sido obtenidos o tratados ilícitamente.</p><p>d) Se trate de datos caducos.</p><p>e) Los datos deban suprimirse para el cumplimiento de una sentencia judicial o de una obligación legal.</p><p>El responsable no estará obligado a suprimir los datos cuando su tratamiento sea necesario para el ejercicio del derecho a las libertades de emitir opinión e informar, o para el cumplimiento de una obligación legal.</p>",
       "capacidades": [
-        {"sigla": "DDC", "criticidad": "core", "justificacion": "Localizar TODOS los datos del titular en TODOS los sistemas, incluyendo backups"},
-        {"sigla": "DRD", "criticidad": "core", "justificacion": "Ejecutar eliminación verificable y permanente, incluyendo copias de respaldo"},
-        {"sigla": "WFA", "criticidad": "essential", "justificacion": "Proceso de aprobación, ejecución coordinada y verificación de completitud"},
-        {"sigla": "DPE", "criticidad": "essential", "justificacion": "Alternativa: anonimización cuando supresión técnica no es viable"},
-        {"sigla": "DAM", "criticidad": "complementary", "justificacion": "Generar evidencia auditable de eliminación completa"}
+        {"sigla": "DLP/DCS", "criticidad": "core", "justificacion": "Localizar todas las instancias de los datos a eliminar en todos los sistemas"},
+        {"sigla": "RET/DEL", "criticidad": "core", "justificacion": "Ejecutar eliminación segura incluyendo copias de respaldo"},
+        {"sigla": "PRM", "criticidad": "esencial", "justificacion": "Gestionar solicitudes de supresión con verificación y certificación"},
+        {"sigla": "ENC/TOK", "criticidad": "esencial", "justificacion": "Anonimización como alternativa a la supresión cuando aplique"},
+        {"sigla": "DAM", "criticidad": "complementaria", "justificacion": "Evidencia auditable de que los datos fueron efectivamente eliminados"}
       ],
       "controles": {
-        "iso27001": ["A.8.10", "A.5.9", "A.8.13", "A.8.14", "A.8.11", "A.8.15"],
-        "iso27701": ["7.4.8", "7.4.1", "7.4.5", "7.3.1"],
-        "nist": ["MP-6", "CM-8", "CP-9", "SI-19", "AU-2", "AU-3"]
+        "iso27001": ["A.8.10", "A.8.14", "A.5.33"],
+        "iso27701": ["7.4.7", "7.4.8", "7.3.6"],
+        "nist": ["MP-6", "SI-12", "AU-2", "AU-3"]
       }
     },
     {
@@ -91,20 +91,19 @@
       "titulo": "Derecho de Oposición",
       "categoria": "DERECHOS ARCOP",
       "categoriaId": "derechos",
-      "nuevo": true,
-      "resumen": "Otorga al titular el derecho a oponerse a tratamientos específicos: cuando se basa en interés legítimo del responsable, para marketing directo o elaboración de perfiles, o cuando los datos provienen de fuentes públicas sin otro fundamento legal. No procede para investigación científica o estadística de interés público.",
-      "textoCompleto": "<p>El titular de datos tiene derecho a oponerse ante el responsable a que se realice un tratamiento específico o determinado de los datos personales que le conciernan, en los siguientes casos:</p><p>a) Cuando la base de licitud del tratamiento sea la satisfacción de intereses legítimos del responsable. En dicho caso podrá ejercer su derecho de oposición en cualquier momento. El responsable deberá dejar de tratar los datos personales, salvo que acredite motivos legítimos imperiosos.</p><p>b) Si el tratamiento se realiza exclusivamente con fines de mercadotecnia o marketing directo, incluida la elaboración de perfiles.</p><p>c) Si el tratamiento se realiza respecto de datos obtenidos de una fuente de acceso público y no existe otro fundamento legal para su tratamiento.</p><p><strong>No procede</strong> la oposición cuando el tratamiento se realice con fines de investigación científica o histórica o fines estadísticos, y siempre que fueran necesarios para el cumplimiento de una función pública.</p><p><strong>Plazo:</strong> 30 días corridos.</p>",
+      "resumen": "Permite al titular oponerse al tratamiento de sus datos cuando: afecte sus derechos o libertades fundamentales, se usen para marketing directo, o se apliquen a decisiones automatizadas. El responsable debe dejar de tratar los datos salvo motivos legítimos que prevalezcan.",
+      "textoCompleto": "<p>El titular de datos tiene derecho a oponerse ante el responsable a que se realice un tratamiento específico o determinado de los datos personales que le conciernan, en los siguientes casos:</p><p>a) Si el tratamiento afecta sus derechos y libertades fundamentales.</p><p>b) Si el tratamiento se realiza exclusivamente con fines de mercadotecnia o marketing directo.</p><p>c) Si el tratamiento se refiere a datos obtenidos de una fuente de acceso público y no exista otro fundamento de licitud del tratamiento.</p><p>El responsable deberá dejar de tratar los datos personales, salvo que acredite motivos legítimos imperiosos para el tratamiento que prevalezcan sobre los intereses, derechos y libertades del titular.</p>",
       "capacidades": [
-        {"sigla": "DDC", "criticidad": "core", "justificacion": "Identificar todos los tratamientos activos del titular y su base de licitud"},
-        {"sigla": "WFA", "criticidad": "core", "justificacion": "Gestionar solicitud de oposición, evaluación y ejecución de cese"},
-        {"sigla": "IAM", "criticidad": "essential", "justificacion": "Implementar flags de oposición que bloqueen tratamientos específicos"},
-        {"sigla": "DGC", "criticidad": "essential", "justificacion": "Registrar base de licitud de cada tratamiento para evaluar procedencia"},
-        {"sigla": "CDM", "criticidad": "complementary", "justificacion": "Documentar solicitud, evaluación y respuesta"}
+        {"sigla": "DLP/DCS", "criticidad": "core", "justificacion": "Identificar todos los tratamientos aplicados a los datos del titular"},
+        {"sigla": "PRM", "criticidad": "core", "justificacion": "Gestionar solicitudes de oposición con flujos diferenciados según causal"},
+        {"sigla": "IAM", "criticidad": "esencial", "justificacion": "Verificar identidad y aplicar restricciones de tratamiento"},
+        {"sigla": "DGV", "criticidad": "esencial", "justificacion": "Registro de finalidades para evaluar procedencia de oposición"},
+        {"sigla": "ECM", "criticidad": "complementaria", "justificacion": "Documentar solicitud, evaluación y resolución"}
       ],
       "controles": {
-        "iso27001": ["A.5.31", "A.5.10", "A.5.15", "A.5.37"],
-        "iso27701": ["7.2.2", "7.4.3", "7.3.5", "7.3.1", "7.3.4"],
-        "nist": ["AC-1", "AC-3", "AC-6", "AU-2", "IP-3"]
+        "iso27001": ["A.5.31", "A.5.33", "A.5.34"],
+        "iso27701": ["7.3.4", "7.3.5", "7.3.6"],
+        "nist": ["IP-1", "IP-3", "IP-4", "AC-3"]
       }
     },
     {
@@ -113,21 +112,20 @@
       "titulo": "Decisiones Automatizadas",
       "categoria": "DERECHOS ARCOP",
       "categoriaId": "derechos",
-      "nuevo": true,
-      "resumen": "Establece el derecho del titular a oponerse y no ser objeto de decisiones basadas únicamente en tratamiento automatizado (incluida elaboración de perfiles) que produzcan efectos jurídicos. En todos los casos, el responsable debe garantizar: derecho a explicación, intervención humana y solicitar revisión.",
-      "textoCompleto": "<p>El titular de datos tiene derecho a oponerse y a no ser objeto de decisiones basadas en el tratamiento automatizado de sus datos personales, incluida la elaboración de perfiles, que produzca efectos jurídicos en él o le afecte significativamente.</p><p><strong>El inciso anterior no se aplicará en los siguientes casos:</strong></p><p>a) Cuando la decisión sea necesaria para la celebración o ejecución de un contrato entre el titular y el responsable;</p><p>b) Cuando exista consentimiento previo y expreso del titular;</p><p>c) Cuando lo disponga la ley, con salvaguardas a los derechos y libertades del titular.</p><p><strong>En todos los casos</strong> de decisiones basadas en el tratamiento automatizado de datos personales, el responsable deberá adoptar las medidas necesarias para asegurar: el derecho a la información y transparencia, el derecho a obtener una explicación, la intervención humana, a expresar su punto de vista y a solicitar la revisión de la decisión.</p>",
+      "resumen": "Regula las decisiones basadas únicamente en tratamiento automatizado (incluido el perfilado). El titular tiene derecho a no ser objeto de decisiones automatizadas que produzcan efectos jurídicos significativos, salvo excepciones. Puede solicitar revisión humana, obtener explicación de la lógica aplicada, e impugnar la decisión.",
+      "textoCompleto": "<p>El titular de datos tiene derecho a no ser objeto de decisiones individuales adoptadas en base al tratamiento automatizado de sus datos personales, incluida la elaboración de perfiles, que produzca efectos jurídicos en él o le afecte significativamente de modo similar.</p><p>Este derecho no se aplicará en los siguientes casos:</p><p>a) Cuando la decisión sea necesaria para la celebración o ejecución de un contrato.</p><p>b) Cuando exista consentimiento previo y expreso del titular.</p><p>c) Cuando lo disponga la ley.</p><p>En todos los casos, el responsable deberá adoptar las medidas necesarias para asegurar los derechos y libertades del titular, al menos el derecho a obtener intervención humana, a expresar su punto de vista y a impugnar la decisión.</p>",
       "capacidades": [
-        {"sigla": "DGC", "criticidad": "core", "justificacion": "Inventario de modelos de IA/ML y algoritmos que toman decisiones automatizadas"},
-        {"sigla": "WFA", "criticidad": "core", "justificacion": "Proceso para solicitar explicación e intervención humana"},
-        {"sigla": "DAM", "criticidad": "core", "justificacion": "Trazabilidad completa de decisiones automatizadas y sus inputs"},
-        {"sigla": "GRC", "criticidad": "essential", "justificacion": "Evaluación de impacto de sistemas de decisión automatizada"},
-        {"sigla": "IAM", "criticidad": "essential", "justificacion": "Control de acceso a sistemas de decisión, roles de revisión humana"},
-        {"sigla": "CDM", "criticidad": "complementary", "justificacion": "Documentación de lógica algorítmica y decisiones tomadas"}
+        {"sigla": "DAM", "criticidad": "core", "justificacion": "Registrar todas las decisiones automatizadas y su lógica aplicada"},
+        {"sigla": "PRM", "criticidad": "core", "justificacion": "Gestionar solicitudes de revisión humana y oposición a perfilado"},
+        {"sigla": "DGV", "criticidad": "core", "justificacion": "Documentar la lógica de algoritmos y criterios de decisión"},
+        {"sigla": "IAM", "criticidad": "esencial", "justificacion": "Control de quién puede crear/modificar reglas de decisión automatizada"},
+        {"sigla": "GRC", "criticidad": "esencial", "justificacion": "Evaluación de riesgos de sistemas de decisión automatizada"},
+        {"sigla": "ECM", "criticidad": "complementaria", "justificacion": "Documentación de explicaciones entregadas a titulares"}
       ],
       "controles": {
-        "iso27001": ["A.5.9", "A.5.37", "A.8.15", "A.5.34"],
-        "iso27701": ["7.4.1", "7.3.2", "7.4.5", "7.2.5", "7.3.1"],
-        "nist_ai_rmf": ["MAP 1.1", "GOVERN 1.2", "MEASURE 2.6", "MANAGE 2.2", "MAP 2.1", "MANAGE 4.1"]
+        "iso27001": ["A.8.15", "A.8.16", "A.5.34"],
+        "iso27701": ["7.4.5", "7.2.1", "7.3.6"],
+        "nist": ["AC-3", "AU-2", "AU-3", "PM-9"]
       }
     },
     {
@@ -136,18 +134,18 @@
       "titulo": "Derecho de Portabilidad",
       "categoria": "DERECHOS ARCOP",
       "categoriaId": "derechos",
-      "resumen": "Otorga al titular el derecho de obtener y transferir sus datos personales en formato electrónico estructurado cuando el tratamiento es automatizado y basado en consentimiento. Incluye el derecho a transmisión directa responsable-a-responsable cuando sea técnicamente posible.",
-      "textoCompleto": "<p>El titular de datos tiene derecho a solicitar y recibir una copia de los datos personales que le conciernen, que haya facilitado al responsable, en un formato electrónico estructurado, genérico y de uso común, que permita ser operado por distintos sistemas, y a comunicarlos o transferirlos a otro responsable de datos, cuando concurran las siguientes circunstancias:</p><p>a) El tratamiento se realice en forma automatizada, y</p><p>b) El tratamiento esté basado en el consentimiento del titular.</p><p>El responsable debe utilizar los medios más expeditos, menos onerosos y sin poner trabas u obstáculos para el ejercicio de este derecho.</p><p>El titular tendrá derecho a que sus datos personales se transmitan directamente de responsable a responsable cuando sea técnicamente posible.</p><p><strong>Formatos de exportación:</strong> JSON, CSV, XML como mínimo.</p><p><strong>Alcance:</strong> Solo datos facilitados directamente por el titular, no incluye datos derivados o inferidos.</p>",
+      "resumen": "Permite al titular solicitar la entrega de sus datos en formato electrónico estructurado, genérico y de uso común, y su transferencia directa a otro responsable cuando sea técnicamente posible. Solo aplica a datos facilitados directamente por el titular.",
+      "textoCompleto": "<p>El titular de datos tiene derecho a solicitar y recibir una copia de los datos personales que le conciernan, que haya facilitado al responsable, en un formato electrónico estructurado, genérico y de uso común, que permita ser operado por distintos sistemas.</p><p>Asimismo, el titular tendrá derecho a comunicar o transferir sus datos personales directamente a otro responsable de datos, cuando ello sea técnicamente posible.</p><p>El derecho de portabilidad se aplica a los datos personales que el titular haya proporcionado al responsable, ya sea en base al consentimiento o en el marco de un contrato.</p>",
       "capacidades": [
-        {"sigla": "DDC", "criticidad": "core", "justificacion": "Identificar todos los datos facilitados por el titular (no derivados ni inferidos)"},
-        {"sigla": "IDT", "criticidad": "core", "justificacion": "Exportación en formatos estándar y transferencia directa responsable-a-responsable"},
-        {"sigla": "WFA", "criticidad": "essential", "justificacion": "Gestionar solicitud, extracción, validación y entrega"},
-        {"sigla": "DPE", "criticidad": "complementary", "justificacion": "Cifrado de datos durante transferencia"}
+        {"sigla": "DLP/DCS", "criticidad": "core", "justificacion": "Localizar y extraer todos los datos del titular de todos los sistemas"},
+        {"sigla": "ETL/API", "criticidad": "core", "justificacion": "Transferir datos en formato estructurado al nuevo responsable"},
+        {"sigla": "PRM", "criticidad": "esencial", "justificacion": "Gestionar solicitudes de portabilidad con validación de destino"},
+        {"sigla": "ENC/TOK", "criticidad": "complementaria", "justificacion": "Cifrado en tránsito para transferencia segura"}
       ],
       "controles": {
-        "iso27001": ["A.5.14", "A.8.20", "A.8.24", "A.8.26"],
-        "iso27701": ["7.4.8", "7.4.9", "7.5.1"],
-        "nist": ["AC-21", "SC-8", "SC-13", "IA-8", "SC-23"]
+        "iso27001": ["A.5.14", "A.8.24", "A.8.20"],
+        "iso27701": ["7.3.6", "7.4.8", "7.5.1"],
+        "nist": ["SC-8", "PR.DS-2", "IP-1"]
       }
     },
     {
@@ -156,60 +154,59 @@
       "titulo": "Forma y Medios de Ejercicio",
       "categoria": "PROCEDIMIENTOS",
       "categoriaId": "procedimientos",
-      "resumen": "Regula el ejercicio de derechos del titular: libertad para ejercerlos ante cualquier responsable, obligación de implementar mecanismos tecnológicos expeditos, gratuidad en rectificación, supresión, oposición y acceso trimestral. Empresas extranjeras deben designar medio de contacto electrónico.",
-      "textoCompleto": "<p>Los derechos reconocidos en esta ley se ejercen por el titular ante el responsable de datos. Si los datos personales del titular son tratados por diversos responsables, el titular puede ejercer sus derechos ante cualquiera de ellos.</p><p>En el caso de las personas jurídicas no constituidas en Chile, el responsable deberá señalar por escrito, ante la Agencia, un correo electrónico o un medio de comunicación electrónico equivalente válido y operativo.</p><p>Los responsables de datos deberán implementar mecanismos y herramientas tecnológicas que permitan que el titular ejerza sus derechos en forma expedita, ágil y eficaz. Los medios dispuestos por el responsable deben ser sencillos en su operación.</p><p><strong>Gratuidad:</strong> Los derechos de rectificación, supresión y oposición siempre serán gratuitos. El derecho de acceso también se ejercerá en forma gratuita, al menos trimestralmente.</p><p>El responsable sólo puede exigir el pago de los costos directos cuando el titular ejerza su derecho de acceso y portabilidad más de una vez en el trimestre.</p>",
+      "resumen": "Establece que el responsable debe facilitar al titular mecanismos expeditos, sencillos y gratuitos para el ejercicio de sus derechos ARCOP. Los medios deben ser los mismos que se usaron para la recolección u otros de fácil acceso.",
+      "textoCompleto": "<p>Los derechos reconocidos en esta ley se ejercerán por el titular ante el responsable de datos.</p><p>El responsable deberá arbitrar los mecanismos necesarios para facilitar el ejercicio de los derechos del titular de manera expedita, sencilla y gratuita.</p><p>Los mecanismos utilizados deberán ser los mismos que el responsable empleó para recolectar los datos personales, sin perjuicio de otros mecanismos de fácil acceso que pueda implementar.</p><p>La solicitud deberá ser presentada por el titular o por su mandatario, y deberá incluir la identificación del titular y la descripción del derecho que se ejerce.</p>",
       "capacidades": [
-        {"sigla": "WFA", "criticidad": "core", "justificacion": "Sistema de gestión de solicitudes ARCOP accesible y sencillo"},
-        {"sigla": "IAM", "criticidad": "core", "justificacion": "Verificación de identidad del solicitante antes de procesar"},
-        {"sigla": "CDM", "criticidad": "essential", "justificacion": "Registro y evidencia de todas las solicitudes y respuestas"},
-        {"sigla": "DGC", "criticidad": "complementary", "justificacion": "Enrutamiento inteligente según tipo de solicitud"}
+        {"sigla": "IAM", "criticidad": "core", "justificacion": "Verificación robusta de identidad del solicitante"},
+        {"sigla": "PRM", "criticidad": "core", "justificacion": "Formularios y canales para recepción de solicitudes ARCOP"},
+        {"sigla": "ECM", "criticidad": "esencial", "justificacion": "Registro de medios utilizados y evidencias de comunicación"}
       ],
       "controles": {
-        "iso27001": ["A.5.37", "A.5.16", "A.8.5", "A.8.15"],
-        "iso27701": ["7.3.1", "7.3.6", "7.3.8"],
-        "nist": ["AC-14", "IA-2", "AU-2"]
+        "iso27001": ["A.5.31", "A.5.34"],
+        "iso27701": ["7.3.2", "7.3.3", "7.3.9"],
+        "nist": ["IP-1", "IP-4", "AC-2"]
       }
     },
     {
       "id": "art11",
       "numero": "Art. 11",
-      "titulo": "Procedimiento ante Responsable",
+      "titulo": "Procedimiento y Plazos",
       "categoria": "PROCEDIMIENTOS",
       "categoriaId": "procedimientos",
-      "resumen": "Define el procedimiento para ejercer derechos: requisitos formales de solicitud, plazo de 30 días corridos prorrogables, derecho a bloqueo temporal (respuesta en 2 días hábiles), obligación de fundamentar rechazos, y derecho a reclamar ante la Agencia.",
-      "textoCompleto": "<p>Para ejercer los derechos que le reconoce esta ley, el titular deberá presentar una solicitud o requerimiento escrito ante el responsable.</p><p><strong>La solicitud deberá contener:</strong></p><p>a) Individualización del titular y autenticación de su identidad.</p><p>b) Indicación de domicilio o correo electrónico para comunicar la respuesta.</p><p>c) Identificación de los datos personales o del tratamiento determinado.</p><p>d) En solicitudes de rectificación: indicar las modificaciones precisas. En supresión: indicar la causal invocada. En oposición: fundamentar brevemente la petición.</p><p><strong>Plazo:</strong> 30 días corridos, prorrogables por 30 días más (una sola vez).</p><p><strong>Bloqueo temporal:</strong> El titular tiene derecho a solicitar el bloqueo temporal de sus datos durante la tramitación. El responsable debe responder dentro de 2 días hábiles.</p><p><strong>Rechazos:</strong> Deben ser fundados, indicando la causa y los antecedentes que la justifican, e informando el derecho a reclamar ante la Agencia (30 días hábiles).</p>",
+      "resumen": "Define el procedimiento de respuesta a solicitudes ARCOP: plazo máximo de 30 días corridos, posibilidad de prórroga justificada por 30 días adicionales, bloqueo temporal de datos durante la evaluación, y la obligación de fundamentar los rechazos.",
+      "textoCompleto": "<p>El responsable deberá dar respuesta a la solicitud del titular dentro del plazo de treinta días corridos, contado desde la fecha en que sea presentada.</p><p>Este plazo podrá ser prorrogado, por una sola vez, hasta por treinta días adicionales cuando la solicitud resulte compleja por su naturaleza o número.</p><p>Si la solicitud es rechazada, deberá fundarse la decisión en las causales previstas en la ley.</p><p>Durante la tramitación de la solicitud, el responsable deberá bloquear temporalmente los datos cuando la solicitud se refiera a la supresión o rectificación de los datos.</p>",
       "capacidades": [
-        {"sigla": "WFA", "criticidad": "core", "justificacion": "Gestión completa del ciclo de vida de solicitudes con control de plazos"},
-        {"sigla": "IAM", "criticidad": "core", "justificacion": "Autenticación de identidad según modalidades de la Agencia"},
-        {"sigla": "CDM", "criticidad": "essential", "justificacion": "Almacenamiento de solicitudes, respuestas y evidencias de envío"},
-        {"sigla": "DRD", "criticidad": "essential", "justificacion": "Capacidad de bloqueo temporal de datos durante tramitación"},
-        {"sigla": "DGC", "criticidad": "complementary", "justificacion": "Enrutamiento según tipo de solicitud"},
-        {"sigla": "IDT", "criticidad": "complementary", "justificacion": "Comunicación de cambios a terceros destinatarios"}
+        {"sigla": "IAM", "criticidad": "core", "justificacion": "Verificación de identidad antes de procesar solicitud"},
+        {"sigla": "PRM", "criticidad": "core", "justificacion": "Control de plazos (30 días), escalamientos y notificaciones"},
+        {"sigla": "RET/DEL", "criticidad": "esencial", "justificacion": "Bloqueo temporal de datos durante evaluación de solicitud"},
+        {"sigla": "ECM", "criticidad": "esencial", "justificacion": "Documentar todo el procedimiento y respuestas"},
+        {"sigla": "DGV", "criticidad": "complementaria", "justificacion": "Contexto para evaluar procedencia de solicitudes"},
+        {"sigla": "ETL/API", "criticidad": "complementaria", "justificacion": "Comunicar a terceros cuando corresponda"}
       ],
       "controles": {
-        "iso27001": ["A.5.37", "A.5.33", "A.8.15", "A.5.14"],
-        "iso27701": ["7.3.1", "7.3.9", "7.3.5", "7.5.4"],
-        "nist": ["PM-4", "AU-2", "AC-3", "AU-11", "AC-21"]
+        "iso27001": ["A.5.31", "A.5.33", "A.5.34"],
+        "iso27701": ["7.3.9", "7.3.6", "7.3.2"],
+        "nist": ["IP-1", "IP-4", "AU-2", "AU-3"]
       }
     },
     {
       "id": "art12",
       "numero": "Art. 12",
-      "titulo": "Gestión del Consentimiento",
+      "titulo": "Consentimiento",
       "categoria": "PROCEDIMIENTOS",
       "categoriaId": "procedimientos",
-      "resumen": "Establece los requisitos del consentimiento: libre, informado, específico, inequívoco y previo. Prohíbe el consentimiento condicionado, permite su revocación sin efectos retroactivos. Los medios para otorgarlo deben ser expeditos y gratuitos. Corresponde al responsable probar su obtención.",
-      "textoCompleto": "<p>Es lícito el tratamiento de los datos personales que le conciernen al titular, cuando otorgue su consentimiento para ello.</p><p><strong>El consentimiento del titular debe ser:</strong></p><p>• <strong>Libre:</strong> No condicionado a servicios no relacionados.</p><p>• <strong>Informado:</strong> El titular conoce las finalidades.</p><p>• <strong>Específico:</strong> Por cada finalidad distinta.</p><p>• <strong>Inequívoco:</strong> Mediante declaración verbal, escrita o electrónica, o acto afirmativo claro.</p><p>• <strong>Previo:</strong> Antes del tratamiento.</p><p><strong>Revocación:</strong> El titular puede revocar el consentimiento en cualquier momento y sin expresión de causa, utilizando medios similares a los empleados para su otorgamiento. La revocación no tendrá efectos retroactivos.</p><p><strong>Los medios utilizados deben ser:</strong> expeditos, fidedignos, gratuitos y permanentemente disponibles.</p><p><strong>Carga de la prueba:</strong> Corresponde al responsable probar que contó con el consentimiento del titular y que el tratamiento fue lícito, leal y transparente.</p>",
+      "resumen": "Regula el consentimiento como base de licitud: debe ser libre, informado, específico, inequívoco y verificable. Corresponde al responsable probar que contó con el consentimiento. El titular puede revocar el consentimiento en cualquier momento, y la revocación no afecta la licitud del tratamiento previo.",
+      "textoCompleto": "<p>El consentimiento del titular debe ser libre, informado, específico e inequívoco. Se otorgará mediante una declaración o una acción afirmativa clara del titular.</p><p>Corresponde al responsable probar que el tratamiento de datos se realizó contando con el consentimiento del titular.</p><p>El titular puede revocar el consentimiento en cualquier momento y sin necesidad de expresar causa, utilizando medios similares o equivalentes a los empleados para otorgarlo. La revocación del consentimiento no tendrá efecto retroactivo.</p><p>El responsable no podrá negar la prestación de un servicio, la celebración de un contrato, o la admisión a una institución educativa o de salud condicionándolo al consentimiento del titular para el tratamiento de datos que no guarden relación directa con la prestación solicitada.</p>",
       "capacidades": [
-        {"sigla": "IAM", "criticidad": "core", "justificacion": "Gestión del ciclo de vida del consentimiento y su verificación"},
-        {"sigla": "WFA", "criticidad": "core", "justificacion": "Captura estructurada, renovación y revocación de consentimientos"},
-        {"sigla": "CDM", "criticidad": "essential", "justificacion": "Almacenamiento seguro e inmutable de evidencias de consentimiento"},
-        {"sigla": "DGC", "criticidad": "complementary", "justificacion": "Registro de finalidades asociadas a cada consentimiento"}
+        {"sigla": "IAM", "criticidad": "core", "justificacion": "Verificar identidad del titular que otorga consentimiento"},
+        {"sigla": "PRM", "criticidad": "core", "justificacion": "Captura, registro y gestión de consentimientos"},
+        {"sigla": "ECM", "criticidad": "esencial", "justificacion": "Almacenar evidencia de consentimiento otorgado"},
+        {"sigla": "DGV", "criticidad": "complementaria", "justificacion": "Asociar consentimientos a finalidades específicas de tratamiento"}
       ],
       "controles": {
-        "iso27001": ["A.5.33", "A.8.15"],
-        "iso27701": ["7.2.3", "7.2.4", "7.4.5", "7.3.4", "7.4.1"],
-        "nist": ["IP-1", "IP-2", "AU-11", "IP-3", "TR-1"]
+        "iso27001": ["A.5.31", "A.5.33"],
+        "iso27701": ["7.2.3", "7.2.4", "7.3.4"],
+        "nist": ["IP-1", "IP-2", "IP-4"]
       }
     },
     {
@@ -221,65 +218,66 @@
       "resumen": "Marco integral de obligaciones y seguridad: obligaciones generales, deber de secreto, transparencia (políticas de privacidad), protección desde el diseño, medidas de seguridad (cifrado, seudonimización, capacidad de restauración), y reporte de vulneraciones a la Agencia y titulares afectados.",
       "textoCompleto": "<p><strong>Art. 14 - Obligaciones del responsable:</strong> Informar la licitud del tratamiento, asegurar recolección lícita con fines específicos, comunicar información exacta, suprimir o anonimizar datos cuando ya no sean necesarios.</p><p><strong>Art. 14 bis - Deber de secreto:</strong> El responsable está obligado a mantener secreto o confidencialidad acerca de los datos personales. Este deber subsiste aún después de concluida la relación con el titular.</p><p><strong>Art. 14 ter - Deber de transparencia:</strong> El responsable debe mantener en su sitio web: política de privacidad, individualización del responsable, contacto, categorías de datos, finalidades, derechos del titular, transferencias internacionales, período de conservación, y existencia de decisiones automatizadas.</p><p><strong>Art. 14 quáter - Privacy by Design:</strong> Aplicar medidas técnicas y organizativas desde el diseño. Por defecto, sólo tratar datos estrictamente necesarios.</p><p><strong>Art. 14 quinquies - Medidas de seguridad:</strong> Seudonimización y cifrado, garantizar confidencialidad, integridad, disponibilidad y resiliencia, capacidad de restauración rápida, verificación periódica de eficacia.</p><p><strong>Art. 14 sexies - Reporte de vulneraciones:</strong> Reportar a la Agencia sin dilaciones indebidas. Comunicar a titulares si: datos sensibles, menores de 14 años, o datos financieros.</p>",
       "capacidades": [
-        {"sigla": "DPE", "criticidad": "core", "justificacion": "Art. 14 quinquies: seudonimización y cifrado obligatorios"},
+        {"sigla": "ENC/TOK", "criticidad": "core", "justificacion": "Art. 14 quinquies: seudonimización y cifrado obligatorios"},
         {"sigla": "DAM", "criticidad": "core", "justificacion": "Detección de accesos no autorizados para Art. 14 sexies"},
         {"sigla": "SIEM", "criticidad": "core", "justificacion": "Detección y reporte de vulneraciones según Art. 14 sexies"},
-        {"sigla": "DDC", "criticidad": "essential", "justificacion": "Conocer qué datos proteger y con qué nivel según sensibilidad"},
-        {"sigla": "IAM", "criticidad": "essential", "justificacion": "Control de acceso según principio de mínimo privilegio"},
-        {"sigla": "DRD", "criticidad": "essential", "justificacion": "Art. 14 quinquies: capacidad de restauración rápida"},
-        {"sigla": "CDM", "criticidad": "complementary", "justificacion": "Art. 14 ter: políticas de privacidad accesibles"},
-        {"sigla": "DGC", "criticidad": "complementary", "justificacion": "Gobierno de datos para cumplir obligaciones"}
+        {"sigla": "DLP/DCS", "criticidad": "esencial", "justificacion": "Conocer qué datos proteger y con qué nivel según sensibilidad"},
+        {"sigla": "IAM", "criticidad": "esencial", "justificacion": "Control de acceso según principio de mínimo privilegio"},
+        {"sigla": "RET/DEL", "criticidad": "esencial", "justificacion": "Art. 14 quinquies (c): capacidad de restauración rápida"},
+        {"sigla": "ECM", "criticidad": "complementaria", "justificacion": "Art. 14 ter: políticas de privacidad accesibles"},
+        {"sigla": "DGV", "criticidad": "complementaria", "justificacion": "Gobierno de datos para cumplir obligaciones"}
       ],
       "controles": {
-        "iso27001": ["A.8.24", "A.8.11", "A.8.13", "A.8.14", "A.5.24", "A.5.25", "A.5.26", "A.6.8", "A.5.8", "A.5.1"],
-        "iso27701": ["7.4.9", "7.4.5", "7.3.4", "7.4.6", "7.3.2"],
-        "nist": ["SC-8", "SC-28", "SI-19", "CP-9", "CP-10", "IR-4", "IR-6", "SA-8", "TR-1"]
+        "iso27001": ["A.5.24", "A.5.25", "A.5.26", "A.8.24", "A.8.11", "A.5.34"],
+        "iso27701": ["6.13.1", "7.2.5", "7.4.5"],
+        "nist": ["IR-4", "IR-6", "SC-8", "SC-28", "SI-4", "PM-9"]
       }
     },
     {
       "id": "art15ter",
       "numero": "Art. 15 ter",
-      "titulo": "Evaluación de Impacto",
+      "titulo": "Evaluación de Impacto (EIPDP)",
       "categoria": "OBLIGACIONES",
       "categoriaId": "obligaciones",
-      "resumen": "Requiere evaluación de impacto en protección de datos (EIPDP) antes de tratamientos de alto riesgo: evaluaciones sistemáticas con decisiones automatizadas, tratamiento masivo, monitoreo de zonas públicas, o datos sensibles sin consentimiento. La Agencia publicará listas orientativas.",
-      "textoCompleto": "<p>Cuando sea probable que un tipo de tratamiento, por su naturaleza, alcance, contexto, tecnología utilizada o fines, pueda producir un alto riesgo para los derechos de las personas titulares, el responsable deberá realizar, previo al inicio de las operaciones, una evaluación del impacto en protección de datos personales.</p><p><strong>La evaluación se requerirá siempre en casos de:</strong></p><p>a) Evaluación sistemática y exhaustiva de aspectos personales basadas en tratamiento o decisiones automatizadas, como la elaboración de perfiles.</p><p>b) Tratamiento masivo de datos o gran escala.</p><p>c) Tratamiento que implique observación o monitoreo sistemático de una zona de acceso público.</p><p>d) Tratamiento de datos sensibles en hipótesis de excepción del consentimiento.</p><p><strong>Contenido mínimo de la EIPDP:</strong> Descripción de las operaciones de tratamiento, finalidad, evaluación de necesidad y proporcionalidad, evaluación de riesgos para derechos de titulares, medidas de mitigación propuestas.</p><p>Los responsables podrán consultar a la Agencia cuando el tratamiento demuestre ser de alto riesgo.</p>",
+      "resumen": "Obliga a realizar una evaluación de impacto en protección de datos personales (EIPDP) antes de iniciar tratamientos que puedan generar riesgos significativos. La evaluación debe describir el tratamiento, evaluar necesidad y proporcionalidad, identificar riesgos y definir medidas de mitigación.",
+      "textoCompleto": "<p>El responsable deberá realizar una evaluación de impacto relativa a la protección de datos personales antes de iniciar un tratamiento de datos que por su naturaleza, alcance, contexto o finalidades pueda implicar un riesgo alto para los derechos de los titulares.</p><p>La evaluación deberá contener, a lo menos:</p><p>a) Una descripción sistemática del tratamiento previsto y de los fines del tratamiento.</p><p>b) Una evaluación de la necesidad y la proporcionalidad del tratamiento con respecto a su finalidad.</p><p>c) Una evaluación de los riesgos para los derechos y libertades de los titulares.</p><p>d) Las medidas previstas para afrontar los riesgos.</p><p>La Agencia publicará una lista orientativa de los tipos de operaciones de tratamiento que requieran una evaluación de impacto.</p>",
       "capacidades": [
         {"sigla": "GRC", "criticidad": "core", "justificacion": "Plataforma para ejecutar, documentar y dar seguimiento a evaluaciones de impacto"},
-        {"sigla": "DDC", "criticidad": "essential", "justificacion": "Identificar datos involucrados, su clasificación y flujos"},
-        {"sigla": "DGC", "criticidad": "essential", "justificacion": "Contexto de uso, propietarios, y análisis de riesgos basado en metadata"},
-        {"sigla": "CDM", "criticidad": "complementary", "justificacion": "Almacenar evaluaciones, versiones, evidencias y medidas de mitigación"}
+        {"sigla": "DLP/DCS", "criticidad": "esencial", "justificacion": "Identificar datos involucrados, su clasificación y flujos"},
+        {"sigla": "DGV", "criticidad": "esencial", "justificacion": "Contexto de uso, propietarios, y análisis de riesgos basado en metadata"},
+        {"sigla": "ECM", "criticidad": "complementaria", "justificacion": "Almacenar evaluaciones, versiones, evidencias y medidas de mitigación"}
       ],
       "controles": {
-        "iso27001": ["6.1.2", "A.5.37", "6.1.3"],
+        "iso27001": ["6.1", "A.5.34", "A.5.35"],
         "iso27701": ["7.2.5", "5.4.1.2"],
-        "nist": ["RA-3", "PM-9", "PM-25"]
+        "nist": ["RA-3", "PM-9", "ID.RA-1", "ID.RA-5"]
       }
     },
     {
       "id": "art16",
       "numero": "Art. 16",
-      "titulo": "Tratamiento de Datos Sensibles",
+      "titulo": "Datos Personales Sensibles",
       "categoria": "OBLIGACIONES",
       "categoriaId": "obligaciones",
-      "resumen": "Regula el tratamiento de datos sensibles (origen racial, opiniones políticas, datos de salud, biométricos, genéticos, vida sexual) requiriendo consentimiento expreso y específico. Define excepciones limitadas y establece protecciones reforzadas.",
-      "textoCompleto": "<p>El tratamiento de los datos personales sensibles sólo puede realizarse cuando el titular manifiesta su consentimiento en forma expresa, otorgado a través de una declaración escrita, verbal o por un medio tecnológico equivalente.</p><p><strong>Es lícito el tratamiento de datos sensibles sin consentimiento:</strong></p><p>a) Cuando sean datos que el titular ha hecho manifiestamente públicos.</p><p>b) Cuando el tratamiento se basa en un interés legítimo de persona jurídica sin fines de lucro (política, filosófica, religiosa, sindical).</p><p>c) Cuando resulte indispensable para salvaguardar la vida, salud o integridad del titular u otra persona.</p><p>d) Para la formulación, ejercicio o defensa de un derecho ante tribunales.</p><p>e) Para el cumplimiento de obligaciones laborales o de seguridad social.</p><p>f) Cuando lo autorice o mandate expresamente la ley.</p><p><strong>Datos sensibles:</strong> Origen racial o étnico, opiniones políticas, religiosas, filosóficas, afiliación sindical, datos de salud, biométricos, genéticos, vida sexual y orientación sexual.</p><p><strong>Controles técnicos reforzados:</strong> Cifrado obligatorio, acceso basado en necesidad de conocer, autenticación multifactor, logs detallados, enmascaramiento en ambientes no productivos.</p>",
+      "resumen": "Define las categorías de datos sensibles (origen étnico, salud, biométricos, orientación sexual, afiliación sindical, etc.) y establece que su tratamiento requiere consentimiento expreso, protección reforzada, y controles técnicos adicionales.",
+      "textoCompleto": "<p>Son datos personales sensibles aquellos datos personales que se refieren a las características físicas o morales de las personas o a hechos o circunstancias de su vida privada o intimidad, tales como aquellos que revelen:</p><p>a) El origen étnico o racial.</p><p>b) La afiliación política, sindical o gremial.</p><p>c) La situación socioeconómica.</p><p>d) Las convicciones ideológicas, filosóficas o religiosas.</p><p>e) El estado de salud físico o psíquico.</p><p>f) Los datos biométricos.</p><p>g) Los datos relativos a la orientación sexual.</p><p>h) La identidad de género.</p><p>i) El perfil biológico humano.</p><p>El tratamiento de datos personales sensibles sólo puede realizarse cuando el titular consienta libre e informadamente en forma expresa, o en los demás casos que establece la ley.</p><p>El responsable debe adoptar las medidas de seguridad reforzadas que garanticen la protección de estos datos.</p>",
       "capacidades": [
-        {"sigla": "DDC", "criticidad": "core", "justificacion": "Identificación automática de datos sensibles en todos los repositorios"},
-        {"sigla": "DPE", "criticidad": "core", "justificacion": "Protección reforzada: cifrado específico, enmascaramiento granular"},
+        {"sigla": "DLP/DCS", "criticidad": "core", "justificacion": "Identificación automática de datos sensibles en todos los repositorios"},
+        {"sigla": "ENC/TOK", "criticidad": "core", "justificacion": "Protección reforzada: cifrado específico, enmascaramiento granular"},
         {"sigla": "IAM", "criticidad": "core", "justificacion": "Controles de acceso reforzados, autenticación adicional para datos sensibles"},
-        {"sigla": "DAM", "criticidad": "essential", "justificacion": "Monitoreo especializado de operaciones sobre datos sensibles"},
-        {"sigla": "DGC", "criticidad": "essential", "justificacion": "Clasificación específica y políticas diferenciadas por tipo de dato sensible"},
-        {"sigla": "GRC", "criticidad": "complementary", "justificacion": "Evaluación de riesgos específica para tratamientos de datos sensibles"}
+        {"sigla": "DAM", "criticidad": "esencial", "justificacion": "Monitoreo especializado de operaciones sobre datos sensibles"},
+        {"sigla": "DGV", "criticidad": "esencial", "justificacion": "Clasificación específica y políticas diferenciadas por tipo de dato sensible"},
+        {"sigla": "SIEM", "criticidad": "esencial", "justificacion": "Monitoreo de acceso y operaciones sobre datos sensibles para detección de anomalías"},
+        {"sigla": "GRC", "criticidad": "complementaria", "justificacion": "Evaluación de riesgos específica para tratamientos de datos sensibles"}
       ],
       "controles": {
-        "iso27001": ["A.5.12", "A.5.13", "A.8.24", "A.5.15", "A.8.2", "A.8.15", "A.8.16"],
-        "iso27701": ["7.4.2", "7.4.9", "7.4.5", "7.2.3"],
-        "nist": ["RA-2", "SC-28", "AC-3", "AC-6", "AU-2", "AU-6", "IP-1"]
+        "iso27001": ["A.5.12", "A.5.15", "A.8.24", "A.8.11", "A.8.5"],
+        "iso27701": ["7.2.1", "7.2.4", "7.4.5"],
+        "nist": ["AC-3", "SC-8", "SC-28", "SI-4", "AU-2"]
       }
     },
     {
-      "id": "art2728",
+      "id": "art27",
       "numero": "Art. 27/28",
       "titulo": "Transferencia Internacional",
       "categoria": "TRANSFERENCIAS Y COMPLIANCE",
@@ -287,11 +285,12 @@
       "resumen": "Regula transferencias internacionales: lícitas cuando el país destino tiene niveles adecuados de protección (según la Agencia), existen cláusulas contractuales o normas corporativas con garantías, o se adoptan modelos de cumplimiento certificados. Define excepciones específicas.",
       "textoCompleto": "<p><strong>Art. 27 - Regla general:</strong> Son lícitas las operaciones de transferencia internacional de datos cuando:</p><p>a) La transferencia se realice a un país que proporcione niveles adecuados de protección (según Art. 28).</p><p>b) La transferencia quede amparada por cláusulas contractuales, normas corporativas vinculantes, u otros instrumentos que establezcan garantías adecuadas.</p><p>c) El responsable adopte un modelo de cumplimiento o mecanismo de certificación con garantías adecuadas.</p><p><strong>En ausencia de adecuación o garantías,</strong> se podrá realizar una transferencia específica y no habitual si: existe consentimiento expreso, son transferencias bancarias específicas, cumplimiento de tratados internacionales, cooperación entre órganos públicos, autorización legal, colaboración judicial, o necesidad contractual.</p><p><strong>Art. 28 - Países adecuados:</strong> La Agencia determinará los países con niveles adecuados de protección, considerando: existencia de principios de tratamiento, normas que reconozcan derechos de titulares, autoridad de control, obligaciones de seguridad, y determinación de responsabilidades.</p>",
       "capacidades": [
-        {"sigla": "IDT", "criticidad": "core", "justificacion": "Gestión técnica de transferencias cross-border con controles por destino"},
-        {"sigla": "DPE", "criticidad": "core", "justificacion": "Cifrado obligatorio en tránsito internacional"},
-        {"sigla": "DAM", "criticidad": "essential", "justificacion": "Monitoreo de movimientos de datos que cruzan fronteras"},
-        {"sigla": "GRC", "criticidad": "essential", "justificacion": "Validación de cumplimiento del país destino, gestión de garantías"},
-        {"sigla": "DDC", "criticidad": "complementary", "justificacion": "Identificar qué datos están siendo transferidos internacionalmente"}
+        {"sigla": "ETL/API", "criticidad": "core", "justificacion": "APIs y mecanismos seguros para transferencia cross-border"},
+        {"sigla": "ENC/TOK", "criticidad": "core", "justificacion": "Cifrado obligatorio para transferencias internacionales"},
+        {"sigla": "GRC", "criticidad": "esencial", "justificacion": "Verificar nivel de protección del país destino"},
+        {"sigla": "DAM", "criticidad": "esencial", "justificacion": "Registro detallado de cada transferencia internacional"},
+        {"sigla": "SIEM", "criticidad": "esencial", "justificacion": "Detección de exfiltración de datos en transferencias cross-border"},
+        {"sigla": "DLP/DCS", "criticidad": "complementaria", "justificacion": "Identificar qué datos son objeto de transferencia"}
       ],
       "controles": {
         "iso27001": ["A.8.24", "A.5.20", "A.8.15", "A.8.16"],
@@ -309,15 +308,16 @@
       "textoCompleto": "<p>Los responsables de datos podrán voluntariamente adoptar un modelo de prevención de infracciones consistente en un programa de cumplimiento.</p><p><strong>El programa de cumplimiento deberá contener:</strong></p><p>a) La designación de un delegado de protección de datos personales.</p><p>b) La definición de medios y facultades del delegado.</p><p>c) La identificación del tipo de información que la entidad trata, el ámbito territorial, las categorías y clases de datos, y la caracterización de los titulares.</p><p>d) La identificación de las actividades o procesos en cuyo contexto se genere o incremente el riesgo de infracciones.</p><p>e) El establecimiento de protocolos, reglas y procedimientos específicos que permitan prevenir infracciones.</p><p>f) Los mecanismos de reporte interno sobre cumplimiento y mecanismos de reporte a la autoridad (Art. 14 sexies).</p><p>g) La existencia de sanciones administrativas internas y procedimientos de denuncia.</p><p>La regulación interna deberá ser incorporada en los contratos de trabajo o en el reglamento interno de la empresa.</p>",
       "capacidades": [
         {"sigla": "GRC", "criticidad": "core", "justificacion": "Plataforma para gestionar programa de cumplimiento completo"},
-        {"sigla": "DDC", "criticidad": "essential", "justificacion": "Inventario y caracterización de datos tratados (letra c)"},
-        {"sigla": "DAM", "criticidad": "essential", "justificacion": "Identificación de riesgos y monitoreo de actividades (letra d)"},
-        {"sigla": "DRD", "criticidad": "essential", "justificacion": "Gestión de retención según políticas del programa"},
-        {"sigla": "WFA", "criticidad": "complementary", "justificacion": "Workflows para reporte interno y sanciones (letras f y g)"},
-        {"sigla": "CDM", "criticidad": "complementary", "justificacion": "Documentación de políticas, procedimientos y evidencias"}
+        {"sigla": "DLP/DCS", "criticidad": "esencial", "justificacion": "Inventario y caracterización de datos tratados (letra c)"},
+        {"sigla": "DAM", "criticidad": "esencial", "justificacion": "Identificación de riesgos y monitoreo de actividades (letra d)"},
+        {"sigla": "RET/DEL", "criticidad": "esencial", "justificacion": "Gestión de retención según políticas del programa"},
+        {"sigla": "SIEM", "criticidad": "esencial", "justificacion": "Generación de reportes de cumplimiento y detección de riesgos para la Agencia"},
+        {"sigla": "PRM", "criticidad": "complementaria", "justificacion": "Workflows para reporte interno y sanciones (letras f y g)"},
+        {"sigla": "ECM", "criticidad": "complementaria", "justificacion": "Documentación de políticas, procedimientos y evidencias"}
       ],
       "controles": {
         "iso27001": ["A.5.1", "A.5.2", "A.5.9", "6.1.2", "A.6.8", "A.6.4"],
-        "iso27701": ["5.2.1", "5.4.2", "7.4.1", "5.4.1.2", "7.3.4"],
+        "iso27701": ["5.2.1", "5.4.2", "7.4.1", "5.4.1.2"],
         "nist": ["PM-1", "PM-2", "CM-8", "RA-3", "IR-6", "PS-8"]
       }
     }
