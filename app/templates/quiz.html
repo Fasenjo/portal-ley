@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz de Madurez{% endblock %}
+
+{% block head %}
+<!-- Chart.js para gráfico radar -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<!-- jsPDF + html2canvas para exportación PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECCIÓN 1: BIENVENIDA
+     ═══════════════════════════════════════════════════════════ -->
+<section id="quiz-welcome" class="quiz-welcome">
+    <div class="quiz-welcome__container">
+        <header class="page-header">
+            <div class="page-header__container">
+                <h1 class="page-header__title">Evaluación de Madurez en Protección de Datos Personales</h1>
+                <p class="page-header__subtitle">
+                    Cuestionario de autoevaluación alineado con la Ley 21.719 de Chile
+                </p>
+            </div>
+        </header>
+
+        <div class="quiz-welcome__body">
+            <div class="quiz-welcome__info">
+                <p class="quiz-welcome__desc">
+                    Esta evaluación mide el nivel de madurez de su organización en 
+                    <strong>6 capacidades clave</strong> de protección de datos personales, 
+                    a través de <strong>26 preguntas</strong> organizadas en 6 bloques temáticos.
+                </p>
+                <div class="quiz-welcome__meta">
+                    <span class="quiz-welcome__meta-item">
+                        <strong>Tiempo estimado:</strong> ~10 minutos
+                    </span>
+                    <span class="quiz-welcome__meta-item">
+                        <strong>Preguntas:</strong> 26
+                    </span>
+                    <span class="quiz-welcome__meta-item">
+                        <strong>Bloques:</strong> 6
+                    </span>
+                </div>
+            </div>
+
+            <!-- Resumen de las 6 CAPs -->
+            <div class="quiz-welcome__caps" id="quiz-caps-preview">
+                <!-- Se renderiza dinámicamente desde quiz.js -->
+            </div>
+
+            <div class="quiz-welcome__actions">
+                <button class="btn btn--primary btn--lg" id="btn-comenzar" disabled>
+                    Comenzar evaluación
+                </button>
+                <p class="quiz-welcome__note">
+                    Sus respuestas no se almacenan. Al finalizar podrá exportar los resultados en PDF.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECCIÓN 2: WIZARD (oculta por defecto)
+     ═══════════════════════════════════════════════════════════ -->
+<section id="quiz-wizard" class="quiz-wizard" hidden>
+    <div class="quiz-wizard__container">
+
+        <!-- Barra de progreso -->
+        <div class="quiz-progress" role="navigation" aria-label="Progreso del cuestionario">
+            <ol class="quiz-progress__steps" id="quiz-progress-steps">
+                <!-- Se renderiza dinámicamente: 6 pasos -->
+            </ol>
+            <div class="quiz-progress__bar">
+                <div class="quiz-progress__fill" id="quiz-progress-fill" 
+                     role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 0%">
+                </div>
+            </div>
+            <p class="quiz-progress__text" id="quiz-progress-text">Paso 1 de 6</p>
+        </div>
+
+        <!-- Título del bloque -->
+        <h2 class="quiz-wizard__title" id="quiz-block-title">
+            <!-- Se actualiza dinámicamente -->
+        </h2>
+
+        <!-- Contenedor de preguntas -->
+        <div class="quiz-questions" id="quiz-questions">
+            <!-- Se renderiza dinámicamente -->
+        </div>
+
+        <!-- Navegación -->
+        <div class="quiz-wizard__nav">
+            <button class="btn btn--secondary" id="btn-anterior" hidden>
+                Anterior
+            </button>
+            <div class="quiz-wizard__nav-spacer"></div>
+            <button class="btn btn--primary" id="btn-siguiente" disabled>
+                Siguiente
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECCIÓN 3: RESULTADOS (oculta por defecto)
+     ═══════════════════════════════════════════════════════════ -->
+<section id="quiz-results" class="quiz-results" hidden>
+    <div class="quiz-results__container">
+
+        <header class="quiz-results__header">
+            <h2 class="quiz-results__title">Resultados de la Evaluación</h2>
+            <p class="quiz-results__date" id="quiz-results-date"></p>
+        </header>
+
+        <!-- Puntuación global -->
+        <div class="quiz-global" id="quiz-global">
+            <div class="quiz-global__score">
+                <span class="quiz-global__number" id="quiz-global-number">--</span>
+                <span class="quiz-global__percent">%</span>
+            </div>
+            <div class="quiz-global__level" id="quiz-global-level">--</div>
+            <p class="quiz-global__recommendation" id="quiz-global-recommendation"></p>
+        </div>
+
+        <!-- Gráfico radar -->
+        <div class="quiz-radar">
+            <canvas id="quiz-radar-chart" width="400" height="400"></canvas>
+        </div>
+
+        <!-- Detalle por CAP -->
+        <div class="quiz-caps-detail" id="quiz-caps-detail">
+            <!-- Se renderiza dinámicamente: 6 cards -->
+        </div>
+
+        <!-- Acciones -->
+        <div class="quiz-results__actions">
+            <button class="btn btn--primary" id="btn-exportar-pdf">
+                Exportar PDF
+            </button>
+            <button class="btn btn--secondary" id="btn-reiniciar">
+                Reiniciar evaluación
+            </button>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+{% endblock %}

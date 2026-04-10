@@ -1,0 +1,399 @@
+{
+  "meta": {
+    "titulo": "Evaluación de Madurez en Protección de Datos Personales",
+    "descripcion": "Cuestionario de autoevaluación alineado con la Ley 21.719 de Chile",
+    "version": "1.0",
+    "tiempoEstimado": "10 minutos",
+    "totalPreguntas": 26
+  },
+
+  "escala": [
+    { "valor": 0, "etiqueta": "No implementado / No evaluado", "descripcion": "La organización no ha abordado este aspecto" },
+    { "valor": 1, "etiqueta": "Planificado / En diseño", "descripcion": "Existe un plan pero no se ha ejecutado" },
+    { "valor": 2, "etiqueta": "Parcialmente implementado", "descripcion": "Implementación en curso, no completa" },
+    { "valor": 3, "etiqueta": "Implementado y operativo", "descripcion": "Funcionando en producción" },
+    { "valor": 4, "etiqueta": "Optimizado y revisado periódicamente", "descripcion": "Implementado con mejora continua" }
+  ],
+
+  "capacidades": [
+    {
+      "id": "CAP1",
+      "nombre": "Descubrimiento, Clasificación y Gobierno de Datos",
+      "nombreCorto": "Descubrimiento y Gobierno",
+      "pesoGlobal": 16.67,
+      "sumaPesos": 415,
+      "divisor": 4.15,
+      "tecnologiasRelacionadas": ["DLP/DCS", "DGV"]
+    },
+    {
+      "id": "CAP2",
+      "nombre": "Protección y Seguridad de Datos",
+      "nombreCorto": "Protección y Seguridad",
+      "pesoGlobal": 16.67,
+      "sumaPesos": 505,
+      "divisor": 5.05,
+      "tecnologiasRelacionadas": ["ENC/TOK", "DAM", "SIEM", "DLP/DCS"]
+    },
+    {
+      "id": "CAP3",
+      "nombre": "Gestión de Identidad, Acceso y Consentimiento",
+      "nombreCorto": "Identidad y Consentimiento",
+      "pesoGlobal": 16.67,
+      "sumaPesos": 330,
+      "divisor": 3.30,
+      "tecnologiasRelacionadas": ["IAM", "PRM"]
+    },
+    {
+      "id": "CAP4",
+      "nombre": "Gobernanza, Riesgo y Cumplimiento (GRC)",
+      "nombreCorto": "GRC",
+      "pesoGlobal": 16.67,
+      "sumaPesos": 745,
+      "divisor": 7.45,
+      "tecnologiasRelacionadas": ["GRC", "ECM"]
+    },
+    {
+      "id": "CAP5",
+      "nombre": "Gestión de Derechos del Titular (ARCOP)",
+      "nombreCorto": "Derechos ARCOP",
+      "pesoGlobal": 16.67,
+      "sumaPesos": 335,
+      "divisor": 3.35,
+      "tecnologiasRelacionadas": ["PRM", "RET/DEL", "ETL/API"]
+    },
+    {
+      "id": "CAP6",
+      "nombre": "Resiliencia y Recuperación de Datos",
+      "nombreCorto": "Resiliencia y Recuperación",
+      "pesoGlobal": 16.67,
+      "sumaPesos": 270,
+      "divisor": 2.70,
+      "tecnologiasRelacionadas": ["RET/DEL", "SIEM", "ETL/API"]
+    }
+  ],
+
+  "bloques": [
+    {
+      "id": "B1",
+      "nombre": "Inventario y Gestión del Ciclo de Vida de Datos",
+      "preguntas": ["B1Q1", "B1Q2", "B1Q3", "B1Q4"]
+    },
+    {
+      "id": "B2",
+      "nombre": "Seguridad y Protección Técnica",
+      "preguntas": ["B2Q1", "B2Q2", "B2Q3", "B2Q4", "B2Q5"]
+    },
+    {
+      "id": "B3",
+      "nombre": "Gestión de Consentimiento e Identidad",
+      "preguntas": ["B3Q1", "B3Q2", "B3Q3", "B3Q4", "B3Q5"]
+    },
+    {
+      "id": "B4",
+      "nombre": "Gobernanza y Cumplimiento",
+      "preguntas": ["B4Q1", "B4Q2", "B4Q3", "B4Q4"]
+    },
+    {
+      "id": "B5",
+      "nombre": "Derechos del Titular",
+      "preguntas": ["B5Q1", "B5Q2", "B5Q3"]
+    },
+    {
+      "id": "B6",
+      "nombre": "Resiliencia, Continuidad y Transferencia",
+      "preguntas": ["B6Q1", "B6Q2", "B6Q3", "B6Q4", "B6Q5"]
+    }
+  ],
+
+  "preguntas": [
+    {
+      "id": "B1Q1",
+      "bloque": "B1",
+      "texto": "¿En qué medida su organización ha implementado un inventario de activos de información que identifique dónde se almacenan datos personales, su clasificación según sensibilidad, y los flujos de datos entre sistemas?",
+      "contribuciones": [
+        { "cap": "CAP1", "peso": 60 },
+        { "cap": "CAP4", "peso": 25 },
+        { "cap": "CAP5", "peso": 15 }
+      ]
+    },
+    {
+      "id": "B1Q2",
+      "bloque": "B1",
+      "texto": "¿Cómo gestiona su organización el ciclo de vida completo de los datos personales desde su recolección hasta su eliminación, incluyendo la documentación de propósito y base legal para cada tratamiento?",
+      "contribuciones": [
+        { "cap": "CAP1", "peso": 40 },
+        { "cap": "CAP4", "peso": 30 },
+        { "cap": "CAP5", "peso": 20 },
+        { "cap": "CAP6", "peso": 10 }
+      ]
+    },
+    {
+      "id": "B1Q3",
+      "bloque": "B1",
+      "texto": "¿En qué grado sus sistemas pueden identificar, etiquetar y rastrear automáticamente datos sensibles (salud, biométricos, origen étnico, etc.) a través de todos sus repositorios?",
+      "contribuciones": [
+        { "cap": "CAP1", "peso": 50 },
+        { "cap": "CAP2", "peso": 40 },
+        { "cap": "CAP4", "peso": 10 }
+      ]
+    },
+    {
+      "id": "B1Q4",
+      "bloque": "B1",
+      "texto": "¿Cómo define y aplica su organización plazos máximos de retención, políticas de eliminación y procesos de anonimización para los datos personales que trata?",
+      "contribuciones": [
+        { "cap": "CAP1", "peso": 50 },
+        { "cap": "CAP5", "peso": 30 },
+        { "cap": "CAP6", "peso": 20 }
+      ]
+    },
+    {
+      "id": "B2Q1",
+      "bloque": "B2",
+      "texto": "¿Qué nivel de controles de seguridad técnica ha implementado para proteger datos personales (cifrado, enmascaramiento, tokenización, control de acceso, etc.) según su clasificación de sensibilidad?",
+      "contribuciones": [
+        { "cap": "CAP1", "peso": 10 },
+        { "cap": "CAP2", "peso": 70 },
+        { "cap": "CAP3", "peso": 20 }
+      ]
+    },
+    {
+      "id": "B2Q2",
+      "bloque": "B2",
+      "texto": "¿Cómo evalúa y mitiga su organización los riesgos de seguridad para datos personales antes de implementar nuevos tratamientos o sistemas?",
+      "contribuciones": [
+        { "cap": "CAP1", "peso": 20 },
+        { "cap": "CAP2", "peso": 40 },
+        { "cap": "CAP4", "peso": 40 }
+      ]
+    },
+    {
+      "id": "B2Q3",
+      "bloque": "B2",
+      "texto": "¿En qué medida sus sistemas pueden detectar, responder y reportar incidentes de seguridad que afecten datos personales?",
+      "contribuciones": [
+        { "cap": "CAP2", "peso": 50 },
+        { "cap": "CAP4", "peso": 30 },
+        { "cap": "CAP6", "peso": 20 }
+      ]
+    },
+    {
+      "id": "B2Q4",
+      "bloque": "B2",
+      "texto": "¿Qué controles ha implementado su organización sobre decisiones automatizadas o elaboración de perfiles que producen efectos jurídicos en los titulares?",
+      "contribuciones": [
+        { "cap": "CAP2", "peso": 30 },
+        { "cap": "CAP3", "peso": 30 },
+        { "cap": "CAP4", "peso": 40 }
+      ]
+    },
+    {
+      "id": "B2Q5",
+      "bloque": "B2",
+      "texto": "¿Cómo asegura su organización la notificación oportuna y completa de vulneraciones de seguridad a la Agencia y a los titulares afectados?",
+      "contribuciones": [
+        { "cap": "CAP2", "peso": 40 },
+        { "cap": "CAP4", "peso": 30 },
+        { "cap": "CAP6", "peso": 30 }
+      ]
+    },
+    {
+      "id": "B3Q1",
+      "bloque": "B3",
+      "texto": "¿Cómo gestiona su organización la obtención, registro, demostración y revocación del consentimiento para todos los tratamientos de datos personales?",
+      "contribuciones": [
+        { "cap": "CAP3", "peso": 60 },
+        { "cap": "CAP4", "peso": 10 },
+        { "cap": "CAP5", "peso": 30 }
+      ]
+    },
+    {
+      "id": "B3Q2",
+      "bloque": "B3",
+      "texto": "¿En qué medida sus controles de acceso a datos personales implementan el principio de mínimo privilegio y mantienen registros de auditoría de todos los accesos y acciones sobre datos personales sensibles?",
+      "contribuciones": [
+        { "cap": "CAP2", "peso": 40 },
+        { "cap": "CAP3", "peso": 50 },
+        { "cap": "CAP4", "peso": 10 }
+      ]
+    },
+    {
+      "id": "B3Q3",
+      "bloque": "B3",
+      "texto": "¿Cómo asegura que solo personal autorizado y capacitado pueda acceder a datos personales sensibles, especialmente datos biométricos o de salud?",
+      "contribuciones": [
+        { "cap": "CAP2", "peso": 40 },
+        { "cap": "CAP3", "peso": 40 },
+        { "cap": "CAP4", "peso": 20 }
+      ]
+    },
+    {
+      "id": "B3Q4",
+      "bloque": "B3",
+      "texto": "¿En qué medida su organización identifica, documenta y revisa periódicamente las bases de licitud distintas del consentimiento (ej. contrato, obligación legal, interés legítimo) para sus tratamientos de datos personales?",
+      "contribuciones": [
+        { "cap": "CAP1", "peso": 20 },
+        { "cap": "CAP3", "peso": 30 },
+        { "cap": "CAP4", "peso": 50 }
+      ]
+    },
+    {
+      "id": "B3Q5",
+      "bloque": "B3",
+      "texto": "¿Qué medidas y controles específicos aplica su organización para el tratamiento de datos personales de niños, niñas y adolescentes?",
+      "contribuciones": [
+        { "cap": "CAP2", "peso": 20 },
+        { "cap": "CAP3", "peso": 50 },
+        { "cap": "CAP4", "peso": 30 }
+      ]
+    },
+    {
+      "id": "B4Q1",
+      "bloque": "B4",
+      "texto": "¿Cómo gestiona su organización la evaluación, contratación y supervisión de encargados o terceros mandatarios que tratan datos personales en su nombre?",
+      "contribuciones": [
+        { "cap": "CAP1", "peso": 20 },
+        { "cap": "CAP4", "peso": 70 },
+        { "cap": "CAP5", "peso": 10 }
+      ]
+    },
+    {
+      "id": "B4Q2",
+      "bloque": "B4",
+      "texto": "¿Qué nivel de formalización tienen sus políticas y procedimientos de protección de datos, y cómo se comunican e integran con otras políticas organizacionales?",
+      "contribuciones": [
+        { "cap": "CAP3", "peso": 20 },
+        { "cap": "CAP4", "peso": 80 }
+      ]
+    },
+    {
+      "id": "B4Q3",
+      "bloque": "B4",
+      "texto": "¿En qué medida su organización ha implementado un modelo de prevención de infracciones a la Ley de Protección de Datos con roles definidos (ej: Delegado de Protección)?",
+      "contribuciones": [
+        { "cap": "CAP1", "peso": 25 },
+        { "cap": "CAP2", "peso": 15 },
+        { "cap": "CAP4", "peso": 60 }
+      ]
+    },
+    {
+      "id": "B4Q4",
+      "bloque": "B4",
+      "texto": "¿Cómo lleva a cabo y documenta las evaluaciones de impacto en protección de datos para tratamientos de alto riesgo?",
+      "contribuciones": [
+        { "cap": "CAP2", "peso": 20 },
+        { "cap": "CAP4", "peso": 60 },
+        { "cap": "CAP6", "peso": 20 }
+      ]
+    },
+    {
+      "id": "B5Q1",
+      "bloque": "B5",
+      "texto": "¿Qué tan eficientes y automatizados son sus procedimientos para responder a solicitudes de derechos ARCOP (acceso, rectificación, cancelación, oposición, portabilidad)?",
+      "contribuciones": [
+        { "cap": "CAP1", "peso": 30 },
+        { "cap": "CAP5", "peso": 60 },
+        { "cap": "CAP6", "peso": 10 }
+      ]
+    },
+    {
+      "id": "B5Q2",
+      "bloque": "B5",
+      "texto": "¿En qué medida sus sistemas pueden localizar, extraer, modificar o eliminar todos los datos de un titular específico a través de múltiples sistemas, incluidas copias de seguridad?",
+      "contribuciones": [
+        { "cap": "CAP1", "peso": 30 },
+        { "cap": "CAP5", "peso": 40 },
+        { "cap": "CAP6", "peso": 30 }
+      ]
+    },
+    {
+      "id": "B5Q3",
+      "bloque": "B5",
+      "texto": "¿Cómo registra, supervisa y mejora el cumplimiento de plazos legales para responder solicitudes de titulares (máximo 30 días)?",
+      "contribuciones": [
+        { "cap": "CAP4", "peso": 30 },
+        { "cap": "CAP5", "peso": 70 }
+      ]
+    },
+    {
+      "id": "B6Q1",
+      "bloque": "B6",
+      "texto": "¿Cómo garantiza la disponibilidad y rápida recuperación de los datos personales tras incidentes, manteniendo la integridad y seguridad?",
+      "contribuciones": [
+        { "cap": "CAP2", "peso": 30 },
+        { "cap": "CAP6", "peso": 70 }
+      ]
+    },
+    {
+      "id": "B6Q2",
+      "bloque": "B6",
+      "texto": "¿En qué medida sus procesos de eliminación de datos incluyen todos los sistemas, copias de seguridad y entornos de recuperación?",
+      "contribuciones": [
+        { "cap": "CAP1", "peso": 30 },
+        { "cap": "CAP5", "peso": 30 },
+        { "cap": "CAP6", "peso": 40 }
+      ]
+    },
+    {
+      "id": "B6Q3",
+      "bloque": "B6",
+      "texto": "¿Cómo asegura que las transferencias internacionales de datos personales cumplan con los requisitos legales de protección adecuada?",
+      "contribuciones": [
+        { "cap": "CAP2", "peso": 40 },
+        { "cap": "CAP4", "peso": 40 },
+        { "cap": "CAP6", "peso": 20 }
+      ]
+    },
+    {
+      "id": "B6Q4",
+      "bloque": "B6",
+      "texto": "¿En qué grado la protección de datos está integrada en sus procesos de desarrollo e implementación de nuevos proyectos, productos o servicios?",
+      "contribuciones": [
+        { "cap": "CAP1", "peso": 30 },
+        { "cap": "CAP2", "peso": 30 },
+        { "cap": "CAP4", "peso": 40 }
+      ]
+    },
+    {
+      "id": "B6Q5",
+      "bloque": "B6",
+      "texto": "¿Qué nivel de concientización y capacitación sobre protección de datos personales tienen sus empleados según sus roles y responsabilidades?",
+      "contribuciones": [
+        { "cap": "CAP3", "peso": 30 },
+        { "cap": "CAP4", "peso": 40 },
+        { "cap": "CAP5", "peso": 30 }
+      ]
+    }
+  ],
+
+  "rangos": [
+    {
+      "min": 0,
+      "max": 25,
+      "nivel": "Crítico",
+      "color": "#e74c3c",
+      "recomendacion": "La organización presenta brechas significativas en protección de datos personales. Se recomienda priorizar la implementación de controles básicos y establecer un plan de acción urgente antes de la entrada en vigencia de la ley (1 de diciembre de 2026)."
+    },
+    {
+      "min": 26,
+      "max": 50,
+      "nivel": "En desarrollo",
+      "color": "#f39c12",
+      "recomendacion": "Existen avances parciales pero insuficientes para cumplir con la Ley 21.719. Se requiere acelerar la implementación de las capacidades faltantes y formalizar los procesos existentes."
+    },
+    {
+      "min": 51,
+      "max": 75,
+      "nivel": "Avanzado",
+      "color": "#f1c40f",
+      "recomendacion": "La organización tiene una base sólida de cumplimiento. Se recomienda completar las implementaciones pendientes, formalizar la documentación y establecer ciclos de revisión periódica."
+    },
+    {
+      "min": 76,
+      "max": 100,
+      "nivel": "Óptimo",
+      "color": "#27ae60",
+      "recomendacion": "Alto nivel de madurez en protección de datos. Se recomienda mantener los procesos de mejora continua, realizar auditorías periódicas y monitorear cambios regulatorios."
+    }
+  ]
+}

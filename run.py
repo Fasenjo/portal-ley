@@ -51,6 +51,10 @@ def recursos():
     """Resources view"""
     return render_template('recursos.html', active_page='recursos')
 
+@app.route('/quiz')
+def quiz():
+    """Quiz de madurez en protección de datos"""
+    return render_template('quiz.html', active_page='quiz')
 
 # =========================================
 # Static data endpoint
