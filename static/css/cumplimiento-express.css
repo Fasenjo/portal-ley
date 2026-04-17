@@ -119,13 +119,13 @@
    ───────────────────────────────────────── */
 
 .express-detail {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  min-height: 320px;
-  display: grid;
-  grid-template-columns: 300px 1fr;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    min-height: 320px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
 }
 
 @media (max-width: 768px) {
@@ -367,6 +367,16 @@
   background-color: var(--color-complementary);
 }
 
+/* Variante: leyenda entre grid y panel de detalle */
+.express-legend--middle {
+    border-top: none;
+    border-bottom: none;
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-2xl);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 /* ─────────────────────────────────────────
    RESPONSIVE
    ───────────────────────────────────────── */
@@ -386,4 +396,87 @@
   .express-cards {
     grid-template-columns: 1fr;
   }
+}
+
+/* ─────────────────────────────────────────
+   FONDO SECUNDARIO EN SECCIÓN "Qué es esta guía"
+   (solo en la home, recupera separación visual
+   que antes daba la sección "stats")
+   ───────────────────────────────────────── */
+
+.intro {
+    background-color: var(--bg-secondary);
+}
+
+/* ─────────────────────────────────────────
+   VISTA RÁPIDA: Chips horizontales con nombre completo
+   (capacidades fluyen left→right y hacen wrap)
+   ───────────────────────────────────────── */
+
+.caps-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.cap-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    border: 1px solid transparent;
+}
+
+.cap-chip:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.cap-chip--core {
+    background-color: var(--color-core-bg);
+    color: var(--color-core);
+    border-color: var(--color-core);
+}
+
+.cap-chip--esencial {
+    background-color: var(--color-essential-bg);
+    color: var(--color-essential);
+    border-color: var(--color-essential);
+}
+
+.cap-chip--complementaria {
+    background-color: var(--color-complementary-bg);
+    color: var(--color-complementary);
+    border-color: var(--color-complementary);
+}
+
+/* ─────────────────────────────────────────
+   JUSTIFICACIÓN: expandida con vendors
+   ───────────────────────────────────────── */
+
+.cap-justificacion {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 5;
+    min-height: calc(var(--line-height-relaxed) * var(--font-size-xs) * 3);
+}
+
+.cap-justificacion__vendors {
+    display: inline;
+    color: var(--text-muted);
+    font-style: normal;
+}
+
+.cap-justificacion__vendors em {
+    color: var(--text-secondary);
+    font-style: normal;
+    font-weight: 500;
 }

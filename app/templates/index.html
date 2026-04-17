@@ -42,7 +42,9 @@
     </div>
 </section>
 
-<!-- Quick Stats -->
+{# Sección "Estadísticas" (stats) ocultada temporalmente.
+   Para reactivarla, descomenta este bloque completo. #}
+{#
 <section class="stats" aria-labelledby="stats-title">
     <h2 id="stats-title" class="visually-hidden">Estadísticas del contenido</h2>
     <div class="stats__container">
@@ -63,12 +65,13 @@
         </article>
     </div>
 </section>
+#}
 
 <!-- Intro -->
 <section class="intro" aria-labelledby="intro-title">
     <div class="intro__container">
         <div class="intro__about">
-            <h2 id="intro-title" class="intro__heading">Qué es esta guía</h2>
+            <h2 id="intro-title" class="intro__heading">¿Qué es esta Guía?</h2>
             <p class="intro__text">
                 Una herramienta para entender los requisitos de la Ley N° 21.719 de Protección de Datos Personales 
                 y las capacidades tecnológicas necesarias para cumplir con sus obligaciones.
@@ -78,7 +81,16 @@
                 que indican su importancia para el cumplimiento, junto con referencias a controles internacionales 
                 ISO 27001, ISO 27701 y NIST SP 800-53.
             </p>
+            <p class="intro__text">
+                Usa la <a href="#vista-rapida"><strong>Vista Rápida</strong></a> a continuación para seleccionar 
+                cualquier artículo de la ley y ver de inmediato qué capacidades tecnológicas requiere, con qué nivel 
+                de criticidad, y ejemplos concretos de productos que las implementan.
+            </p>
             <div class="intro__actions">
+                <a href="#vista-rapida" class="btn btn--primary">
+                    Ir a Vista Rápida
+                    <span aria-hidden="true">↓</span>
+                </a>
                 <a href="{{ url_for('articulos') }}" class="btn btn--secondary">Ver Artículos</a>
                 <a href="{{ url_for('matriz') }}" class="btn btn--ghost">Ver Matriz</a>
             </div>
@@ -112,235 +124,122 @@
         </div>
     </div>
 </section>
-<!-- ═══════════════════════════════════════════════════════════════════════
-     SECCIÓN: Cumplimiento Express
-     Insertar DESPUÉS de la sección "intro" y ANTES de "categories-preview"
-     ═══════════════════════════════════════════════════════════════════════ -->
 
-<!-- Cumplimiento Express -->
-<section class="cumplimiento-express" aria-labelledby="express-title">
+<!-- Vista Rápida -->
+<section id="vista-rapida" class="cumplimiento-express" aria-labelledby="express-title">
     <div class="cumplimiento-express__container">
+
+        <!-- Header -->
         <header class="cumplimiento-express__header">
-            <h2 id="express-title" class="cumplimiento-express__title">Cumplimiento Express</h2>
+            <h2 id="express-title" class="cumplimiento-express__title">
+                Vista Rápida
+            </h2>
             <p class="cumplimiento-express__subtitle">
-                Selecciona un artículo para ver qué capacidades tecnológicas necesitas
+                Selecciona un artículo de la ley para ver qué capacidades tecnológicas necesitas para cumplirlo
             </p>
         </header>
-        
-        <!-- Grid de tarjetas mini -->
+
         <div class="express-cards" role="listbox" aria-label="Artículos de la ley">
+
             <!-- Principios -->
-            <article class="express-card" data-article="art3" tabindex="0" role="option">
+            <article class="express-card" data-article="art3" tabindex="0" role="option" aria-selected="false">
                 <span class="express-card__num">Art. 3</span>
                 <span class="express-card__title">Principios Generales</span>
-                <div class="express-card__dots">
-                    <span class="express-card__dot express-card__dot--core" title="Core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                </div>
+                <div class="express-card__dots"></div>
             </article>
-            
+
             <!-- Derechos ARCOP -->
-            <article class="express-card" data-article="art5" tabindex="0" role="option">
+            <article class="express-card" data-article="art5" tabindex="0" role="option" aria-selected="false">
                 <span class="express-card__num">Art. 5</span>
                 <span class="express-card__title">Derecho de Acceso</span>
-                <div class="express-card__dots">
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                </div>
+                <div class="express-card__dots"></div>
             </article>
-            
-            <article class="express-card" data-article="art6" tabindex="0" role="option">
+
+            <article class="express-card" data-article="art6" tabindex="0" role="option" aria-selected="false">
                 <span class="express-card__num">Art. 6</span>
-                <span class="express-card__title">Rectificación</span>
-                <div class="express-card__dots">
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                </div>
+                <span class="express-card__title">Derecho de Rectificación</span>
+                <div class="express-card__dots"></div>
             </article>
-            
-            <article class="express-card" data-article="art7" tabindex="0" role="option">
+
+            <article class="express-card" data-article="art7" tabindex="0" role="option" aria-selected="false">
                 <span class="express-card__num">Art. 7</span>
-                <span class="express-card__title">Supresión</span>
-                <div class="express-card__dots">
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                </div>
+                <span class="express-card__title">Derecho de Supresión</span>
+                <div class="express-card__dots"></div>
             </article>
-            
-            <article class="express-card" data-article="art8" tabindex="0" role="option">
+
+            <article class="express-card" data-article="art8" tabindex="0" role="option" aria-selected="false">
                 <span class="express-card__num">Art. 8</span>
-                <span class="express-card__title">Oposición</span>
-                <div class="express-card__dots">
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                </div>
+                <span class="express-card__title">Derecho de Oposición</span>
+                <div class="express-card__dots"></div>
             </article>
-            
-            <article class="express-card" data-article="art9" tabindex="0" role="option">
-                <span class="express-card__num">Art. 9</span>
-                <span class="express-card__title">Portabilidad</span>
-                <div class="express-card__dots">
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                </div>
-            </article>
-            
-            <!-- Procedimientos -->
-            <article class="express-card" data-article="art10" tabindex="0" role="option">
-                <span class="express-card__num">Art. 10</span>
-                <span class="express-card__title">Forma de Ejercicio</span>
-                <div class="express-card__dots">
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                </div>
-            </article>
-            
-            <article class="express-card" data-article="art11" tabindex="0" role="option">
-                <span class="express-card__num">Art. 11</span>
-                <span class="express-card__title">Procedimiento</span>
-                <div class="express-card__dots">
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                </div>
-            </article>
-            
-            <article class="express-card" data-article="art12" tabindex="0" role="option">
-                <span class="express-card__num">Art. 12</span>
-                <span class="express-card__title">Consentimiento</span>
-                <div class="express-card__dots">
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                </div>
-            </article>
-            
-            <!-- Obligaciones -->
-            <article class="express-card" data-article="art14" tabindex="0" role="option">
-                <span class="express-card__num">Art. 14</span>
-                <span class="express-card__title">Medidas de Seguridad</span>
-                <div class="express-card__dots">
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                </div>
-            </article>
-            
-            <article class="express-card" data-article="art15ter" tabindex="0" role="option">
-                <span class="express-card__num">Art. 15 ter</span>
-                <span class="express-card__title">DPO</span>
-                <div class="express-card__dots">
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                </div>
-            </article>
-            
-            <article class="express-card" data-article="art16" tabindex="0" role="option">
-                <span class="express-card__num">Art. 16</span>
-                <span class="express-card__title">Deber de Secreto</span>
-                <div class="express-card__dots">
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                </div>
-            </article>
-            
-            <!-- Transferencias y Compliance -->
-            <article class="express-card" data-article="art27" tabindex="0" role="option">
-                <span class="express-card__num">Art. 27/28</span>
-                <span class="express-card__title">Transfer. Internacional</span>
-                <div class="express-card__dots">
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                </div>
-            </article>
-            
-            <article class="express-card" data-article="art49" tabindex="0" role="option">
-                <span class="express-card__num">Art. 49</span>
-                <span class="express-card__title">Modelo Prevención</span>
-                <div class="express-card__dots">
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                </div>
-            </article>
-            
-            <!-- Decisiones automatizadas -->
-            <article class="express-card" data-article="art8bis" tabindex="0" role="option">
+
+            <article class="express-card" data-article="art8bis" tabindex="0" role="option" aria-selected="false">
                 <span class="express-card__num">Art. 8 bis</span>
                 <span class="express-card__title">Decisiones Automatizadas</span>
-                <div class="express-card__dots">
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--core"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--esencial"></span>
-                    <span class="express-card__dot express-card__dot--complementaria"></span>
-                </div>
+                <div class="express-card__dots"></div>
             </article>
+
+            <article class="express-card" data-article="art9" tabindex="0" role="option" aria-selected="false">
+                <span class="express-card__num">Art. 9</span>
+                <span class="express-card__title">Derecho de Portabilidad</span>
+                <div class="express-card__dots"></div>
+            </article>
+
+            <!-- Procedimientos -->
+            <article class="express-card" data-article="art10" tabindex="0" role="option" aria-selected="false">
+                <span class="express-card__num">Art. 10</span>
+                <span class="express-card__title">Forma y Medios de Ejercicio</span>
+                <div class="express-card__dots"></div>
+            </article>
+
+            <article class="express-card" data-article="art11" tabindex="0" role="option" aria-selected="false">
+                <span class="express-card__num">Art. 11</span>
+                <span class="express-card__title">Procedimiento y Plazos</span>
+                <div class="express-card__dots"></div>
+            </article>
+
+            <article class="express-card" data-article="art12" tabindex="0" role="option" aria-selected="false">
+                <span class="express-card__num">Art. 12</span>
+                <span class="express-card__title">Consentimiento</span>
+                <div class="express-card__dots"></div>
+            </article>
+
+            <!-- Obligaciones -->
+            <article class="express-card" data-article="art14" tabindex="0" role="option" aria-selected="false">
+                <span class="express-card__num">Art. 14-14sept</span>
+                <span class="express-card__title">Obligaciones y Seguridad</span>
+                <div class="express-card__dots"></div>
+            </article>
+
+            <article class="express-card" data-article="art15ter" tabindex="0" role="option" aria-selected="false">
+                <span class="express-card__num">Art. 15 ter</span>
+                <span class="express-card__title">Evaluación de Impacto (EIPDP)</span>
+                <div class="express-card__dots"></div>
+            </article>
+
+            <article class="express-card" data-article="art16" tabindex="0" role="option" aria-selected="false">
+                <span class="express-card__num">Art. 16</span>
+                <span class="express-card__title">Datos Personales Sensibles</span>
+                <div class="express-card__dots"></div>
+            </article>
+
+            <!-- Transferencias y Compliance -->
+            <article class="express-card" data-article="art27" tabindex="0" role="option" aria-selected="false">
+                <span class="express-card__num">Art. 27/28</span>
+                <span class="express-card__title">Transferencia Internacional</span>
+                <div class="express-card__dots"></div>
+            </article>
+
+            <article class="express-card" data-article="art49" tabindex="0" role="option" aria-selected="false">
+                <span class="express-card__num">Art. 49</span>
+                <span class="express-card__title">Modelo de Prevención</span>
+                <div class="express-card__dots"></div>
+            </article>
+
         </div>
-        
-        <!-- Panel de detalle -->
-        <div class="express-detail">
-            <!-- Panel izquierdo: Artículo -->
-            <div class="express-detail__left" id="express-left">
-                <div class="express-detail__placeholder">
-                    <span class="express-detail__placeholder-icon" aria-hidden="true">←</span>
-                    <span class="express-detail__placeholder-text">
-                        Selecciona un artículo para ver sus requisitos
-                    </span>
-                </div>
-            </div>
-            
-            <!-- Panel derecho: Capacidades (se llena dinámicamente) -->
-            <div class="express-detail__right" id="express-right">
-                <div class="express-detail__placeholder">
-                    <span class="express-detail__placeholder-text">
-                        Las capacidades requeridas aparecerán aquí
-                    </span>
-                    <span class="express-detail__placeholder-icon" aria-hidden="true">→</span>
-                </div>
-            </div>
-        </div>
-        
+
         <!-- Leyenda -->
-        <div class="express-legend">
+        <div class="express-legend express-legend--middle">
             <span class="express-legend__item">
                 <span class="express-legend__dot express-legend__dot--core"></span>
                 Core (imprescindible)
@@ -354,8 +253,32 @@
                 Complementaria (valor agregado)
             </span>
         </div>
+
+        <!-- Grid de tarjetas mini (15 artículos) -->
+
+        <!-- Panel de detalle (dos columnas) -->
+        <div class="express-detail">
+            <div class="express-detail__left" id="express-left">
+                <div class="express-detail__placeholder">
+                    <span class="express-detail__placeholder-icon" aria-hidden="true">←</span>
+                    <span class="express-detail__placeholder-text">
+                        Selecciona un artículo para ver sus requisitos
+                    </span>
+                </div>
+            </div>
+            <div class="express-detail__right" id="express-right">
+                <div class="express-detail__placeholder">
+                    <span class="express-detail__placeholder-text">
+                        Las capacidades requeridas aparecerán aquí
+                    </span>
+                    <span class="express-detail__placeholder-icon" aria-hidden="true">→</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
+
 <!-- Categorías preview -->
 <section class="categories-preview" aria-labelledby="categories-title">
     <div class="categories-preview__container">
