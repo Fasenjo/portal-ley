@@ -217,12 +217,17 @@
     }
 
     function updateCardStates(activeId) {
-        document.querySelectorAll('.express-card').forEach(function (card) {
-            var isActive = card.getAttribute('data-article') === activeId;
-            card.classList.toggle('express-card--active', isActive);
-            card.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        });
-    }
+    document.querySelectorAll('.express-card').forEach(function (card) {
+        var isActive = card.getAttribute('data-article') === activeId;
+        card.classList.toggle('express-card--active', isActive);
+        card.setAttribute('aria-selected', isActive ? 'true' : 'false');
+
+        // NUEVO: scrollear la tarjeta activa a la vista dentro del nav
+        if (isActive && card.scrollIntoView) {
+            card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        }
+    });
+}
 
     // ═══════════════════════════════════════
     // PANEL IZQUIERDO
@@ -278,47 +283,124 @@
                 }, i * 150);
             });
         });
+
+        // Enganchar clicks en chips para cambiar la justificación mostrada
+        bindChipClicks(article);
+
+    }
+
+    // ═══════════════════════════════════════
+    // INTERACCIÓN DE CHIPS (tabs dentro de cada sección)
+    // ═══════════════════════════════════════
+
+    function bindChipClicks(article) {
+        var sections = document.querySelectorAll('#express-right .reveal-section');
+
+        sections.forEach(function (section) {
+            var nivel = section.getAttribute('data-nivel');
+            var caps = (article.capacidades || []).filter(function (c) {
+                return c.criticidad === nivel;
+            });
+
+            var chips = section.querySelectorAll('.cap-chip');
+            var wrapper = section.querySelector('.cap-justificacion-wrapper');
+            if (!wrapper) return;
+
+            chips.forEach(function (chip) {
+                chip.addEventListener('click', function () {
+                    var idx = parseInt(this.getAttribute('data-idx'), 10);
+                    if (isNaN(idx) || !caps[idx]) return;
+
+                    // Si ya está activo, no hacer nada
+                    if (this.classList.contains('cap-chip--active')) return;
+
+                    // Actualizar estado visual de chips
+                    chips.forEach(function (c) {
+                        c.classList.remove('cap-chip--active');
+                        c.setAttribute('aria-selected', 'false');
+                    });
+                    this.classList.add('cap-chip--active');
+                    this.setAttribute('aria-selected', 'true');
+
+                    // Fade out → swap → fade in
+                    wrapper.classList.add('cap-justificacion-wrapper--fading');
+
+                    setTimeout(function () {
+                        wrapper.innerHTML = renderJustificacion(caps[idx], nivel);
+                        wrapper.classList.remove('cap-justificacion-wrapper--fading');
+                    }, 150);
+                });
+            });
+        });
     }
 
     function buildSection(title, subtitle, capacidades, nivel) {
-        var html = '<div class="reveal-section">';
+    var html = '<div class="reveal-section" data-nivel="' + nivel + '">';
 
-        // Chips horizontales: solo el nombre completo
-        html += '<div class="caps-chips">';
-        capacidades.forEach(function (cap) {
-            var nombreCompleto = getNombreCompleto(cap.sigla);
-            html += '<a href="/capacidades#' + getSiglaId(cap.sigla) + '" ' +
-                'class="cap-chip cap-chip--' + nivel + '" ' +
-                'title="' + escapeHTML(cap.sigla) + ' — ' + escapeHTML(cap.justificacion) + '">' +
-                escapeHTML(nombreCompleto) +
-                '</a>';
-        });
+    // Chips clickeables (no links): el primero inicia activo
+    html += '<div class="caps-chips" role="tablist">';
+    capacidades.forEach(function (cap, idx) {
+        var nombreCompleto = getNombreCompleto(cap.sigla);
+        var activeClass = idx === 0 ? ' cap-chip--active' : '';
+        var isSingle = capacidades.length === 1 ? ' cap-chip--single' : '';
+
+        html += '<button type="button" ' +
+            'class="cap-chip cap-chip--' + nivel + activeClass + isSingle + '" ' +
+            'role="tab" ' +
+            'aria-selected="' + (idx === 0 ? 'true' : 'false') + '" ' +
+            'data-sigla="' + escapeHTML(cap.sigla) + '" ' +
+            'data-idx="' + idx + '" ' +
+            'title="' + escapeHTML(cap.sigla) + '">' +
+            escapeHTML(nombreCompleto) +
+            '</button>';
+    });
+    html += '</div>';
+
+    // Contenedor de justificación — inicia con el primer elemento
+    if (capacidades.length > 0) {
+        html += '<div class="cap-justificacion-wrapper">';
+        html += renderJustificacion(capacidades[0], nivel);
+        html += '</div>';
+    }
+
+    html += '</div>';
+    return html;
+}
+
+/**
+ * Renderiza el contenido del bloque de justificación para una capacidad dada.
+ * Se separa de buildSection para poder reutilizarlo al cambiar de chip activo.
+ */
+    function renderJustificacion(cap, nivel) {
+        var nombreCompleto = getNombreCompleto(cap.sigla);
+        var vendors = getVendorsForSigla(cap.sigla);
+        var capId = getSiglaId(cap.sigla);
+
+        var html = '<div class="cap-justificacion cap-justificacion--' + nivel + '">';
+
+        // Header: nombre capacidad + link "Ver más →" (Opción C)
+        html += '<div class="cap-justificacion__header">';
+        html += '<strong class="cap-justificacion__name">' + escapeHTML(nombreCompleto) + ':</strong>';
+        html += '<a href="/capacidades#' + capId + '" class="cap-justificacion__more" ' +
+            'title="Ver capacidad completa">Ver más →</a>';
         html += '</div>';
 
-        // Justificación expandida + vendors del primer elemento
-        if (capacidades.length > 0) {
-            var first = capacidades[0];
-            var firstNombre = getNombreCompleto(first.sigla);
-            var vendors = getVendorsForSigla(first.sigla);
+        // Texto de justificación
+        html += '<div class="cap-justificacion__body">';
+        html += escapeHTML(cap.justificacion);
 
-            html += '<div class="cap-justificacion cap-justificacion--' + nivel + '">';
-            html += '<strong>' + escapeHTML(firstNombre) + ':</strong> ';
-            html += escapeHTML(first.justificacion);
-
-            // Agregar ejemplos de productos si existen
-            if (vendors.length > 0) {
-                html += '<span class="cap-justificacion__vendors">';
-                html += ' Ejemplos: ';
-                html += vendors.map(function (v) {
-                    return '<em>' + escapeHTML(v.producto) + '</em> (' + escapeHTML(v.vendor) + ')';
-                }).join(', ');
-                html += '.</span>';
-            }
-
-            html += '</div>';
+        // Ejemplos de productos
+        if (vendors.length > 0) {
+            html += '<span class="cap-justificacion__vendors">';
+            html += ' Ejemplos: ';
+            html += vendors.map(function (v) {
+                return '<em>' + escapeHTML(v.producto) + '</em> (' + escapeHTML(v.vendor) + ')';
+            }).join(', ');
+            html += '.</span>';
         }
 
-        html += '</div>';
+        html += '</div>'; // fin __body
+        html += '</div>'; // fin cap-justificacion
         return html;
     }
 

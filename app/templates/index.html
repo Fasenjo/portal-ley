@@ -129,135 +129,136 @@
 <section id="vista-rapida" class="cumplimiento-express" aria-labelledby="express-title">
     <div class="cumplimiento-express__container">
 
-        <!-- Header -->
-        <header class="cumplimiento-express__header">
-            <h2 id="express-title" class="cumplimiento-express__title">
-                Vista Rápida
-            </h2>
-            <p class="cumplimiento-express__subtitle">
-                Selecciona un artículo de la ley para ver qué capacidades tecnológicas necesitas para cumplirlo
-            </p>
+        <!-- Header con leyenda integrada -->
+        <header class="cumplimiento-express__header cumplimiento-express__header--split">
+            <div>
+                <h2 id="express-title" class="cumplimiento-express__title">
+                    Vista Rápida
+                </h2>
+                <p class="cumplimiento-express__subtitle">
+                    Selecciona un artículo para ver qué capacidades tecnológicas requiere
+                </p>
+            </div>
+            <div class="express-legend express-legend--inline">
+                <span class="express-legend__item">
+                    <span class="express-legend__dot express-legend__dot--core"></span>
+                    Core (imprescindible)
+                </span>
+                <span class="express-legend__item">
+                    <span class="express-legend__dot express-legend__dot--esencial"></span>
+                    Esencial (recomendado)
+                </span>
+                <span class="express-legend__item">
+                    <span class="express-legend__dot express-legend__dot--complementaria"></span>
+                    Complementaria (valor agregado)
+                </span>
+            </div>
         </header>
 
-        <div class="express-cards" role="listbox" aria-label="Artículos de la ley">
+        <!-- Layout 3 columnas: nav | resumen | capacidades -->
+        <div class="express-layout">
 
-            <!-- Principios -->
-            <article class="express-card" data-article="art3" tabindex="0" role="option" aria-selected="false">
-                <span class="express-card__num">Art. 3</span>
-                <span class="express-card__title">Principios Generales</span>
-                <div class="express-card__dots"></div>
-            </article>
+            <!-- COL 1: Navegador de artículos agrupados -->
+            <aside class="express-nav" role="listbox" aria-label="Artículos de la ley">
 
-            <!-- Derechos ARCOP -->
-            <article class="express-card" data-article="art5" tabindex="0" role="option" aria-selected="false">
-                <span class="express-card__num">Art. 5</span>
-                <span class="express-card__title">Derecho de Acceso</span>
-                <div class="express-card__dots"></div>
-            </article>
+                <div class="express-nav__group">
+                    <h4 class="express-nav__group-title">Principios</h4>
+                    <article class="express-card express-card--row" data-article="art3" tabindex="0" role="option" aria-selected="false">
+                        <span class="express-card__num">Art. 3</span>
+                        <span class="express-card__title">Principios Generales</span>
+                        <div class="express-card__dots"></div>
+                    </article>
+                </div>
 
-            <article class="express-card" data-article="art6" tabindex="0" role="option" aria-selected="false">
-                <span class="express-card__num">Art. 6</span>
-                <span class="express-card__title">Derecho de Rectificación</span>
-                <div class="express-card__dots"></div>
-            </article>
+                <div class="express-nav__group">
+                    <h4 class="express-nav__group-title">Derechos ARCOP</h4>
+                    <article class="express-card express-card--row" data-article="art5" tabindex="0" role="option" aria-selected="false">
+                        <span class="express-card__num">Art. 5</span>
+                        <span class="express-card__title">Derecho de Acceso</span>
+                        <div class="express-card__dots"></div>
+                    </article>
+                    <article class="express-card express-card--row" data-article="art6" tabindex="0" role="option" aria-selected="false">
+                        <span class="express-card__num">Art. 6</span>
+                        <span class="express-card__title">Derecho de Rectificación</span>
+                        <div class="express-card__dots"></div>
+                    </article>
+                    <article class="express-card express-card--row" data-article="art7" tabindex="0" role="option" aria-selected="false">
+                        <span class="express-card__num">Art. 7</span>
+                        <span class="express-card__title">Derecho de Supresión</span>
+                        <div class="express-card__dots"></div>
+                    </article>
+                    <article class="express-card express-card--row" data-article="art8" tabindex="0" role="option" aria-selected="false">
+                        <span class="express-card__num">Art. 8</span>
+                        <span class="express-card__title">Derecho de Oposición</span>
+                        <div class="express-card__dots"></div>
+                    </article>
+                    <article class="express-card express-card--row" data-article="art8bis" tabindex="0" role="option" aria-selected="false">
+                        <span class="express-card__num">Art. 8 bis</span>
+                        <span class="express-card__title">Decisiones Automatizadas</span>
+                        <div class="express-card__dots"></div>
+                    </article>
+                    <article class="express-card express-card--row" data-article="art9" tabindex="0" role="option" aria-selected="false">
+                        <span class="express-card__num">Art. 9</span>
+                        <span class="express-card__title">Derecho de Portabilidad</span>
+                        <div class="express-card__dots"></div>
+                    </article>
+                </div>
 
-            <article class="express-card" data-article="art7" tabindex="0" role="option" aria-selected="false">
-                <span class="express-card__num">Art. 7</span>
-                <span class="express-card__title">Derecho de Supresión</span>
-                <div class="express-card__dots"></div>
-            </article>
+                <div class="express-nav__group">
+                    <h4 class="express-nav__group-title">Procedimientos</h4>
+                    <article class="express-card express-card--row" data-article="art10" tabindex="0" role="option" aria-selected="false">
+                        <span class="express-card__num">Art. 10</span>
+                        <span class="express-card__title">Forma y Medios de Ejercicio</span>
+                        <div class="express-card__dots"></div>
+                    </article>
+                    <article class="express-card express-card--row" data-article="art11" tabindex="0" role="option" aria-selected="false">
+                        <span class="express-card__num">Art. 11</span>
+                        <span class="express-card__title">Procedimiento y Plazos</span>
+                        <div class="express-card__dots"></div>
+                    </article>
+                    <article class="express-card express-card--row" data-article="art12" tabindex="0" role="option" aria-selected="false">
+                        <span class="express-card__num">Art. 12</span>
+                        <span class="express-card__title">Consentimiento</span>
+                        <div class="express-card__dots"></div>
+                    </article>
+                </div>
 
-            <article class="express-card" data-article="art8" tabindex="0" role="option" aria-selected="false">
-                <span class="express-card__num">Art. 8</span>
-                <span class="express-card__title">Derecho de Oposición</span>
-                <div class="express-card__dots"></div>
-            </article>
+                <div class="express-nav__group">
+                    <h4 class="express-nav__group-title">Obligaciones</h4>
+                    <article class="express-card express-card--row" data-article="art14" tabindex="0" role="option" aria-selected="false">
+                        <span class="express-card__num">Art. 14-14sept</span>
+                        <span class="express-card__title">Obligaciones y Seguridad</span>
+                        <div class="express-card__dots"></div>
+                    </article>
+                    <article class="express-card express-card--row" data-article="art15ter" tabindex="0" role="option" aria-selected="false">
+                        <span class="express-card__num">Art. 15 ter</span>
+                        <span class="express-card__title">Evaluación de Impacto (EIPDP)</span>
+                        <div class="express-card__dots"></div>
+                    </article>
+                    <article class="express-card express-card--row" data-article="art16" tabindex="0" role="option" aria-selected="false">
+                        <span class="express-card__num">Art. 16</span>
+                        <span class="express-card__title">Datos Personales Sensibles</span>
+                        <div class="express-card__dots"></div>
+                    </article>
+                </div>
 
-            <article class="express-card" data-article="art8bis" tabindex="0" role="option" aria-selected="false">
-                <span class="express-card__num">Art. 8 bis</span>
-                <span class="express-card__title">Decisiones Automatizadas</span>
-                <div class="express-card__dots"></div>
-            </article>
+                <div class="express-nav__group">
+                    <h4 class="express-nav__group-title">Transferencias &amp; Compliance</h4>
+                    <article class="express-card express-card--row" data-article="art27" tabindex="0" role="option" aria-selected="false">
+                        <span class="express-card__num">Art. 27/28</span>
+                        <span class="express-card__title">Transferencia Internacional</span>
+                        <div class="express-card__dots"></div>
+                    </article>
+                    <article class="express-card express-card--row" data-article="art49" tabindex="0" role="option" aria-selected="false">
+                        <span class="express-card__num">Art. 49</span>
+                        <span class="express-card__title">Modelo de Prevención</span>
+                        <div class="express-card__dots"></div>
+                    </article>
+                </div>
 
-            <article class="express-card" data-article="art9" tabindex="0" role="option" aria-selected="false">
-                <span class="express-card__num">Art. 9</span>
-                <span class="express-card__title">Derecho de Portabilidad</span>
-                <div class="express-card__dots"></div>
-            </article>
+            </aside>
 
-            <!-- Procedimientos -->
-            <article class="express-card" data-article="art10" tabindex="0" role="option" aria-selected="false">
-                <span class="express-card__num">Art. 10</span>
-                <span class="express-card__title">Forma y Medios de Ejercicio</span>
-                <div class="express-card__dots"></div>
-            </article>
-
-            <article class="express-card" data-article="art11" tabindex="0" role="option" aria-selected="false">
-                <span class="express-card__num">Art. 11</span>
-                <span class="express-card__title">Procedimiento y Plazos</span>
-                <div class="express-card__dots"></div>
-            </article>
-
-            <article class="express-card" data-article="art12" tabindex="0" role="option" aria-selected="false">
-                <span class="express-card__num">Art. 12</span>
-                <span class="express-card__title">Consentimiento</span>
-                <div class="express-card__dots"></div>
-            </article>
-
-            <!-- Obligaciones -->
-            <article class="express-card" data-article="art14" tabindex="0" role="option" aria-selected="false">
-                <span class="express-card__num">Art. 14-14sept</span>
-                <span class="express-card__title">Obligaciones y Seguridad</span>
-                <div class="express-card__dots"></div>
-            </article>
-
-            <article class="express-card" data-article="art15ter" tabindex="0" role="option" aria-selected="false">
-                <span class="express-card__num">Art. 15 ter</span>
-                <span class="express-card__title">Evaluación de Impacto (EIPDP)</span>
-                <div class="express-card__dots"></div>
-            </article>
-
-            <article class="express-card" data-article="art16" tabindex="0" role="option" aria-selected="false">
-                <span class="express-card__num">Art. 16</span>
-                <span class="express-card__title">Datos Personales Sensibles</span>
-                <div class="express-card__dots"></div>
-            </article>
-
-            <!-- Transferencias y Compliance -->
-            <article class="express-card" data-article="art27" tabindex="0" role="option" aria-selected="false">
-                <span class="express-card__num">Art. 27/28</span>
-                <span class="express-card__title">Transferencia Internacional</span>
-                <div class="express-card__dots"></div>
-            </article>
-
-            <article class="express-card" data-article="art49" tabindex="0" role="option" aria-selected="false">
-                <span class="express-card__num">Art. 49</span>
-                <span class="express-card__title">Modelo de Prevención</span>
-                <div class="express-card__dots"></div>
-            </article>
-
-        </div>
-
-        <!-- Leyenda -->
-        <div class="express-legend express-legend--middle">
-            <span class="express-legend__item">
-                <span class="express-legend__dot express-legend__dot--core"></span>
-                Core (imprescindible)
-            </span>
-            <span class="express-legend__item">
-                <span class="express-legend__dot express-legend__dot--esencial"></span>
-                Esencial (recomendado)
-            </span>
-            <span class="express-legend__item">
-                <span class="express-legend__dot express-legend__dot--complementaria"></span>
-                Complementaria (valor agregado)
-            </span>
-        </div>
-
-        <!-- Grid de tarjetas mini (15 artículos) -->
-
-        <!-- Panel de detalle (dos columnas) -->
-        <div class="express-detail">
+            <!-- COL 2: Resumen del artículo seleccionado -->
             <div class="express-detail__left" id="express-left">
                 <div class="express-detail__placeholder">
                     <span class="express-detail__placeholder-icon" aria-hidden="true">←</span>
@@ -266,6 +267,8 @@
                     </span>
                 </div>
             </div>
+
+            <!-- COL 3: Capacidades requeridas -->
             <div class="express-detail__right" id="express-right">
                 <div class="express-detail__placeholder">
                     <span class="express-detail__placeholder-text">
@@ -274,8 +277,8 @@
                     <span class="express-detail__placeholder-icon" aria-hidden="true">→</span>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
 </section>
 

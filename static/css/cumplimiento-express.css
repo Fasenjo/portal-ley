@@ -193,7 +193,7 @@
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
   line-height: var(--line-height-relaxed);
-  flex: 1;
+  margin-bottom: var(--space-lg);
 }
 
 .express-detail__link {
@@ -458,15 +458,117 @@
 }
 
 /* ─────────────────────────────────────────
+   CHIPS COMO TABS — estado activo (Opción B)
+   ───────────────────────────────────────── */
+
+/* Eliminar subrayado residual de button, resetear box-shadow del :hover */
+.cap-chip {
+    font-family: inherit;
+    letter-spacing: inherit;
+}
+
+/* Cuando es un <button>, quitar default browser styles */
+button.cap-chip {
+    background-color: var(--color-core-bg); /* fallback, se sobreescribe por modifier */
+    cursor: pointer;
+}
+
+/* Estado ACTIVO: fondo sólido + texto blanco */
+.cap-chip--active.cap-chip--core {
+    background-color: var(--color-core);
+    color: #ffffff;
+    border-color: var(--color-core);
+    font-weight: 600;
+}
+
+.cap-chip--active.cap-chip--esencial {
+    background-color: var(--color-essential);
+    color: #ffffff;
+    border-color: var(--color-essential);
+    font-weight: 600;
+}
+
+.cap-chip--active.cap-chip--complementaria {
+    background-color: var(--color-complementary);
+    color: #ffffff;
+    border-color: var(--color-complementary);
+    font-weight: 600;
+}
+
+/* Cuando hay UN solo chip en la sección: no hacer hover efecto (es decorativo) */
+.cap-chip--single {
+    cursor: default;
+}
+
+.cap-chip--single:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* ─────────────────────────────────────────
+   HEADER DE LA JUSTIFICACIÓN — nombre + "Ver más"
+   ───────────────────────────────────────── */
+
+.cap-justificacion__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xs);
+}
+
+.cap-justificacion__name {
+    color: var(--text-primary);
+    font-weight: 600;
+    flex: 1;
+    min-width: 0;
+}
+
+.cap-justificacion__more {
+    flex-shrink: 0;
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity var(--transition-fast);
+}
+
+.cap-justificacion__more:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+}
+
+/* ─────────────────────────────────────────
+   FADE al cambiar de chip activo (Opción B — 200ms)
+   ───────────────────────────────────────── */
+
+.cap-justificacion-wrapper {
+    opacity: 1;
+    transition: opacity 150ms ease-out;
+}
+
+.cap-justificacion-wrapper--fading {
+    opacity: 0;
+}
+
+/* ─────────────────────────────────────────
    JUSTIFICACIÓN: expandida con vendors
    ───────────────────────────────────────── */
 
 .cap-justificacion {
+    /* El clamp ahora va al __body, no al contenedor completo */
+    min-height: calc(var(--line-height-relaxed) * var(--font-size-xs) * 3);
+}
+
+.cap-justificacion__body {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
     -webkit-line-clamp: 5;
-    min-height: calc(var(--line-height-relaxed) * var(--font-size-xs) * 3);
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    line-height: var(--line-height-relaxed);
 }
 
 .cap-justificacion__vendors {
@@ -479,4 +581,218 @@
     color: var(--text-secondary);
     font-style: normal;
     font-weight: 500;
+}
+
+/* ─────────────────────────────────────────
+   LAYOUT 3 COLUMNAS (Master-Detail integrado)
+   ───────────────────────────────────────── */
+
+.express-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: var(--space-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  align-items: stretch;
+}
+
+/* COL 1 — Navegador */
+.express-nav {
+  background-color: var(--bg-tertiary);
+  border-right: 1px solid var(--border-default);
+  padding: var(--space-md);
+  height: 480px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  /* Scrollbar discreto */
+  scrollbar-width: thin;
+}
+
+.express-nav::-webkit-scrollbar {
+  width: 6px;
+}
+
+.express-nav::-webkit-scrollbar-thumb {
+  background-color: var(--border-default);
+  border-radius: 3px;
+}
+
+.express-nav::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.express-nav__group-title {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin: var(--space-sm) 0 var(--space-xs);
+  padding-left: var(--space-xs);
+}
+
+.express-nav__group:first-child .express-nav__group-title {
+  margin-top: 0;
+}
+
+/* Variante horizontal de .express-card dentro del nav */
+.express-card--row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-xs);
+}
+
+.express-card--row .express-card__num {
+  margin-bottom: 0;
+  min-width: 56px;
+}
+
+.express-card--row .express-card__title {
+  margin-bottom: 0;
+  font-size: var(--font-size-sm);
+}
+
+.express-card--row .express-card__dots {
+  gap: 3px;
+}
+
+.express-card--row .express-card__dot {
+  width: 6px;
+  height: 6px;
+}
+
+/* COL 2 y COL 3 — mantienen clases existentes, solo ajustamos padding */
+.express-layout > .express-detail__left,
+.express-layout > .express-detail__right {
+  padding: var(--space-xl);
+}
+
+.express-layout > .express-detail__left {
+  background-color: transparent;
+  border-right: 1px solid var(--border-default);
+}
+
+/* Header con leyenda integrada a la derecha */
+.cumplimiento-express__header--split {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: left;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.express-legend--inline {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Ocultar el grid antiguo y la leyenda middle (ahora obsoletos) */
+.cumplimiento-express .express-cards,
+.cumplimiento-express .express-legend--middle,
+.cumplimiento-express .express-detail {
+  display: none;
+}
+
+/* Columnas 2 y 3: contenido fluye desde arriba, scroll interno si excede */
+.express-layout > .express-detail__left,
+.express-layout > .express-detail__right {
+  overflow-y: auto;
+  max-height: 480px;
+}
+
+.express-layout > .express-detail__left::-webkit-scrollbar,
+.express-layout > .express-detail__right::-webkit-scrollbar {
+  width: 6px;
+}
+
+.express-layout > .express-detail__left::-webkit-scrollbar-thumb,
+.express-layout > .express-detail__right::-webkit-scrollbar-thumb {
+  background-color: var(--border-default);
+  border-radius: 3px;
+}
+
+/* Columna 2 — convertir en flex vertical para poder anclar el link al fondo */
+.express-layout > .express-detail__left {
+  display: flex;
+  flex-direction: column;
+}
+
+/* El link "Ver detalle completo" se empuja al fondo automáticamente */
+.express-layout > .express-detail__left .express-detail__link {
+  margin-top: auto;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — colapso progresivo
+   ───────────────────────────────────────── */
+
+/* Tablet: 2 columnas (nav + detalle unificado) */
+@media (max-width: 1024px) {
+  .express-layout {
+    grid-template-columns: 240px 1fr;
+  }
+  .express-layout > .express-detail__right {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--border-default);
+  }
+}
+
+/* Mobile: 1 columna apilada */
+@media (max-width: 768px) {
+  .express-layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .express-nav {
+    height: auto;
+    max-height: 320px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-default);
+  }
+  .express-layout > .express-detail__left {
+    border-right: none;
+    border-bottom: 1px solid var(--border-default);
+    max-height: none;
+  }
+  .express-layout > .express-detail__right {
+    max-height: none;
+  }
+  .cumplimiento-express__header--split {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Header centrado con leyenda debajo */
+.cumplimiento-express__header--split {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-lg);
+}
+
+.cumplimiento-express__header--split > div {
+  /* Limita el ancho del texto introductorio para mejor lectura */
+  max-width: 640px;
+}
+
+.express-legend--inline {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
 }
