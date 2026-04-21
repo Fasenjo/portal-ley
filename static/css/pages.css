@@ -830,7 +830,9 @@
 
 .criticality-legend__item .tag {
   flex-shrink: 0;
-  min-width: 100px;
+  width: 140px;              
+  justify-content: center;
+  text-align: center;
 }
 
 .criticality-legend__desc {
