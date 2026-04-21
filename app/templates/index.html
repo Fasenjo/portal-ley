@@ -290,49 +290,62 @@
             <h2 id="categories-title" class="categories-preview__title">Capacidades Tecnológicas</h2>
             <p class="categories-preview__subtitle">11 categorías genéricas para implementar cumplimiento</p>
         </header>
-        
+        <div class="categories-legend" role="list" aria-label="Estado de implementación de categorías">
+            <span class="categories-legend__item" role="listitem">
+                <span class="categories-legend__dot categories-legend__dot--tech" aria-hidden="true"></span>
+                Tecnología Compatible
+            </span>
+            <span class="categories-legend__item" role="listitem">
+                <span class="categories-legend__dot categories-legend__dot--process" aria-hidden="true"></span>
+                Proceso Operacional
+            </span>
+            <span class="categories-legend__item" role="listitem">
+                <span class="categories-legend__dot categories-legend__dot--unknown" aria-hidden="true"></span>
+                Tecnología sin conocimientos
+            </span>
+        </div>  
         <div class="categories-preview__grid">
-            <article class="capacity-mini" data-capacity="dlp">
+            <article class="capacity-mini capacity-mini--unknown" data-capacity="dlp">
                 <span class="capacity-mini__sigla">DLP/DCS</span>
                 <span class="capacity-mini__name">Data Discovery, Classification & DLP</span>
             </article>
-            <article class="capacity-mini" data-capacity="iam">
+            <article class="capacity-mini capacity-mini--tech" data-capacity="iam">
                 <span class="capacity-mini__sigla">IAM</span>
                 <span class="capacity-mini__name">Identity & Access Management</span>
             </article>
-            <article class="capacity-mini" data-capacity="dam">
+            <article class="capacity-mini capacity-mini--unknown" data-capacity="dam">
                 <span class="capacity-mini__sigla">DAM</span>
                 <span class="capacity-mini__name">Database Activity Monitoring & Audit</span>
             </article>
-            <article class="capacity-mini" data-capacity="enc">
+            <article class="capacity-mini capacity-mini--unknown" data-capacity="enc">
                 <span class="capacity-mini__sigla">ENC/TOK</span>
                 <span class="capacity-mini__name">Cifrado, Enmascaramiento & Tokenización</span>
             </article>
-            <article class="capacity-mini" data-capacity="prm">
+            <article class="capacity-mini capacity-mini--process" data-capacity="prm">
                 <span class="capacity-mini__sigla">PRM</span>
                 <span class="capacity-mini__name">Privacy Rights Management</span>
             </article>
-            <article class="capacity-mini" data-capacity="grc">
+            <article class="capacity-mini capacity-mini--unknown" data-capacity="grc">
                 <span class="capacity-mini__sigla">GRC</span>
                 <span class="capacity-mini__name">Governance, Risk & Compliance</span>
             </article>
-            <article class="capacity-mini" data-capacity="ret">
+            <article class="capacity-mini capacity-mini--process" data-capacity="ret">
                 <span class="capacity-mini__sigla">RET/DEL</span>
                 <span class="capacity-mini__name">Retención y Eliminación de Datos</span>
             </article>
-            <article class="capacity-mini" data-capacity="ecm">
+            <article class="capacity-mini capacity-mini--process" data-capacity="ecm">
                 <span class="capacity-mini__sigla">ECM</span>
                 <span class="capacity-mini__name">Gestión Documental & Evidencias</span>
             </article>
-            <article class="capacity-mini" data-capacity="dgv">
+            <article class="capacity-mini capacity-mini--unknown" data-capacity="dgv">
                 <span class="capacity-mini__sigla">DGV</span>
                 <span class="capacity-mini__name">Data Governance & Catálogo de Datos</span>
             </article>
-            <article class="capacity-mini" data-capacity="etl">
+            <article class="capacity-mini capacity-mini--unknown" data-capacity="etl">
                 <span class="capacity-mini__sigla">ETL/API</span>
                 <span class="capacity-mini__name">Integración, APIs & Transferencia de Datos</span>
             </article>
-            <article class="capacity-mini" data-capacity="siem">
+            <article class="capacity-mini capacity-mini--tech" data-capacity="siem">
                 <span class="capacity-mini__sigla">SIEM</span>
                 <span class="capacity-mini__name">Security Information & Event Management</span>
             </article>

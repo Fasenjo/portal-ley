@@ -916,6 +916,55 @@
   text-align: center;
 }
 
+.categories-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  margin-top: calc(var(--space-xl) * -1);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+}
+
+.categories-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.categories-legend__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.categories-legend__dot--tech {
+  background-color: var(--success);
+}
+
+.categories-legend__dot--process {
+  background-color: #facc15;
+}
+
+.categories-legend__dot--unknown {
+  background-color: var(--color-core);
+}
+
+.capacity-mini--tech {
+  border-top: 2px solid var(--success);
+}
+
+.capacity-mini--process {
+  border-top: 2px solid #facc15;
+}
+
+.capacity-mini--unknown {
+  border-top: 2px solid var(--color-core);
+}
+
 /* ─────────────────────────────────────────
    CAPACIDADES PAGE - ADDITIONAL STYLES
    ───────────────────────────────────────── */
