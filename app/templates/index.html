@@ -14,14 +14,15 @@
             <p class="hero__subtitle">
                 Guía interactiva para implementación técnica del cumplimiento normativo en Chile
             </p>
-            <p class="hero__date">
-                <span class="hero__date-label">Vigencia:</span>
-                <time datetime="2026-12-01">1 de diciembre de 2026</time>
-            </p>
-            <a href="{{ url_for('articulos') }}" class="btn btn--primary hero__cta">
-                Explorar Guía
-                <span aria-hidden="true">→</span>
-            </a>
+
+            <!-- Badge de vigencia destacado -->
+            <div class="hero__deadline" role="note" aria-label="Fecha de entrada en vigencia">
+                <span class="hero__deadline-icon" aria-hidden="true">⚠</span>
+                <div class="hero__deadline-content">
+                    <span class="hero__deadline-label">Entra en vigencia el</span>
+                    <time class="hero__deadline-date" datetime="2026-12-01">1 de diciembre de 2026</time>
+                </div>
+            </div>
         </div>
         <div class="hero__visual" aria-hidden="true">
             <div class="hero__illustration">

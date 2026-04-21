@@ -676,22 +676,44 @@
   margin-bottom: var(--space-md);
 }
 
-.hero__date {
-  display: flex;
+/* Hero deadline badge — destaca la fecha de vigencia */
+.hero__deadline {
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-sm);
-  font-size: var(--font-size-sm);
-  color: var(--text-muted);
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background-color: rgba(234, 179, 8, 0.08);
+  border: 1px solid var(--warning);
+  border-left: 4px solid var(--warning);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-xl);
   margin-bottom: var(--space-xl);
 }
 
-.hero__date-label {
-  font-weight: 500;
+.hero__deadline-icon {
+  font-size: var(--font-size-xl);
+  color: var(--warning);
+  line-height: 1;
 }
 
-.hero__date time {
-  color: var(--warning);
+.hero__deadline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero__deadline-label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
   font-weight: 600;
+}
+
+.hero__deadline-date {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--warning);
 }
 
 .hero__shield-icon {
