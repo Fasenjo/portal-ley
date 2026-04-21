@@ -133,10 +133,10 @@
             if (firstCard) {
                 var artId = firstCard.getAttribute('data-article');
                 if (artId) selectArticle(artId);
+                firstCard.blur();
             }
         }, 500);
     }
-
     // ═══════════════════════════════════════
     // SYNC DOTS (desde JSON)
     // ═══════════════════════════════════════
@@ -222,10 +222,6 @@
         card.classList.toggle('express-card--active', isActive);
         card.setAttribute('aria-selected', isActive ? 'true' : 'false');
 
-        // NUEVO: scrollear la tarjeta activa a la vista dentro del nav
-        if (isActive && card.scrollIntoView) {
-            card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
-        }
     });
 }
 

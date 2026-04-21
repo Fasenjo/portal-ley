@@ -44,30 +44,6 @@
     }
 
     // =========================================
-    // Smooth scroll for anchor links
-    // =========================================
-    
-    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const target = document.querySelector(targetId);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                
-                // Set focus for accessibility
-                target.setAttribute('tabindex', '-1');
-                target.focus();
-            }
-        });
-    });
-
-    // =========================================
     // Active nav link highlighting
     // =========================================
     

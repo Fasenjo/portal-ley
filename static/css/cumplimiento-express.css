@@ -67,6 +67,12 @@
   outline-offset: 2px;
 }
 
+/* Evita que el focus automático del navegador haga scroll
+   hacia las tarjetas al cargar la página. */
+.express-card {
+  scroll-margin-top: 100vh;
+}
+
 .express-card--active {
   border-color: var(--accent);
   box-shadow: 0 0 0 1px var(--accent);
@@ -795,4 +801,14 @@ button.cap-chip {
   justify-content: center;
   gap: var(--space-lg);
   flex-wrap: wrap;
+}
+
+/* ─────────────────────────────────────────
+   FIX SCROLL AUTOMÁTICO AL CARGAR
+   Evita que el navegador haga scroll hacia la primera
+   tarjeta con tabindex al cargar la página. Las tarjetas
+   siguen siendo enfocables y navegables por teclado.
+   ───────────────────────────────────────── */
+.express-cards {
+  scroll-margin-top: 9999px;
 }
